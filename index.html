@@ -1518,6 +1518,7 @@ The JSON examples are not based on any real data product, but exemplify the usag
             <span class="dl">"</span><span class="s2">continuityConditions</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Expired license will automatically continued without written cancellation (termination) by Data Holder</span><span class="dl">"</span>
         <span class="p">},</span>
         <span class="dl">"</span><span class="s2">governance</span><span class="dl">"</span><span class="p">:{</span>
+      <span class="dl">"</span><span class="s2">ownership</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Mindmote Oy, a company specializing in pet industry insights, owns the license to its proprietary data product 'Pets of the Year'.</span><span class="dl">"</span><span class="p">,</span>
             <span class="dl">"</span><span class="s2">damages</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">During the term of license, except for the force majeure or the Data Holders reasons, Data User is required to follow strictly in accordance with the license. If Data User wants to terminate the license early, it needs to pay a certain amount of liquidated damages.</span><span class="dl">"</span><span class="p">,</span>
             <span class="dl">"</span><span class="s2">confidentiality</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Data User undertakes to maintain confidentiality as regards all information of a technical (such as, by way of a non-limiting example, drawings, tables, documentation, formulas and correspondence) and commercial nature (including contractual conditions, prices, payment conditions) gained during the performance of this license.</span><span class="dl">"</span><span class="p">,</span>
             <span class="dl">"</span><span class="s2">applicableLaws</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">This license shall be interpreted, construed and enforced in accordance with the law of Finland, Incl. Copyright Act 404/1961.</span><span class="dl">"</span><span class="p">,</span>
@@ -1606,7 +1607,7 @@ The JSON examples are not based on any real data product, but exemplify the usag
 <td>termination</td>
 <td>element</td>
 <td>-</td>
-<td>Licence termination and continuity related condititions.</td>
+<td>Licence termination and continuity related conditions.</td>
 </tr>
 <tr>
 <td>terminationConditions</td>
@@ -1625,6 +1626,12 @@ The JSON examples are not based on any real data product, but exemplify the usag
 <td>element</td>
 <td>-</td>
 <td>Governance is the approach taken to ensure that the agreed outcomes are being fulfilled.</td>
+</tr>
+<tr>
+<td>ownership</td>
+<td>string</td>
+<td>text content, max length 512 chars</td>
+<td>Data product licensing ownership.</td>
 </tr>
 <tr>
 <td>audit</td>
