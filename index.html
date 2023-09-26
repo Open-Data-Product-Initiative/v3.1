@@ -1492,7 +1492,6 @@ The JSON examples are not based on any real data product, but exemplify the usag
   <span class="dl">"</span><span class="s2">versionControlSystem</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Git</span><span class="dl">"</span><span class="p">,</span>
   <span class="dl">"</span><span class="s2">versionRepositoryURL</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://example.com/git-repo</span><span class="dl">"</span><span class="p">,</span>
   <span class="dl">"</span><span class="s2">accessPermissions</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
-    <span class="dl">"</span><span class="s2">usersGroups</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">groupA</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">groupB</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">groupC</span><span class="dl">"</span><span class="p">],</span>
     <span class="dl">"</span><span class="s2">permissionLevels</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
       <span class="dl">"</span><span class="s2">level1</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
         <span class="dl">"</span><span class="s2">read</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
@@ -1507,24 +1506,18 @@ The JSON examples are not based on any real data product, but exemplify the usag
         <span class="dl">"</span><span class="s2">write</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span>
       <span class="p">}</span>
     <span class="p">},</span>
-    <span class="dl">"</span><span class="s2">userRights</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">userGroups</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
       <span class="dl">"</span><span class="s2">groupA</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
-        <span class="dl">"</span><span class="s2">level1</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-        <span class="dl">"</span><span class="s2">level2</span><span class="dl">"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-        <span class="dl">"</span><span class="s2">level3</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+         <span class="dl">"</span><span class="s2">levels</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">level1</span><span class="dl">"</span><span class="p">],</span>
         <span class="dl">"</span><span class="s2">description</span><span class="dl">"</span><span class="p">:</span><span class="dl">""</span>
-      <span class="p">},</span>
+      <span class="p">},</span>  
       <span class="dl">"</span><span class="s2">groupB</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
-        <span class="dl">"</span><span class="s2">level1</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-        <span class="dl">"</span><span class="s2">level2</span><span class="dl">"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-        <span class="dl">"</span><span class="s2">level3</span><span class="dl">"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+         <span class="dl">"</span><span class="s2">levels</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">level2</span><span class="dl">"</span><span class="p">],</span>
         <span class="dl">"</span><span class="s2">description</span><span class="dl">"</span><span class="p">:</span><span class="dl">""</span>
-      <span class="p">},</span>
+      <span class="p">},</span>  
       <span class="dl">"</span><span class="s2">groupC</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
-        <span class="dl">"</span><span class="s2">level1</span><span class="dl">"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-        <span class="dl">"</span><span class="s2">level2</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-        <span class="dl">"</span><span class="s2">level3</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-        <span class="dl">"</span><span class="s2">description</span><span class="dl">"</span><span class="p">:</span><span class="dl">""</span>
+        <span class="dl">"</span><span class="s2">levels</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">level1</span><span class="dl">"</span><span class="p">],</span>
+        <span class="dl">"</span><span class="s2">description</span><span class="dl">"</span><span class="p">:</span><span class="dl">""</span> 
       <span class="p">}</span>
     <span class="p">},</span>
     <span class="dl">"</span><span class="s2">compliance</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
