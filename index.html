@@ -392,6 +392,9 @@
               </ul>
           </li>
           <li>
+            <a href="#data-governance" class="toc-h1 toc-link" data-title="Data Governance">Data Governance</a>
+          </li>
+          <li>
             <a href="#data-licensing" class="toc-h1 toc-link" data-title="Data Licensing">Data Licensing</a>
           </li>
           <li>
@@ -1477,6 +1480,131 @@ The JSON examples are not based on any real data product, but exemplify the usag
 </tbody></table>
 
 <p><button data-tf-popup="Q1Zo6wE5" data-tf-iframe-props="title=Customer Feedback Survey" style="all:unset;font-family:Helvetica,Arial,sans-serif;display:inline-block;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;background-color:#FA6B05;color:#000000;font-size:17px;border-radius:3px;padding:0 28px;font-weight:bold;height:42.5px;cursor:pointer;line-height:42.5px;text-align:center;margin:0;text-decoration:none;">Raise an issue</button><script src="//embed.typeform.com/next/embed.js"></script></p>
+<h1 id='data-governance'>Data Governance</h1>
+<p>The Data Governance <strong>OBJECT</strong> pertains to the structured definition of policies, rules, and permissions that govern the management and utilization of data within an IT system or data product</p>
+
+<blockquote>
+<p>Example of Data Governance component usage:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code>
+<span class="dl">"</span><span class="s2">dataGovernance</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+  <span class="dl">"</span><span class="s2">confidentiality</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Ensuring data privacy and information security in accordance with relevant regulations and best practices.</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">versionControlSystem</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Git</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">versionRepositoryURL</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://example.com/git-repo</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">accessPermissions</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">usersGroups</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">groupA</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">groupB</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">groupC</span><span class="dl">"</span><span class="p">],</span>
+    <span class="dl">"</span><span class="s2">permissionLevels</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+      <span class="dl">"</span><span class="s2">level1</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="dl">"</span><span class="s2">read</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">write</span><span class="dl">"</span><span class="p">:</span> <span class="kc">false</span>
+      <span class="p">},</span>
+      <span class="dl">"</span><span class="s2">level2</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="dl">"</span><span class="s2">read</span><span class="dl">"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">write</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span>
+      <span class="p">},</span>
+      <span class="dl">"</span><span class="s2">level3</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="dl">"</span><span class="s2">read</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">write</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="dl">"</span><span class="s2">userRights</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+      <span class="dl">"</span><span class="s2">groupA</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="dl">"</span><span class="s2">level1</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">level2</span><span class="dl">"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">level3</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span>
+      <span class="p">},</span>
+      <span class="dl">"</span><span class="s2">groupB</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="dl">"</span><span class="s2">level1</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">level2</span><span class="dl">"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">level3</span><span class="dl">"</span><span class="p">:</span> <span class="kc">false</span>
+      <span class="p">},</span>
+      <span class="dl">"</span><span class="s2">groupC</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="dl">"</span><span class="s2">level1</span><span class="dl">"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">level2</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">level3</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="dl">"</span><span class="s2">compliance</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+      <span class="dl">"</span><span class="s2">regulations</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Access needs to be monitored to ensure compliance with data privacy and security regulations.</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">training</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Users need to receive training on data access policies and security best practices.</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">guidelines</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">The data governance practices and guidelines are defined and followed to maintain data integrity and security.</span><span class="dl">"</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+
+
+
+</code></pre></div>
+<table><thead>
+<tr>
+<th><div style="width:150px">Element name</div></th>
+<th>Type</th>
+<th>Options</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>dataGovernance</td>
+<td>element</td>
+<td>-</td>
+<td>tructured definition of policies, rules, and permissions that govern the management and utilization of data within an IT system or data product.</td>
+</tr>
+<tr>
+<td>confidentiality</td>
+<td>string</td>
+<td>any</td>
+<td>Ensuring data privacy and information security in accordance with relevant regulations and best practices.</td>
+</tr>
+<tr>
+<td>versionControlSystem</td>
+<td>string</td>
+<td>any</td>
+<td>A version control system (VCS) is a software tool that tracks and manages changes to files, enabling collaboration and providing a history of revisions. Examples: Git, Mercurial, Bazaar.</td>
+</tr>
+<tr>
+<td>versionRepositoryURL</td>
+<td>URL</td>
+<td>Valid URL</td>
+<td>The URL of the version repository, such as Git repository.</td>
+</tr>
+<tr>
+<td>accessPermissions</td>
+<td>element</td>
+<td>-</td>
+<td>Access permissions refer to the rights and restrictions that determine who can view, edit, or perform specific actions on data product.</td>
+</tr>
+<tr>
+<td>permissionLevels</td>
+<td>array</td>
+<td>-</td>
+<td>Comma separates array of permission levels and boolean values.</td>
+</tr>
+<tr>
+<td>userRights</td>
+<td>array</td>
+<td>-</td>
+<td>Comma separates array of user rights and boolean values.</td>
+</tr>
+<tr>
+<td>compiliance</td>
+<td>element</td>
+<td>-</td>
+<td>Compliance refers to the adherence to established rules, regulations, and standards, ensuring that actions and practices align with legal and industry requirements, particularly in the context of data privacy and security.</td>
+</tr>
+<tr>
+<td>regulations</td>
+<td>string</td>
+<td>any</td>
+<td>Requirements for monitoring access to ensure compliance with data privacy and security regulations.</td>
+</tr>
+<tr>
+<td>guidelines</td>
+<td>string</td>
+<td>any</td>
+<td>Data governance practices and guidelines defined and followed to maintain data integrity and security.</td>
+</tr>
+</tbody></table>
 <h1 id='data-licensing'>Data Licensing</h1>
 <p>The data product may be exploited e.g. by licensing its use and exploitation to third parties. Machine-readable license as part of the specification is implemented for this purpose. It can be used to conclude various agreements regarding data protection, processing and intellectual property rights (IPR). Data can be protected by one or more intellectual property rights. Principle is that when a third party (Data User) exploits the data, it must have a license or other right from Data Holder to exploit to the data.</p>
 
