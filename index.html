@@ -1519,7 +1519,7 @@ The JSON examples are not based on any real data product, but exemplify the usag
         <span class="dl">"</span><span class="s2">description</span><span class="dl">"</span><span class="p">:</span><span class="dl">""</span> 
       <span class="p">}</span>
     <span class="p">},</span>
-    <span class="dl">"</span><span class="s2">privacy</span><span class="dl">"</span><span class="p">:{</span>
+    <span class="dl">"</span><span class="s2">dataPrivacy</span><span class="dl">"</span><span class="p">:{</span>
       <span class="dl">"</span><span class="s2">containsPersonalData</span><span class="dl">"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
       <span class="dl">"</span><span class="s2">applicaplePrivacyLaws</span><span class="dl">"</span><span class="p">:[</span>
         <span class="dl">"</span><span class="s2">General Data Protection Regulation</span><span class="dl">"</span><span class="p">,</span>
@@ -1529,7 +1529,7 @@ The JSON examples are not based on any real data product, but exemplify the usag
       <span class="dl">"</span><span class="s2">dpaURL</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">http://192.168.10.1/dpaconditions</span><span class="dl">"</span>
         <span class="p">},</span>
 
-    <span class="dl">"</span><span class="s2">securityInformation</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">dataSecurity</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
       <span class="dl">"</span><span class="s2">encryption</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Data in transit is encrypted using the TLS 1.2 protocol with AES-256 encryption. Data at rest is encrypted using industry-standard AES-256 encryption algorithms.</span><span class="dl">"</span><span class="p">,</span>
       <span class="dl">"</span><span class="s2">authentication</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Users are initially identified through a username and password combination during API key acquisition. Multi-factor authentication (MFA) is not currently employed but is being considered for future implementation.</span><span class="dl">"</span><span class="p">,</span>
       <span class="dl">"</span><span class="s2">vulnerabilities</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Security vulnerabilities are identified through regular automated scans and user-reported issues. A dedicated security team reviews and addresses these vulnerabilities. We have a vulnerability management process in place.</span><span class="dl">"</span><span class="p">,</span>
@@ -1597,7 +1597,7 @@ The JSON examples are not based on any real data product, but exemplify the usag
 <td>Comma separates array of group rights and boolean values.</td>
 </tr>
 <tr>
-<td>privacy</td>
+<td>dataPrivacy</td>
 <td>element</td>
 <td>-</td>
 <td>Data privacy related attributes.</td>
@@ -1615,7 +1615,7 @@ The JSON examples are not based on any real data product, but exemplify the usag
 <td>The URL of the Data Processing Agreement (DPA).</td>
 </tr>
 <tr>
-<td>securityInformation</td>
+<td>dataSecurity</td>
 <td>element</td>
 <td>-</td>
 <td>Information related to data product security.</td>
