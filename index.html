@@ -1486,36 +1486,36 @@ The JSON examples are not based on any real data product, but exemplify the usag
 <blockquote>
 <p>Example of Data Governance component usage:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="dl">"</span><span class="s2">dataGovernance</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
-  <span class="dl">"</span><span class="s2">confidentiality</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Ensuring data privacy and information security in accordance with relevant regulations and best practices.</span><span class="dl">"</span><span class="p">,</span>
-  <span class="dl">"</span><span class="s2">versionControlSystem</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Git</span><span class="dl">"</span><span class="p">,</span>
-  <span class="dl">"</span><span class="s2">versionRepositoryURL</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://example.com/git-repo</span><span class="dl">"</span><span class="p">,</span>
-  <span class="dl">"</span><span class="s2">accessPermissions</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
-    <span class="dl">"</span><span class="s2">permissionLevels</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
-      <span class="dl">"</span><span class="s2">level1</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
-        <span class="dl">"</span><span class="s2">read</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-        <span class="dl">"</span><span class="s2">write</span><span class="dl">"</span><span class="p">:</span> <span class="kc">false</span>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="dl">"</span><span class="s2">dataGovernance</span><span class="dl">"</span><span class="p">:{</span>
+  <span class="dl">"</span><span class="s2">confidentiality</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Ensuring data privacy and information security in accordance with relevant regulations and best practices.</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">versionControlSystem</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Git</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">versionRepositoryURL</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">https://example.com/git-repo</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">accessPermissions</span><span class="dl">"</span><span class="p">:{</span>
+    <span class="dl">"</span><span class="s2">permissionLevels</span><span class="dl">"</span><span class="p">:{</span>
+      <span class="dl">"</span><span class="s2">level1</span><span class="dl">"</span><span class="p">:{</span>
+        <span class="dl">"</span><span class="s2">read</span><span class="dl">"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">write</span><span class="dl">"</span><span class="p">:</span><span class="kc">false</span>
       <span class="p">},</span>
-      <span class="dl">"</span><span class="s2">level2</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
-        <span class="dl">"</span><span class="s2">read</span><span class="dl">"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-        <span class="dl">"</span><span class="s2">write</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span>
+      <span class="dl">"</span><span class="s2">level2</span><span class="dl">"</span><span class="p">:{</span>
+        <span class="dl">"</span><span class="s2">read</span><span class="dl">"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">write</span><span class="dl">"</span><span class="p">:</span><span class="kc">true</span>
       <span class="p">},</span>
-      <span class="dl">"</span><span class="s2">level3</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
-        <span class="dl">"</span><span class="s2">read</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-        <span class="dl">"</span><span class="s2">write</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span>
+      <span class="dl">"</span><span class="s2">level3</span><span class="dl">"</span><span class="p">:{</span>
+        <span class="dl">"</span><span class="s2">read</span><span class="dl">"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">write</span><span class="dl">"</span><span class="p">:</span><span class="kc">true</span>
       <span class="p">}</span>
     <span class="p">},</span>
-    <span class="dl">"</span><span class="s2">userGroups</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
-      <span class="dl">"</span><span class="s2">groupA</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
-        <span class="dl">"</span><span class="s2">levels</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">level1</span><span class="dl">"</span><span class="p">],</span>
+    <span class="dl">"</span><span class="s2">userGroups</span><span class="dl">"</span><span class="p">:{</span>
+      <span class="dl">"</span><span class="s2">groupA</span><span class="dl">"</span><span class="p">:{</span>
+        <span class="dl">"</span><span class="s2">levels</span><span class="dl">"</span><span class="p">:[</span><span class="dl">"</span><span class="s2">level1</span><span class="dl">"</span><span class="p">],</span>
         <span class="dl">"</span><span class="s2">description</span><span class="dl">"</span><span class="p">:</span><span class="dl">""</span>
       <span class="p">},</span>  
-      <span class="dl">"</span><span class="s2">groupB</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
-        <span class="dl">"</span><span class="s2">levels</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">level2</span><span class="dl">"</span><span class="p">],</span>
+      <span class="dl">"</span><span class="s2">groupB</span><span class="dl">"</span><span class="p">:{</span>
+        <span class="dl">"</span><span class="s2">levels</span><span class="dl">"</span><span class="p">:[</span><span class="dl">"</span><span class="s2">level2</span><span class="dl">"</span><span class="p">],</span>
         <span class="dl">"</span><span class="s2">description</span><span class="dl">"</span><span class="p">:</span><span class="dl">""</span>
       <span class="p">},</span>  
-      <span class="dl">"</span><span class="s2">groupC</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
-        <span class="dl">"</span><span class="s2">levels</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">level3</span><span class="dl">"</span><span class="p">],</span>
+      <span class="dl">"</span><span class="s2">groupC</span><span class="dl">"</span><span class="p">:{</span>
+        <span class="dl">"</span><span class="s2">levels</span><span class="dl">"</span><span class="p">:[</span><span class="dl">"</span><span class="s2">level3</span><span class="dl">"</span><span class="p">],</span>
         <span class="dl">"</span><span class="s2">description</span><span class="dl">"</span><span class="p">:</span><span class="dl">""</span> 
       <span class="p">}</span>
     <span class="p">},</span>
@@ -1529,19 +1529,19 @@ The JSON examples are not based on any real data product, but exemplify the usag
       <span class="dl">"</span><span class="s2">dpaURL</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">http://192.168.10.1/dpaconditions</span><span class="dl">"</span>
         <span class="p">},</span>
 
-    <span class="dl">"</span><span class="s2">dataSecurity</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
-      <span class="dl">"</span><span class="s2">encryption</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Data in transit is encrypted using the TLS 1.2 protocol with AES-256 encryption. Data at rest is encrypted using industry-standard AES-256 encryption algorithms.</span><span class="dl">"</span><span class="p">,</span>
-      <span class="dl">"</span><span class="s2">authentication</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Users are initially identified through a username and password combination during API key acquisition. Multi-factor authentication (MFA) is not currently employed but is being considered for future implementation.</span><span class="dl">"</span><span class="p">,</span>
-      <span class="dl">"</span><span class="s2">vulnerabilities</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Security vulnerabilities are identified through regular automated scans and user-reported issues. A dedicated security team reviews and addresses these vulnerabilities. We have a vulnerability management process in place.</span><span class="dl">"</span><span class="p">,</span>
-      <span class="dl">"</span><span class="s2">securityCertificatesAndAudits</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Our data product has undergone an annual security audit by a third-party firm, and we hold a SOC 2 Type II certification. The current certification is valid until December 31, 2024.</span><span class="dl">"</span><span class="p">,</span>
-      <span class="dl">"</span><span class="s2">resilience</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">In case of data breaches, we have a disaster recovery plan that includes data backups with daily snapshots. DDoS attacks are mitigated through a combination of traffic filtering and load balancing.</span><span class="dl">"</span><span class="p">,</span>
-      <span class="dl">"</span><span class="s2">monitoring</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Log data is securely stored in an isolated environment with restricted access. We use real-time monitoring tools to detect anomalies, and automated alerts are triggered for any suspicious activities.</span><span class="dl">"</span><span class="p">,</span>
-      <span class="dl">"</span><span class="s2">updates</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Security vulnerabilities are patched within 48 hours of discovery. Users are notified of security updates through email, and a dedicated changelog is maintained on our website.</span><span class="dl">"</span>
+    <span class="dl">"</span><span class="s2">dataSecurity</span><span class="dl">"</span><span class="p">:{</span>
+      <span class="dl">"</span><span class="s2">encryption</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Data in transit is encrypted using the TLS 1.2 protocol with AES-256 encryption. Data at rest is encrypted using industry-standard AES-256 encryption algorithms.</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">authentication</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Users are initially identified through a username and password combination during API key acquisition. Multi-factor authentication (MFA) is not currently employed but is being considered for future implementation.</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">vulnerabilities</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Security vulnerabilities are identified through regular automated scans and user-reported issues. A dedicated security team reviews and addresses these vulnerabilities. We have a vulnerability management process in place.</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">securityCertificatesAndAudits</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Our data product has undergone an annual security audit by a third-party firm, and we hold a SOC 2 Type II certification. The current certification is valid until December 31, 2024.</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">resilience</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">In case of data breaches, we have a disaster recovery plan that includes data backups with daily snapshots. DDoS attacks are mitigated through a combination of traffic filtering and load balancing.</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">monitoring</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Log data is securely stored in an isolated environment with restricted access. We use real-time monitoring tools to detect anomalies, and automated alerts are triggered for any suspicious activities.</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">updates</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Security vulnerabilities are patched within 48 hours of discovery. Users are notified of security updates through email, and a dedicated changelog is maintained on our website.</span><span class="dl">"</span>
     <span class="p">},</span>
-    <span class="dl">"</span><span class="s2">compliance</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
-      <span class="dl">"</span><span class="s2">regulations</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Access needs to be monitored to ensure compliance with data privacy and security regulations.</span><span class="dl">"</span><span class="p">,</span>
-      <span class="dl">"</span><span class="s2">training</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Users need to receive training on data access policies and security best practices.</span><span class="dl">"</span><span class="p">,</span>
-      <span class="dl">"</span><span class="s2">guidelines</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">The data governance practices and guidelines are defined and followed to maintain data integrity and security.</span><span class="dl">"</span>
+    <span class="dl">"</span><span class="s2">compliance</span><span class="dl">"</span><span class="p">:{</span>
+      <span class="dl">"</span><span class="s2">regulations</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Access needs to be monitored to ensure compliance with data privacy and security regulations.</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">training</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Users need to receive training on data access policies and security best practices.</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">guidelines</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">The data governance practices and guidelines are defined and followed to maintain data integrity and security.</span><span class="dl">"</span>
     <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">}</span>  
