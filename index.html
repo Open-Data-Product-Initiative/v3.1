@@ -1486,7 +1486,6 @@ The JSON examples are not based on any real data product, but exemplify the usag
 <p>Example of Data Governance component usage:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="dl">"</span><span class="s2">dataGovernance</span><span class="dl">"</span><span class="p">:{</span>
-  <span class="dl">"</span><span class="s2">confidentiality</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Ensuring data privacy and information security in accordance with relevant regulations and best practices.</span><span class="dl">"</span><span class="p">,</span>
   <span class="dl">"</span><span class="s2">versionControlSystem</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Git</span><span class="dl">"</span><span class="p">,</span>
   <span class="dl">"</span><span class="s2">versionRepositoryURL</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">https://example.com/git-repo</span><span class="dl">"</span><span class="p">,</span>
   <span class="dl">"</span><span class="s2">accessPermissions</span><span class="dl">"</span><span class="p">:{</span>
@@ -1538,6 +1537,7 @@ The JSON examples are not based on any real data product, but exemplify the usag
       <span class="dl">"</span><span class="s2">updates</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Security vulnerabilities are patched within 48 hours of discovery. Users are notified of security updates through email, and a dedicated changelog is maintained on our website.</span><span class="dl">"</span>
     <span class="p">},</span>
     <span class="dl">"</span><span class="s2">compliance</span><span class="dl">"</span><span class="p">:{</span>
+      <span class="dl">"</span><span class="s2">confidentiality</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Ensuring data privacy and information security in accordance with relevant regulations and best practices.</span><span class="dl">"</span><span class="p">,</span>
       <span class="dl">"</span><span class="s2">regulations</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Access needs to be monitored to ensure compliance with data privacy and security regulations.</span><span class="dl">"</span><span class="p">,</span>
       <span class="dl">"</span><span class="s2">training</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Users need to receive training on data access policies and security best practices.</span><span class="dl">"</span><span class="p">,</span>
       <span class="dl">"</span><span class="s2">guidelines</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">The data governance practices and guidelines are defined and followed to maintain data integrity and security.</span><span class="dl">"</span>
@@ -1558,12 +1558,6 @@ The JSON examples are not based on any real data product, but exemplify the usag
 <td>element</td>
 <td>-</td>
 <td>Structured definition of policies, rules, and permissions that govern the management and utilization of data within an IT system or data product.</td>
-</tr>
-<tr>
-<td>confidentiality</td>
-<td>string</td>
-<td>any</td>
-<td>Ensuring data privacy and information security in accordance with relevant regulations and best practices.</td>
 </tr>
 <tr>
 <td>versionControlSystem</td>
@@ -1666,6 +1660,12 @@ The JSON examples are not based on any real data product, but exemplify the usag
 <td>element</td>
 <td>-</td>
 <td>Compliance refers to the adherence to established rules, regulations, and standards, ensuring that actions and practices align with legal and industry requirements, particularly in the context of data privacy and security.</td>
+</tr>
+<tr>
+<td>confidentiality</td>
+<td>string</td>
+<td>any</td>
+<td>Ensuring data privacy and information security in accordance with relevant regulations and best practices.</td>
 </tr>
 <tr>
 <td>regulations</td>
