@@ -1528,6 +1528,16 @@ The JSON examples are not based on any real data product, but exemplify the usag
         <span class="p">],</span>
       <span class="dl">"</span><span class="s2">dpaURL</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">http://192.168.10.1/dpaconditions</span><span class="dl">"</span>
         <span class="p">},</span>
+
+    <span class="dl">"</span><span class="s2">securityInformation</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+      <span class="dl">"</span><span class="s2">encryption</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Data in transit is encrypted using the TLS 1.2 protocol with AES-256 encryption. Data at rest is encrypted using industry-standard AES-256 encryption algorithms.</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">authentication</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Users are initially identified through a username and password combination during API key acquisition. Multi-factor authentication (MFA) is not currently employed but is being considered for future implementation.</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">vulnerabilities</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Security vulnerabilities are identified through regular automated scans and user-reported issues. A dedicated security team reviews and addresses these vulnerabilities. We have a vulnerability management process in place.</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">securityCertificatesAndAudits</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Our data product has undergone an annual security audit by a third-party firm, and we hold a SOC 2 Type II certification. The current certification is valid until December 31, 2024.</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">resilience</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">In case of data breaches, we have a disaster recovery plan that includes data backups with daily snapshots. DDoS attacks are mitigated through a combination of traffic filtering and load balancing.</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">monitoring</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Log data is securely stored in an isolated environment with restricted access. We use real-time monitoring tools to detect anomalies, and automated alerts are triggered for any suspicious activities.</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">updates</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Security vulnerabilities are patched within 48 hours of discovery. Users are notified of security updates through email, and a dedicated changelog is maintained on our website.</span><span class="dl">"</span>
+    <span class="p">},</span>
     <span class="dl">"</span><span class="s2">compliance</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
       <span class="dl">"</span><span class="s2">regulations</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Access needs to be monitored to ensure compliance with data privacy and security regulations.</span><span class="dl">"</span><span class="p">,</span>
       <span class="dl">"</span><span class="s2">training</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Users need to receive training on data access policies and security best practices.</span><span class="dl">"</span><span class="p">,</span>
@@ -1603,6 +1613,54 @@ The JSON examples are not based on any real data product, but exemplify the usag
 <td>URL</td>
 <td>valid URL</td>
 <td>The URL of the Data Processing Agreement (DPA).</td>
+</tr>
+<tr>
+<td>securityInformation</td>
+<td>element</td>
+<td>-</td>
+<td>Information related to data product security.</td>
+</tr>
+<tr>
+<td>encryption</td>
+<td>string</td>
+<td>any</td>
+<td>How data is encrypted both in transit and at rest. List encryption algorithms and protocols used.</td>
+</tr>
+<tr>
+<td>authentication</td>
+<td>string</td>
+<td>any</td>
+<td>How users are initially identified.</td>
+</tr>
+<tr>
+<td>vulnerabilities</td>
+<td>string</td>
+<td>any</td>
+<td>Process for identifying and responding to security vulnerabilities and gaps.</td>
+</tr>
+<tr>
+<td>securityCertificatesAndAudits</td>
+<td>string</td>
+<td>any</td>
+<td>Security certifications or audits the data product has undergone and provide their expiration dates if applicable.</td>
+</tr>
+<tr>
+<td>resilience</td>
+<td>string</td>
+<td>any</td>
+<td>How the data product recovers from incidents like data breaches or DDoS attacks. Includes details about backup and recovery plans.</td>
+</tr>
+<tr>
+<td>monitoring</td>
+<td>string</td>
+<td>any</td>
+<td>How log data from the data product is stored and monitored for security purposes. Processes for reporting and addressing anomalies.</td>
+</tr>
+<tr>
+<td>updates</td>
+<td>string</td>
+<td>any</td>
+<td>How security vulnerabilities are addressed and how security updates are managed. Describe the process for notifying users of updates.</td>
 </tr>
 <tr>
 <td>compiliance</td>
