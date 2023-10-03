@@ -1423,6 +1423,8 @@ The JSON examples are not based on any real data product, but exemplify the usag
       <span class="dl">"</span><span class="s2">validity</span><span class="dl">"</span><span class="p">:</span><span class="mi">100</span><span class="p">,</span>
       <span class="dl">"</span><span class="s2">uniqueness</span><span class="dl">"</span><span class="p">:</span><span class="mi">100</span><span class="p">,</span>
       <span class="dl">"</span><span class="s2">dataQualityAssuranceMethods</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Data quality assurance suite of tools and methods include both data quality auditing (DQA) tools designed for use by external audit teams and routine data quality assessment (RDQA) tools designed for capacity building and self-assessment.</span><span class="dl">"</span>
+      <span class="nx">dataQualityMonitoring</span><span class="p">:</span><span class="dl">"</span><span class="s2">SodaSQL</span><span class="dl">"</span><span class="p">,</span>
+      <span class="nx">monitoringScriptURL</span><span class="p">:</span><span class="dl">"</span><span class="s2">http://192.168.10.1/soda-petshop.py</span><span class="dl">"</span>
       <span class="p">}</span>
 
 </code></pre></div>
@@ -1475,6 +1477,18 @@ The JSON examples are not based on any real data product, but exemplify the usag
 <td>string</td>
 <td>text content, max length 512 chars</td>
 <td>Description of the data product quality assurance methods and tools used.</td>
+</tr>
+<tr>
+<td>dataQualityMonitoring</td>
+<td>string</td>
+<td>text content, max length 512 chars</td>
+<td>Description of the tool to test for data quality, such as SodaCL or SodaSQL.</td>
+</tr>
+<tr>
+<td>monitoringScriptURL</td>
+<td>URL</td>
+<td>Valid URL</td>
+<td>The URL of the data quality testing script.</td>
 </tr>
 </tbody></table>
 
