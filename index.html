@@ -412,6 +412,9 @@
             <a href="#hello-world-example" class="toc-h1 toc-link" data-title="Hello world example">Hello world example</a>
           </li>
           <li>
+            <a href="#example-with-mandatory-only-elements" class="toc-h1 toc-link" data-title="Example with mandatory-only elements">Example with mandatory-only elements</a>
+          </li>
+          <li>
             <a href="#terms-used" class="toc-h1 toc-link" data-title="Terms used">Terms used</a>
           </li>
           <li>
@@ -2138,6 +2141,42 @@ The JSON examples are not based on any real data product, but exemplify the usag
             <span class="dl">"</span><span class="s2">ratingCount</span><span class="dl">"</span><span class="p">:</span><span class="mi">1245</span><span class="p">,</span>
             <span class="dl">"</span><span class="s2">slogan</span><span class="dl">"</span><span class="p">:</span><span class="dl">""</span><span class="p">,</span>
             <span class="dl">"</span><span class="s2">parentOrganization</span><span class="dl">"</span><span class="p">:</span><span class="dl">""</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div><h1 id='example-with-mandatory-only-elements'>Example with mandatory-only elements</h1>
+<p>Example data product with just the mandatory elements and attributes. </p>
+
+<blockquote>
+<p>Example of mandatory-only elements and attributes Data Product specification instance:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+    <span class="dl">"</span><span class="s2">$schema</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">https://raw.githubusercontent.com/Open-Data-Product-Initiative/open-data-product-spec-dev/ddbc069196a664d0e28a0f3dc7c1c7fb49b64591/source/schema/odps-dev-json-schema.json</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">$version</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">dev</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">product</span><span class="dl">"</span><span class="p">:{</span>
+        <span class="dl">"</span><span class="s2">en</span><span class="dl">"</span><span class="p">:{</span>
+            <span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Pets of the year</span><span class="dl">"</span><span class="p">,</span>
+            <span class="dl">"</span><span class="s2">productID</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">123456are</span><span class="dl">"</span><span class="p">,</span>
+            <span class="dl">"</span><span class="s2">visibility</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">private</span><span class="dl">"</span><span class="p">,</span>
+            <span class="dl">"</span><span class="s2">status</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">draft</span><span class="dl">"</span><span class="p">,</span>
+            <span class="dl">"</span><span class="s2">type</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">derived data</span><span class="dl">"</span>
+        <span class="p">},</span>
+        <span class="dl">"</span><span class="s2">pricingPlans</span><span class="dl">"</span><span class="p">:{</span>
+            <span class="dl">"</span><span class="s2">en</span><span class="dl">"</span><span class="p">:[</span>
+                <span class="p">{</span>
+                    <span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Freemium Package</span><span class="dl">"</span><span class="p">,</span>
+                    <span class="dl">"</span><span class="s2">priceCurrency</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">EUR</span><span class="dl">"</span><span class="p">,</span>
+                    <span class="dl">"</span><span class="s2">price</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">0.00</span><span class="dl">"</span><span class="p">,</span>
+                    <span class="dl">"</span><span class="s2">billingDuration</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">month</span><span class="dl">"</span><span class="p">,</span>
+                    <span class="dl">"</span><span class="s2">unit</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">recurring</span><span class="dl">"</span><span class="p">,</span>
+                    <span class="dl">"</span><span class="s2">maxTransactionQuantity</span><span class="dl">"</span><span class="p">:</span><span class="mi">1000</span>
+                <span class="p">}</span>
+            <span class="p">]</span>
+        <span class="p">},</span>
+        <span class="dl">"</span><span class="s2">dataHolder</span><span class="dl">"</span><span class="p">:{</span>
+            <span class="dl">"</span><span class="s2">legalName</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">MindMote Oy</span><span class="dl">"</span><span class="p">,</span>
+            <span class="dl">"</span><span class="s2">businessId</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">12243434-12</span><span class="dl">"</span><span class="p">,</span>
+            <span class="dl">"</span><span class="s2">email</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">contact@mindmote.fi</span><span class="dl">"</span>
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
