@@ -313,7 +313,7 @@
 
   </head>
 
-  <body class="index" data-languages="[&quot;yml&quot;,&quot;json&quot;]">
+  <body class="index" data-languages="[&quot;yml&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -324,7 +324,6 @@
       <img src="images/logo-dps-new-4bb33ca5.png" class="logo" alt="" />
         <div class="lang-selector">
               <a href="#" data-language-name="yml">yml</a>
-              <a href="#" data-language-name="json">json</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -526,19 +525,16 @@
 
 <p><strong>RIGHT COLUMN: Examples</strong></p>
 
-<p>The right column contains JSON formatted examples of how the specification is used. In the future other output formats are added on request basis. </p>
+<p>The right column contains YAML formatted examples of how the specification is used. In the future other output formats are added on request basis. YAML can easily be converted to JSON if needed. </p>
 
 <blockquote>
-<p>Example of JSON formatted snippet from the Open Data Product Specification:</p>
+<p>Example of YAML formatted snippet from the Open Data Product Specification:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight yaml"><code><span class="na">monitoring</span><span class="pi">:</span>
   <span class="na">url</span><span class="pi">:</span> <span class="s">https://monitoring.com</span>
-</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="nl">"monitoring"</span><span class="p">:{</span><span class="w">
-  </span><span class="nl">"url"</span><span class="p">:</span><span class="s2">"https://monitoring.com"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
+</code></pre></div>
 <aside class="notice">
-The JSON examples are not based on any real data product, but exemplify the usage of Open Data Product Specification. 
+The YAML examples are not based on any real data product, but exemplify the usage of Open Data Product Specification. 
 
 </aside>
 <h1 id='document-level-attributes'>Document level attributes</h1>
@@ -547,25 +543,21 @@ The JSON examples are not based on any real data product, but exemplify the usag
 <blockquote>
 <p>Example of document level attribute usage and structure:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
-<span class="dl">"</span><span class="s2">$schema</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">https://raw.githubusercontent.com/Open-Data-Product-Initiative/open-data-product-spec-dev/ddbc069196a664d0e28a0f3dc7c1c7fb49b64591/source/schema/odps-dev-json-schema.json</span><span class="dl">"</span><span class="p">,</span>
-<span class="dl">"</span><span class="s2">$version</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">dev</span><span class="dl">"</span><span class="p">,</span>
-<span class="dl">"</span><span class="s2">product</span><span class="dl">"</span><span class="p">:{</span>
-  <span class="dl">"</span><span class="s2">en</span><span class="dl">"</span><span class="p">:{</span>
-    <span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Pets of the year</span><span class="dl">"</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">productID</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">123456are</span><span class="dl">"</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">visibility</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">private</span><span class="dl">"</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">status</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">draft</span><span class="dl">"</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">type</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">dataset</span><span class="dl">"</span>
-   <span class="p">},</span>
-   <span class="dl">"</span><span class="s2">fi</span><span class="dl">"</span><span class="p">:{</span>
-    <span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Vuoden suosituimmat lemmikit</span><span class="dl">"</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">productID</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">123456are</span><span class="dl">"</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">visibility</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">private</span><span class="dl">"</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">status</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">draft</span><span class="dl">"</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">type</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">dataset</span><span class="dl">"</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight"><pre class="highlight yaml"><code><span class="s">$schema</span><span class="pi">:</span> <span class="s">https://raw.githubusercontent.com/Open-Data-Product-Initiative/open-data-product-spec-dev/ddbc069196a664d0e28a0f3dc7c1c7fb49b64591/source/schema/odps-dev-json-schema.json</span>
+<span class="s">$version"</span><span class="pi">:</span> <span class="s">dev</span>
+<span class="na">product</span><span class="pi">:</span>
+  <span class="na">en</span><span class="pi">:</span>
+    <span class="na">name</span><span class="pi">:</span> <span class="s">Pets of the year</span>
+    <span class="na">productID</span><span class="pi">:</span> <span class="s">123456are</span>
+    <span class="na">visibility</span><span class="pi">:</span> <span class="s">private</span>
+    <span class="s">status"</span><span class="pi">:</span> <span class="s">draft</span>
+    <span class="na">type</span><span class="pi">:</span> <span class="s">dataset</span>
+  <span class="na">fi</span><span class="pi">:</span>
+    <span class="na">name</span><span class="pi">:</span> <span class="s">Vuoden suosituimmat lemmikit</span>
+    <span class="na">productID</span><span class="pi">:</span> <span class="s">123456are</span>
+    <span class="na">visibility</span><span class="pi">:</span> <span class="s">private</span>
+    <span class="na">status</span><span class="pi">:</span> <span class="s">draft</span>
+    <span class="na">type</span><span class="pi">:</span> <span class="s">dataset</span>
 </code></pre></div>
 <table><thead>
 <tr>
@@ -2251,7 +2243,6 @@ The JSON examples are not based on any real data product, but exemplify the usag
       <div class="dark-box">
           <div class="lang-selector">
                 <a href="#" data-language-name="yml">yml</a>
-                <a href="#" data-language-name="json">json</a>
           </div>
       </div>
     </div>
