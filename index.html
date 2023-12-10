@@ -1445,17 +1445,23 @@ The YAML examples are not based on any real data product, but exemplify the usag
 <blockquote>
 <p>Example of Data Quality component with some of the voluntary attributes:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight javascript tab-javascript"><code>   <span class="dl">"</span><span class="s2">dataQuality</span><span class="dl">"</span><span class="p">:{</span>
-      <span class="dl">"</span><span class="s2">accuracy</span><span class="dl">"</span><span class="p">:</span><span class="mi">100</span><span class="p">,</span>
-      <span class="dl">"</span><span class="s2">completeness</span><span class="dl">"</span><span class="p">:</span><span class="mi">100</span><span class="p">,</span>
-      <span class="dl">"</span><span class="s2">consistency</span><span class="dl">"</span><span class="p">:</span><span class="mi">100</span><span class="p">,</span>
-      <span class="dl">"</span><span class="s2">timeliness</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">high</span><span class="dl">"</span><span class="p">,</span>
-      <span class="dl">"</span><span class="s2">validity</span><span class="dl">"</span><span class="p">:</span><span class="mi">100</span><span class="p">,</span>
-      <span class="dl">"</span><span class="s2">uniqueness</span><span class="dl">"</span><span class="p">:</span><span class="mi">100</span><span class="p">,</span>
-      <span class="dl">"</span><span class="s2">dataQualityAssuranceMethods</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Data quality assurance suite of tools and methods include both data quality auditing (DQA) tools designed for use by external audit teams and routine data quality assessment (RDQA) tools designed for capacity building and self-assessment.</span><span class="dl">"</span><span class="p">,</span>
-      <span class="dl">"</span><span class="s2">dataQualityMonitoring</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">SodaCL</span><span class="dl">"</span><span class="p">,</span>
-      <span class="dl">"</span><span class="s2">monitoringScriptURL</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">http://192.168.10.1/soda-petshop.py</span><span class="dl">"</span>
-      <span class="p">}</span>
+<div class="highlight"><pre class="highlight yaml"><code>
+<span class="na">dataQuality</span><span class="pi">:</span>
+  <span class="na">accuracy</span><span class="pi">:</span> <span class="m">100</span>
+  <span class="na">completeness</span><span class="pi">:</span> <span class="m">100</span>
+  <span class="na">consistency</span><span class="pi">:</span> <span class="m">100</span>
+  <span class="na">timeliness</span><span class="pi">:</span> <span class="s">high</span>
+  <span class="na">validity</span><span class="pi">:</span> <span class="m">100</span>
+  <span class="na">uniqueness</span><span class="pi">:</span> <span class="m">100</span>
+  <span class="na">dataQualityAssuranceMethods</span><span class="pi">:</span> <span class="pi">&gt;</span> 
+    <span class="s">Data quality assurance suite of tools and methods include</span>
+    <span class="s">both data quality auditing (DQA) tools designed for </span>
+    <span class="s">use by external audit teams and routine data quality </span>
+    <span class="s">assessment (RDQA) tools </span>
+    <span class="s">designed for capacity building</span>
+    <span class="s">and self-assessment.</span>
+  <span class="na">dataQualityMonitoring</span><span class="pi">:</span> <span class="s">SodaCL</span>
+  <span class="na">monitoringScriptURL</span><span class="pi">:</span> <span class="s">http://monitoring.opendataproducts.org/soda/petshop</span> 
 
 </code></pre></div>
 <table><thead>
