@@ -1018,25 +1018,23 @@ The YAML examples are not based on any real data product, but exemplify the usag
 <blockquote>
 <p>Example of DataOps component usage:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight javascript tab-javascript"><code>
-<span class="dl">"</span><span class="s2">dataOps</span><span class="dl">"</span><span class="p">:{</span>
-  <span class="dl">"</span><span class="s2">infrastructure</span><span class="dl">"</span><span class="p">:{</span>
-    <span class="dl">"</span><span class="s2">platform</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Azure</span><span class="dl">"</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">region</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">West US 2 (Washington)</span><span class="dl">"</span><span class="p">;</span>
-    <span class="dl">"</span><span class="s2">storageTechnology</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Azure SQL</span><span class="dl">"</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">storageType</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">sql</span><span class="dl">"</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">containerTool</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">helm</span><span class="dl">"</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">format</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">yaml</span><span class="dl">"</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">schemaLocationURL</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">http://http://192.168.10.1/schemas/2016/petshopML-2.3/schema/petstore.xsd</span><span class="dl">"</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">scriptURL</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">http://192.168.10.1/rundatapipeline.yml</span><span class="dl">"</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">deploymentDocumentationURL</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">http://192.168.10.1/datapipeline</span><span class="dl">"</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">dataLineageTool</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Collibra</span><span class="dl">"</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">dataLineageOutput</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">http://192.168.10.1/lineage.json</span><span class="dl">"</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">hashType</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">SHA-2</span><span class="dl">"</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">checksum</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">7b7444ab8f5832e9ae8f54834782af995d0a83b4a1d77a75833eda7e19b4c921</span><span class="dl">"</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">signatureType</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">JWK</span><span class="dl">"</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight"><pre class="highlight yaml"><code>
+<span class="na">dataOps</span><span class="pi">:</span>
+  <span class="na">infrastructure</span><span class="pi">:</span>
+    <span class="na">platform</span><span class="pi">:</span> <span class="s">Azure</span>
+    <span class="na">region</span><span class="pi">:</span> <span class="s">West US 2 (Washington)</span>
+    <span class="na">storageTechnology</span><span class="pi">:</span> <span class="s">Azure SQL</span>
+    <span class="na">storageType</span><span class="pi">:</span> <span class="s">sql</span>
+    <span class="na">containerTool</span><span class="pi">:</span> <span class="s">helm</span>
+    <span class="na">format</span><span class="pi">:</span> <span class="s">yaml</span>
+    <span class="na">schemaLocationURL</span><span class="pi">:</span> <span class="s">http://http://192.168.10.1/schemas/2016/petshopML-2.3/schema/petstore.xsd</span>
+    <span class="na">scriptURL</span><span class="pi">:</span> <span class="s">http://192.168.10.1/rundatapipeline.yml</span>
+    <span class="na">deploymentDocumentationURL</span><span class="pi">:</span> <span class="s">http://192.168.10.1/datapipeline</span>
+    <span class="na">dataLineageTool</span><span class="pi">:</span> <span class="s">Collibra</span>
+    <span class="na">dataLineageOutput</span><span class="pi">:</span> <span class="s">http://192.168.10.1/lineage.json</span>
+    <span class="na">hashType</span><span class="pi">:</span> <span class="s">SHA-2</span>
+    <span class="na">checksum</span><span class="pi">:</span> <span class="s">7b7444ab8f5832e9ae8f54834782af995d0a83b4a1d77a75833eda7e19b4c921</span>
+    <span class="na">signatureType</span><span class="pi">:</span> <span class="s">JWK</span>
 
 </code></pre></div>
 <table><thead>
