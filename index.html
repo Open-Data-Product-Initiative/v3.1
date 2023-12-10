@@ -1916,15 +1916,17 @@ The YAML examples are not based on any real data product, but exemplify the usag
 
 <p>The extensions properties are implemented as patterned fields that are always prefixed by &quot;x-&quot;. The extensions may or may not be supported by the available tooling, but those may be extended as well to add requested support (if tools are internal or open-sourced). Open Data Product Initiative Technical Steering Committee does not officially approve external extensions - they are fully independent. Popular extensions however are natural candidates for future additions of the standard. </p>
 
+<p>We encourage you to let us know of useful extensions so that we can consider those in the future releases, <a href="https://github.com/Open-Data-Product-Initiative/open-data-product-spec-dev/issues">raise an issue in Github</a></p>
+
 <blockquote>
 <p>Example of extension usage:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight javascript tab-javascript"><code>   <span class="dl">"</span><span class="s2">product</span><span class="dl">"</span><span class="p">:{</span>
-      <span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Pets of the year</span><span class="dl">"</span><span class="p">,</span>
-      <span class="dl">"</span><span class="s2">productID</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">123456are</span><span class="dl">"</span><span class="p">,</span>
-      <span class="dl">"</span><span class="s2">description</span><span class="dl">"</span><span class="p">:</span><span class="dl">""</span><span class="p">,</span>
-      <span class="dl">"</span><span class="s2">x-internal-id</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">foobar123</span><span class="dl">"</span>
-<span class="p">}</span>
+<div class="highlight"><pre class="highlight yaml"><code>
+<span class="na">product</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">Pets of the year</span>
+  <span class="na">productID</span><span class="pi">:</span> <span class="s">123456are</span>
+  <span class="na">description</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
+  <span class="na">x-internal-id</span><span class="pi">:</span> <span class="s">foobar123</span>
 
 </code></pre></div>
 <table><thead>
