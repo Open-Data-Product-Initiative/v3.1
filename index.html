@@ -1950,255 +1950,245 @@ The YAML examples are not based on any real data product, but exemplify the usag
 <blockquote>
 <p>Example of complete working Data Product specification instance:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
-    <span class="dl">"</span><span class="s2">$schema</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">https://raw.githubusercontent.com/Open-Data-Product-Initiative/open-data-product-spec-dev/ddbc069196a664d0e28a0f3dc7c1c7fb49b64591/source/schema/odps-dev-json-schema.json</span><span class="dl">"</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">$version</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">dev</span><span class="dl">"</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">product</span><span class="dl">"</span><span class="p">:{</span>
-        <span class="dl">"</span><span class="s2">en</span><span class="dl">"</span><span class="p">:{</span>
-            <span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Pets of the year</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">productID</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">123456are</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">valueProposition</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Design a customised petstore using a data product that describes pets with their habits, preferences and characteristics.</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">description</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">This is an example of a Petstore product.</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">productSeries</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Lovely pets data products</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">visibility</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">private</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">status</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">draft</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">version</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">0.1</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">categories</span><span class="dl">"</span><span class="p">:[</span>
-                <span class="dl">"</span><span class="s2">pets</span><span class="dl">"</span>
-            <span class="p">],</span>
-            <span class="dl">"</span><span class="s2">standards</span><span class="dl">"</span><span class="p">:[</span>
-                <span class="dl">"</span><span class="s2">ISO 24631-6</span><span class="dl">"</span>
-            <span class="p">],</span>
-            <span class="dl">"</span><span class="s2">tags</span><span class="dl">"</span><span class="p">:[</span>
-                <span class="dl">"</span><span class="s2">pet</span><span class="dl">"</span>
-            <span class="p">],</span>
-            <span class="dl">"</span><span class="s2">brandSlogan</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Passion for the data monetization</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">type</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">derived data</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">logoURL</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">https://data-product-business.github.io/open-data-product-spec/images/logo-dps-ebd5a97d.png</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">OutputFileFormats</span><span class="dl">"</span><span class="p">:[</span>
-                <span class="dl">"</span><span class="s2">json</span><span class="dl">"</span><span class="p">,</span>
-                <span class="dl">"</span><span class="s2">xml</span><span class="dl">"</span><span class="p">,</span>
-                <span class="dl">"</span><span class="s2">csv</span><span class="dl">"</span><span class="p">,</span>
-                <span class="dl">"</span><span class="s2">zip</span><span class="dl">"</span>
-            <span class="p">],</span>
-            <span class="dl">"</span><span class="s2">useCases</span><span class="dl">"</span><span class="p">:[</span>
-                <span class="p">{</span>
-                    <span class="dl">"</span><span class="s2">useCase</span><span class="dl">"</span><span class="p">:{</span>
-                        <span class="dl">"</span><span class="s2">useCaseTitle</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Build attractive and lucrative petstore!</span><span class="dl">"</span><span class="p">,</span>
-                        <span class="dl">"</span><span class="s2">useCaseDescription</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Use case description how succesfull petstore chain was established in Abu Dhabi</span><span class="dl">"</span><span class="p">,</span>
-                        <span class="dl">"</span><span class="s2">useCaseURL</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">https://marketplace.com/usecase1</span><span class="dl">"</span>
-                    <span class="p">}</span>
-                <span class="p">}</span>
-            <span class="p">]</span>
-        <span class="p">},</span>
-        <span class="dl">"</span><span class="s2">recommendedDataProducts</span><span class="dl">"</span><span class="p">:[</span>
-            <span class="dl">"</span><span class="s2">https://marketplace.com/dataproduct.json, https://marketplace.com/dataproduct-another.json</span><span class="dl">"</span>
-        <span class="p">],</span>
-        <span class="dl">"</span><span class="s2">pricingPlans</span><span class="dl">"</span><span class="p">:{</span>
-            <span class="dl">"</span><span class="s2">en</span><span class="dl">"</span><span class="p">:[</span>
-                <span class="p">{</span>
-                    <span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Premium subscription 1 year</span><span class="dl">"</span><span class="p">,</span>
-                    <span class="dl">"</span><span class="s2">priceCurrency</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">EUR</span><span class="dl">"</span><span class="p">,</span>
-                    <span class="dl">"</span><span class="s2">price</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">50.00</span><span class="dl">"</span><span class="p">,</span>
-                    <span class="dl">"</span><span class="s2">billingDuration</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">year</span><span class="dl">"</span><span class="p">,</span>
-                    <span class="dl">"</span><span class="s2">unit</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">recurring</span><span class="dl">"</span><span class="p">,</span>
-                    <span class="dl">"</span><span class="s2">maxTransactionQuantity</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">unlimited</span><span class="dl">"</span>
-                <span class="p">},</span>
-                <span class="p">{</span>
-                    <span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Premium Package Monthly</span><span class="dl">"</span><span class="p">,</span>
-                    <span class="dl">"</span><span class="s2">priceCurrency</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">EUR</span><span class="dl">"</span><span class="p">,</span>
-                    <span class="dl">"</span><span class="s2">price</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">5.00</span><span class="dl">"</span><span class="p">,</span>
-                    <span class="dl">"</span><span class="s2">billingDuration</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">month</span><span class="dl">"</span><span class="p">,</span>
-                    <span class="dl">"</span><span class="s2">unit</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">recurring</span><span class="dl">"</span><span class="p">,</span>
-                    <span class="dl">"</span><span class="s2">maxTransactionQuantity</span><span class="dl">"</span><span class="p">:</span><span class="mi">10000</span>
-                <span class="p">},</span>
-                <span class="p">{</span>
-                    <span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Freemium Package</span><span class="dl">"</span><span class="p">,</span>
-                    <span class="dl">"</span><span class="s2">priceCurrency</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">EUR</span><span class="dl">"</span><span class="p">,</span>
-                    <span class="dl">"</span><span class="s2">price</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">0.00</span><span class="dl">"</span><span class="p">,</span>
-                    <span class="dl">"</span><span class="s2">billingDuration</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">month</span><span class="dl">"</span><span class="p">,</span>
-                    <span class="dl">"</span><span class="s2">unit</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">recurring</span><span class="dl">"</span><span class="p">,</span>
-                    <span class="dl">"</span><span class="s2">maxTransactionQuantity</span><span class="dl">"</span><span class="p">:</span><span class="mi">1000</span>
-                <span class="p">},</span>
-                <span class="p">{</span>
-                    <span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Revenue sharing</span><span class="dl">"</span><span class="p">,</span>
-                    <span class="dl">"</span><span class="s2">priceCurrency</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">percentage</span><span class="dl">"</span><span class="p">,</span>
-                    <span class="dl">"</span><span class="s2">price</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">5.50</span><span class="dl">"</span><span class="p">,</span>
-                    <span class="dl">"</span><span class="s2">billingDuration</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">month</span><span class="dl">"</span><span class="p">,</span>
-                    <span class="dl">"</span><span class="s2">unit</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">revenue-sharing</span><span class="dl">"</span><span class="p">,</span>
-                    <span class="dl">"</span><span class="s2">maxTransactionQuantity</span><span class="dl">"</span><span class="p">:</span><span class="mi">20000</span>
-                <span class="p">}</span>
-            <span class="p">]</span>
-        <span class="p">},</span>
-        <span class="dl">"</span><span class="s2">dataOps</span><span class="dl">"</span><span class="p">:{</span>
-            <span class="dl">"</span><span class="s2">infrastructure</span><span class="dl">"</span><span class="p">:{</span>
-                <span class="dl">"</span><span class="s2">platform</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Azure</span><span class="dl">"</span><span class="p">,</span>
-                <span class="dl">"</span><span class="s2">storageTechnology</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Azure SQL</span><span class="dl">"</span><span class="p">,</span>
-                <span class="dl">"</span><span class="s2">storageType</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">sql</span><span class="dl">"</span><span class="p">,</span>
-                <span class="dl">"</span><span class="s2">containerTool</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">helm</span><span class="dl">"</span><span class="p">,</span>
-                <span class="dl">"</span><span class="s2">format</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">yaml</span><span class="dl">"</span><span class="p">,</span>
-                <span class="dl">"</span><span class="s2">schemaLocationURL</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">http://http://192.168.10.1/schemas/2016/petshopML-2.3/schema/petstore.xsd</span><span class="dl">"</span><span class="p">,</span>
-                <span class="dl">"</span><span class="s2">scriptURL</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">http://192.168.10.1/rundatapipeline.yml</span><span class="dl">"</span><span class="p">,</span>
-                <span class="dl">"</span><span class="s2">deploymentDocumentationURL</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">http://192.168.10.1/datapipeline</span><span class="dl">"</span><span class="p">,</span>
-                <span class="dl">"</span><span class="s2">dataLineageTool</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Collibra</span><span class="dl">"</span><span class="p">,</span>
-                <span class="dl">"</span><span class="s2">dataLineageOutput</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">http://192.168.10.1/lineage.json</span><span class="dl">"</span><span class="p">,</span>
-                <span class="dl">"</span><span class="s2">hashType</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">SHA-2</span><span class="dl">"</span><span class="p">,</span>
-                <span class="dl">"</span><span class="s2">checksum</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">7b7444ab8f5832e9ae8f54834782af995d0a83b4a1d77a75833eda7e19b4c921</span><span class="dl">"</span>
-            <span class="p">}</span>
-        <span class="p">},</span>
-        <span class="dl">"</span><span class="s2">dataAccess</span><span class="dl">"</span><span class="p">:{</span>
-            <span class="dl">"</span><span class="s2">type</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">API</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">authenticationMethod</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">OAuth</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">specification</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">OAS</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">format</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">JSON</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">documentationURL</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">https://swagger.com/petstore.json</span><span class="dl">"</span>
-        <span class="p">},</span>
-        <span class="dl">"</span><span class="s2">SLA</span><span class="dl">"</span><span class="p">:{</span>
-            <span class="dl">"</span><span class="s2">updateFrequency</span><span class="dl">"</span><span class="p">:{</span>
-                <span class="dl">"</span><span class="s2">unit</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">hours</span><span class="dl">"</span><span class="p">,</span>
-                <span class="dl">"</span><span class="s2">value</span><span class="dl">"</span><span class="p">:</span><span class="mi">1</span>
-            <span class="p">},</span>
-            <span class="dl">"</span><span class="s2">uptime</span><span class="dl">"</span><span class="p">:{</span>
-                <span class="dl">"</span><span class="s2">unit</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">percentage</span><span class="dl">"</span><span class="p">,</span>
-                <span class="dl">"</span><span class="s2">value</span><span class="dl">"</span><span class="p">:</span><span class="mi">99</span>
-            <span class="p">},</span>
-            <span class="dl">"</span><span class="s2">responseTime</span><span class="dl">"</span><span class="p">:{</span>
-                <span class="dl">"</span><span class="s2">unit</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">milliseconds</span><span class="dl">"</span><span class="p">,</span>
-                <span class="dl">"</span><span class="s2">value</span><span class="dl">"</span><span class="p">:</span><span class="mi">200</span>
-            <span class="p">},</span>
-            <span class="dl">"</span><span class="s2">nullValues</span><span class="dl">"</span><span class="p">:{</span>
-                <span class="dl">"</span><span class="s2">unit</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">percentage</span><span class="dl">"</span><span class="p">,</span>
-                <span class="dl">"</span><span class="s2">value</span><span class="dl">"</span><span class="p">:</span> <span class="mf">0.01</span>
-            <span class="p">},</span>
-            <span class="dl">"</span><span class="s2">support</span><span class="dl">"</span><span class="p">:{</span>
-                <span class="dl">"</span><span class="s2">company</span><span class="dl">"</span><span class="p">:{</span>
-                    <span class="dl">"</span><span class="s2">phoneNumber</span><span class="dl">"</span><span class="p">:</span><span class="dl">""</span><span class="p">,</span>
-                    <span class="dl">"</span><span class="s2">phoneServiceHours</span><span class="dl">"</span><span class="p">:</span><span class="dl">""</span><span class="p">,</span>
-                    <span class="dl">"</span><span class="s2">chatURL</span><span class="dl">"</span><span class="p">:</span><span class="dl">""</span><span class="p">,</span>
-                    <span class="dl">"</span><span class="s2">chatServiceHours</span><span class="dl">"</span><span class="p">:</span><span class="dl">""</span><span class="p">,</span>
-                    <span class="dl">"</span><span class="s2">chatResponseTime</span><span class="dl">"</span><span class="p">:</span><span class="dl">""</span><span class="p">,</span>
-                    <span class="dl">"</span><span class="s2">email</span><span class="dl">"</span><span class="p">:</span><span class="dl">""</span><span class="p">,</span>
-                    <span class="dl">"</span><span class="s2">emailServiceHours</span><span class="dl">"</span><span class="p">:</span><span class="dl">""</span><span class="p">,</span>
-                    <span class="dl">"</span><span class="s2">emailResponseTime</span><span class="dl">"</span><span class="p">:</span><span class="dl">""</span><span class="p">,</span>
-                    <span class="dl">"</span><span class="s2">documentationURL</span><span class="dl">"</span><span class="p">:</span><span class="dl">""</span><span class="p">,</span>
-                    <span class="dl">"</span><span class="s2">guidesURL</span><span class="dl">"</span><span class="p">:</span><span class="dl">""</span>
-                <span class="p">},</span>
-                <span class="dl">"</span><span class="s2">community</span><span class="dl">"</span><span class="p">:{</span>
-                    <span class="dl">"</span><span class="s2">stackoverflowURL</span><span class="dl">"</span><span class="p">:</span><span class="dl">""</span><span class="p">,</span>
-                    <span class="dl">"</span><span class="s2">forumURL</span><span class="dl">"</span><span class="p">:</span><span class="dl">""</span><span class="p">,</span>
-                    <span class="dl">"</span><span class="s2">slackURL</span><span class="dl">"</span><span class="p">:</span><span class="dl">""</span><span class="p">,</span>
-                    <span class="dl">"</span><span class="s2">twitterURL</span><span class="dl">"</span><span class="p">:</span><span class="dl">""</span>
-                <span class="p">}</span>
-            <span class="p">},</span>
-            <span class="dl">"</span><span class="s2">observability</span><span class="dl">"</span><span class="p">:{</span>
-                <span class="dl">"</span><span class="s2">logsURL</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">https://logs.com</span><span class="dl">"</span><span class="p">,</span>
-                <span class="dl">"</span><span class="s2">dashboardURL</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">https://dashboard.com</span><span class="dl">"</span><span class="p">,</span>
-                <span class="dl">"</span><span class="s2">uptimeURL</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">https://uptime.com</span><span class="dl">"</span>
-            <span class="p">}</span>
-        <span class="p">},</span>
-        <span class="dl">"</span><span class="s2">dataQuality</span><span class="dl">"</span><span class="p">:{</span>
-            <span class="dl">"</span><span class="s2">accuracy</span><span class="dl">"</span><span class="p">:</span><span class="mi">100</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">completeness</span><span class="dl">"</span><span class="p">:</span><span class="mi">100</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">consistency</span><span class="dl">"</span><span class="p">:</span><span class="mi">100</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">timeliness</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">high</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">validity</span><span class="dl">"</span><span class="p">:</span><span class="mi">100</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">uniqueness</span><span class="dl">"</span><span class="p">:</span><span class="mi">100</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">dataQualityAssuranceMethods</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Data quality assurance suite of tools and methods include both data quality auditing (DQA) tools designed for use by external audit teams and routine data quality assessment (RDQA) tools designed for capacity building and self-assessment.</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">dataQualityMonitoring</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Soda</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">monitoringScriptURL</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">http://192.168.10.1/soda-petshop.py</span><span class="dl">"</span>
-        <span class="p">},</span>
-        <span class="dl">"</span><span class="s2">license</span><span class="dl">"</span><span class="p">:{</span>
-            <span class="dl">"</span><span class="s2">scope</span><span class="dl">"</span><span class="p">:{</span>
-                <span class="dl">"</span><span class="s2">definition</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">The purpose of this license is to determine the terms and conditions applicable to the licensing of the data product, whereby Data Holder grants Data User the right to use the data.</span><span class="dl">"</span><span class="p">,</span>
-                <span class="dl">"</span><span class="s2">language</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">en-us</span><span class="dl">"</span><span class="p">,</span>
-                <span class="dl">"</span><span class="s2">restrictions</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Data User agrees not to, directly or indirectly, participate in the unauthorized use, disclosure or conversion of any confidential information.</span><span class="dl">"</span><span class="p">,</span>
-                <span class="dl">"</span><span class="s2">geographicalArea</span><span class="dl">"</span><span class="p">:[</span>
-                    <span class="dl">"</span><span class="s2">EU</span><span class="dl">"</span><span class="p">,</span>
-                    <span class="dl">"</span><span class="s2">US</span><span class="dl">"</span>
-                <span class="p">],</span>
-                <span class="dl">"</span><span class="s2">permanent</span><span class="dl">"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
-                <span class="dl">"</span><span class="s2">exclusive</span><span class="dl">"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
-                <span class="dl">"</span><span class="s2">rights</span><span class="dl">"</span><span class="p">:[</span>
-                    <span class="dl">"</span><span class="s2">Reproduction</span><span class="dl">"</span><span class="p">,</span>
-                    <span class="dl">"</span><span class="s2">Display</span><span class="dl">"</span><span class="p">,</span>
-                    <span class="dl">"</span><span class="s2">Distribution</span><span class="dl">"</span><span class="p">,</span>
-                    <span class="dl">"</span><span class="s2">Adaptation</span><span class="dl">"</span><span class="p">,</span>
-                    <span class="dl">"</span><span class="s2">Reselling</span><span class="dl">"</span><span class="p">,</span>
-                    <span class="dl">"</span><span class="s2">Sublicensing</span><span class="dl">"</span><span class="p">,</span>
-                    <span class="dl">"</span><span class="s2">Transferring</span><span class="dl">"</span>
-                <span class="p">]</span>
-            <span class="p">},</span>
-            <span class="dl">"</span><span class="s2">termination</span><span class="dl">"</span><span class="p">:{</span>
-                <span class="dl">"</span><span class="s2">terminationConditions</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Cancellation before 30 days. After the expiry of the right of use, the product and its derivatives must be removed.</span><span class="dl">"</span><span class="p">,</span>
-                <span class="dl">"</span><span class="s2">continuityConditions</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Expired license will automatically continued without written cancellation (termination) by Data Holder</span><span class="dl">"</span>
-            <span class="p">},</span>
-            <span class="dl">"</span><span class="s2">governance</span><span class="dl">"</span><span class="p">:{</span>
-            <span class="dl">"</span><span class="s2">ownership</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Mindmote Oy, a company specializing in pet industry insights, owns the license to its proprietary data product 'Pets of the Year'.</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">damages</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">During the term of license, except for the force majeure or the Data Holders reasons, Data User is required to follow strictly in accordance with the license. If Data User wants to terminate the license early, it needs to pay a certain amount of liquidated damages.</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">confidentiality</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Data User undertakes to maintain confidentiality as regards all information of a technical (such as, by way of a non-limiting example, drawings, tables, documentation, formulas and correspondence) and commercial nature (including contractual conditions, prices, payment conditions) gained during the performance of this license.</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">applicableLaws</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">This license shall be interpreted, construed and enforced in accordance with the law of Finland, including Copyright Act 404/1961.</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">warranties</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Data Holder makes no warranties, express or implied, guarantees or conditions with respect to your use of the data product. To the extent permitted under local law, Data Holder disclaims all liability for any damages or losses, including direct, consequential, special, indirect, incidental or punitive, resulting from Data User use of the data product.</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">audit</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Data Holder will reasonably cooperate with Data Users by providing available additional information about the data product. Both parties will bear their own audit-related costs.</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">forceMajeure</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Both parties may suspend their contractual obligations when fulfillment becomes impossible or excessively costly due to unforeseeable events beyond their control, such as strikes, fires, wars, and other force majeure events.</span><span class="dl">"</span>
-            <span class="p">}</span>
+<div class="highlight"><pre class="highlight yaml"><code>
+<span class="nn">---</span>
+<span class="na">schema</span><span class="pi">:</span> <span class="s">https://raw.githubusercontent.com/Open-Data-Product-Initiative/open-data-product-spec-dev/ddbc069196a664d0e28a0f3dc7c1c7fb49b64591/source/schema/odps-dev-json-schema.json</span>
+<span class="na">version</span><span class="pi">:</span> <span class="s">dev</span>
+<span class="na">product</span><span class="pi">:</span>
+  <span class="na">en</span><span class="pi">:</span>
+    <span class="na">name</span><span class="pi">:</span> <span class="s">Pets of the year</span>
+    <span class="na">productID</span><span class="pi">:</span> <span class="s">123456are</span>
+    <span class="na">valueProposition</span><span class="pi">:</span> <span class="s">Design a customised petstore using a data product that describes</span>
+      <span class="s">pets with their habits, preferences and characteristics.</span>
+    <span class="na">description</span><span class="pi">:</span> <span class="s">This is an example of a Petstore product.</span>
+    <span class="na">productSeries</span><span class="pi">:</span> <span class="s">Lovely pets data products</span>
+    <span class="na">visibility</span><span class="pi">:</span> <span class="s">private</span>
+    <span class="na">status</span><span class="pi">:</span> <span class="s">draft</span>
+    <span class="na">version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">0.1'</span>
+    <span class="na">categories</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">pets</span>
+    <span class="na">standards</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">ISO 24631-6</span>
+    <span class="na">tags</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">pet</span>
+    <span class="na">brandSlogan</span><span class="pi">:</span> <span class="s">Passion for the data monetization</span>
+    <span class="na">type</span><span class="pi">:</span> <span class="s">derived data</span>
+    <span class="na">logoURL</span><span class="pi">:</span> <span class="s">https://data-product-business.github.io/open-data-product-spec/images/logo-dps-ebd5a97d.png</span>
+    <span class="na">OutputFileFormats</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">json</span>
+    <span class="pi">-</span> <span class="s">xml</span>
+    <span class="pi">-</span> <span class="s">csv</span>
+    <span class="pi">-</span> <span class="s">zip</span>
+    <span class="na">useCases</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">useCase</span><span class="pi">:</span>
+        <span class="na">useCaseTitle</span><span class="pi">:</span> <span class="s">Build attractive and lucrative petstore!</span>
+        <span class="na">useCaseDescription</span><span class="pi">:</span> <span class="s">Use case description how succesfull petstore chain was</span>
+          <span class="s">established in Abu Dhabi</span>
+        <span class="na">useCaseURL</span><span class="pi">:</span> <span class="s">https://marketplace.com/usecase1</span>
+  <span class="na">recommendedDataProducts</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">https://marketplace.com/dataproduct.json, https://marketplace.com/dataproduct-another.json</span>
+  <span class="na">pricingPlans</span><span class="pi">:</span>
+    <span class="na">en</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Premium subscription 1 year</span>
+      <span class="na">priceCurrency</span><span class="pi">:</span> <span class="s">EUR</span>
+      <span class="na">price</span><span class="pi">:</span> <span class="s1">'</span><span class="s">50.00'</span>
+      <span class="na">billingDuration</span><span class="pi">:</span> <span class="s">year</span>
+      <span class="na">unit</span><span class="pi">:</span> <span class="s">recurring</span>
+      <span class="na">maxTransactionQuantity</span><span class="pi">:</span> <span class="s">unlimited</span>
+      <span class="na">offering</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">item </span><span class="m">1</span>
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Premium Package Monthly</span>
+      <span class="na">priceCurrency</span><span class="pi">:</span> <span class="s">EUR</span>
+      <span class="na">price</span><span class="pi">:</span> <span class="s1">'</span><span class="s">5.00'</span>
+      <span class="na">billingDuration</span><span class="pi">:</span> <span class="s">month</span>
+      <span class="na">unit</span><span class="pi">:</span> <span class="s">recurring</span>
+      <span class="na">maxTransactionQuantity</span><span class="pi">:</span> <span class="m">10000</span>
+      <span class="na">offering</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">item </span><span class="m">1</span>
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Freemium Package</span>
+      <span class="na">priceCurrency</span><span class="pi">:</span> <span class="s">EUR</span>
+      <span class="na">price</span><span class="pi">:</span> <span class="s1">'</span><span class="s">0.00'</span>
+      <span class="na">billingDuration</span><span class="pi">:</span> <span class="s">month</span>
+      <span class="na">unit</span><span class="pi">:</span> <span class="s">recurring</span>
+      <span class="na">maxTransactionQuantity</span><span class="pi">:</span> <span class="m">1000</span>
+      <span class="na">offering</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">item </span><span class="m">1</span>
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Revenue sharing</span>
+      <span class="na">priceCurrency</span><span class="pi">:</span> <span class="s">percentage</span>
+      <span class="na">price</span><span class="pi">:</span> <span class="s1">'</span><span class="s">5.50'</span>
+      <span class="na">billingDuration</span><span class="pi">:</span> <span class="s">month</span>
+      <span class="na">unit</span><span class="pi">:</span> <span class="s">revenue-sharing</span>
+      <span class="na">maxTransactionQuantity</span><span class="pi">:</span> <span class="m">20000</span>
+      <span class="na">offering</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">item </span><span class="m">1</span>
+  <span class="na">dataOps</span><span class="pi">:</span>
+    <span class="na">infrastructure</span><span class="pi">:</span>
+      <span class="na">platform</span><span class="pi">:</span> <span class="s">Azure</span>
+      <span class="na">storageTechnology</span><span class="pi">:</span> <span class="s">Azure SQL</span>
+      <span class="na">storageType</span><span class="pi">:</span> <span class="s">sql</span>
+      <span class="na">containerTool</span><span class="pi">:</span> <span class="s">helm</span>
+      <span class="na">format</span><span class="pi">:</span> <span class="s">yaml</span>
+      <span class="na">schemaLocationURL</span><span class="pi">:</span> <span class="s">http://http://192.168.10.1/schemas/2016/petshopML-2.3/schema/petstore.xsd</span>
+      <span class="na">scriptURL</span><span class="pi">:</span> <span class="s">http://192.168.10.1/rundatapipeline.yml</span>
+      <span class="na">deploymentDocumentationURL</span><span class="pi">:</span> <span class="s">http://192.168.10.1/datapipeline</span>
+      <span class="na">dataLineageTool</span><span class="pi">:</span> <span class="s">Collibra</span>
+      <span class="na">dataLineageOutput</span><span class="pi">:</span> <span class="s">http://192.168.10.1/lineage.json</span>
+      <span class="na">hashType</span><span class="pi">:</span> <span class="s">SHA-2</span>
+      <span class="na">checksum</span><span class="pi">:</span> <span class="s">7b7444ab8f5832e9ae8f54834782af995d0a83b4a1d77a75833eda7e19b4c921</span>
+  <span class="na">dataAccess</span><span class="pi">:</span>
+    <span class="na">type</span><span class="pi">:</span> <span class="s">API</span>
+    <span class="na">authenticationMethod</span><span class="pi">:</span> <span class="s">OAuth</span>
+    <span class="na">specification</span><span class="pi">:</span> <span class="s">OAS</span>
+    <span class="na">format</span><span class="pi">:</span> <span class="s">JSON</span>
+    <span class="na">documentationURL</span><span class="pi">:</span> <span class="s">https://swagger.com/petstore.json</span>
+  <span class="na">SLA</span><span class="pi">:</span>
+    <span class="na">updateFrequency</span><span class="pi">:</span>
+      <span class="na">unit</span><span class="pi">:</span> <span class="s">hours</span>
+      <span class="na">value</span><span class="pi">:</span> <span class="m">1</span>
+    <span class="na">uptime</span><span class="pi">:</span>
+      <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
+      <span class="na">value</span><span class="pi">:</span> <span class="m">99</span>
+    <span class="na">responseTime</span><span class="pi">:</span>
+      <span class="na">unit</span><span class="pi">:</span> <span class="s">milliseconds</span>
+      <span class="na">value</span><span class="pi">:</span> <span class="m">200</span>
+    <span class="na">nullValues</span><span class="pi">:</span>
+      <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
+      <span class="na">value</span><span class="pi">:</span> <span class="m">0.01</span>
+    <span class="na">support</span><span class="pi">:</span>
+      <span class="na">company</span><span class="pi">:</span>
+        <span class="na">phoneNumber</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
+        <span class="na">phoneServiceHours</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
+        <span class="na">chatURL</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
+        <span class="na">chatServiceHours</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
+        <span class="na">chatResponseTime</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
+        <span class="na">email</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
+        <span class="na">emailServiceHours</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
+        <span class="na">emailResponseTime</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
+        <span class="na">documentationURL</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
+        <span class="na">guidesURL</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
+      <span class="na">community</span><span class="pi">:</span>
+        <span class="na">stackoverflowURL</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
+        <span class="na">forumURL</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
+        <span class="na">slackURL</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
+        <span class="na">twitterURL</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
+    <span class="na">observability</span><span class="pi">:</span>
+      <span class="na">logsURL</span><span class="pi">:</span> <span class="s">https://logs.com</span>
+      <span class="na">dashboardURL</span><span class="pi">:</span> <span class="s">https://dashboard.com</span>
+      <span class="na">uptimeURL</span><span class="pi">:</span> <span class="s">https://uptime.com</span>
+  <span class="na">dataQuality</span><span class="pi">:</span>
+    <span class="na">accuracy</span><span class="pi">:</span> <span class="m">100</span>
+    <span class="na">completeness</span><span class="pi">:</span> <span class="m">100</span>
+    <span class="na">consistency</span><span class="pi">:</span> <span class="m">100</span>
+    <span class="na">timeliness</span><span class="pi">:</span> <span class="s">high</span>
+    <span class="na">validity</span><span class="pi">:</span> <span class="m">100</span>
+    <span class="na">uniqueness</span><span class="pi">:</span> <span class="m">100</span>
+    <span class="na">dataQualityAssuranceMethods</span><span class="pi">:</span> <span class="s">Data quality assurance suite of tools and methods</span>
+      <span class="s">include both data quality auditing (DQA) tools designed for use by external</span>
+      <span class="s">audit teams and routine data quality assessment (RDQA) tools designed for capacity</span>
+      <span class="s">building and self-assessment.</span>
+    <span class="na">dataQualityMonitoring</span><span class="pi">:</span> <span class="s">Soda</span>
+    <span class="na">monitoringScriptURL</span><span class="pi">:</span> <span class="s">http://192.168.10.1/soda-petshop.py</span>
+  <span class="na">license</span><span class="pi">:</span>
+    <span class="na">scope</span><span class="pi">:</span>
+      <span class="na">definition</span><span class="pi">:</span> <span class="s">The purpose of this license is to determine the terms and conditions</span>
+        <span class="s">applicable to the licensing of the data product, whereby Data Holder grants</span>
+        <span class="s">Data User the right to use the data.</span>
+      <span class="na">language</span><span class="pi">:</span> <span class="s">en-us</span>
+      <span class="na">restrictions</span><span class="pi">:</span> <span class="s">Data User agrees not to, directly or indirectly, participate in</span>
+        <span class="s">the unauthorized use, disclosure or conversion of any confidential information.</span>
+      <span class="na">geographicalArea</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">EU</span>
+      <span class="pi">-</span> <span class="s">US</span>
+      <span class="na">permanent</span><span class="pi">:</span> <span class="no">false</span>
+      <span class="na">exclusive</span><span class="pi">:</span> <span class="no">false</span>
+      <span class="na">rights</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">Reproduction</span>
+      <span class="pi">-</span> <span class="s">Display</span>
+      <span class="pi">-</span> <span class="s">Distribution</span>
+      <span class="pi">-</span> <span class="s">Adaptation</span>
+      <span class="pi">-</span> <span class="s">Reselling</span>
+      <span class="pi">-</span> <span class="s">Sublicensing</span>
+      <span class="pi">-</span> <span class="s">Transferring</span>
+    <span class="na">termination</span><span class="pi">:</span>
+      <span class="na">terminationConditions</span><span class="pi">:</span> <span class="s">Cancellation before 30 days. After the expiry of the</span>
+        <span class="s">right of use, the product and its derivatives must be removed.</span>
+      <span class="na">continuityConditions</span><span class="pi">:</span> <span class="s">Expired license will automatically continued without written</span>
+        <span class="s">cancellation (termination) by Data Holder</span>
+    <span class="na">governance</span><span class="pi">:</span>
+      <span class="na">ownership</span><span class="pi">:</span> <span class="s">Mindmote Oy, a company specializing in pet industry insights, owns</span>
+        <span class="s">the license to its proprietary data product 'Pets of the Year'.</span>
+      <span class="na">damages</span><span class="pi">:</span> <span class="s">During the term of license, except for the force majeure or the Data</span>
+        <span class="s">Holders reasons, Data User is required to follow strictly in accordance with</span>
+        <span class="s">the license. If Data User wants to terminate the license early, it needs to</span>
+        <span class="s">pay a certain amount of liquidated damages.</span>
+      <span class="na">confidentiality</span><span class="pi">:</span> <span class="s">Data User undertakes to maintain confidentiality as regards</span>
+        <span class="s">all information of a technical (such as, by way of a non-limiting example,</span>
+        <span class="s">drawings, tables, documentation, formulas and correspondence) and commercial</span>
+        <span class="s">nature (including contractual conditions, prices, payment conditions) gained</span>
+        <span class="s">during the performance of this license.</span>
+      <span class="na">applicableLaws</span><span class="pi">:</span> <span class="s">This license shall be interpreted, construed and enforced in</span>
+        <span class="s">accordance with the law of Finland, including Copyright Act 404/1961.</span>
+      <span class="na">warranties</span><span class="pi">:</span> <span class="s">Data Holder makes no warranties, express or implied, guarantees</span>
+        <span class="s">or conditions with respect to your use of the data product. To the extent</span>
+        <span class="s">permitted under local law, Data Holder disclaims all liability for any damages</span>
+        <span class="s">or losses, including direct, consequential, special, indirect, incidental</span>
+        <span class="s">or punitive, resulting from Data User use of the data product.</span>
+      <span class="na">audit</span><span class="pi">:</span> <span class="s">Data Holder will reasonably cooperate with Data Users by providing available</span>
+        <span class="s">additional information about the data product. Both parties will bear their</span>
+        <span class="s">own audit-related costs.</span>
+      <span class="na">forceMajeure</span><span class="pi">:</span> <span class="s">Both parties may suspend their contractual obligations when fulfillment</span>
+        <span class="s">becomes impossible or excessively costly due to unforeseeable events beyond</span>
+        <span class="s">their control, such as strikes, fires, wars, and other force majeure events.</span>
+  <span class="na">dataHolder</span><span class="pi">:</span>
+    <span class="na">taxID</span><span class="pi">:</span> <span class="s">12243434-12</span>
+    <span class="na">vatID</span><span class="pi">:</span> <span class="s">12243434-12</span>
+    <span class="na">businessDomain</span><span class="pi">:</span> <span class="s">Data Product Business</span>
+    <span class="na">logoURL</span><span class="pi">:</span> <span class="s">https://mindmote.fi/logo.png</span>
+    <span class="na">description</span><span class="pi">:</span> <span class="s">Digital Economy services and tools</span>
+    <span class="na">URL</span><span class="pi">:</span> <span class="s">https://mindmote.fi</span>
+    <span class="na">telephone</span><span class="pi">:</span> <span class="s2">"</span><span class="s">+358</span><span class="nv"> </span><span class="s">45</span><span class="nv"> </span><span class="s">232</span><span class="nv"> </span><span class="s">2323"</span>
+    <span class="na">streetAddress</span><span class="pi">:</span> <span class="s">Koulukatu </span><span class="m">1</span>
+    <span class="na">postalCode</span><span class="pi">:</span> <span class="s1">'</span><span class="s">33100'</span>
+    <span class="na">addressRegion</span><span class="pi">:</span> <span class="s">Pirkanmaa</span>
+    <span class="na">addressLocality</span><span class="pi">:</span> <span class="s">Tampere</span>
+    <span class="na">addressCountry</span><span class="pi">:</span> <span class="s">Finland</span>
+    <span class="na">aggregateRating</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
+    <span class="na">ratingCount</span><span class="pi">:</span> <span class="m">1245</span>
+    <span class="na">slogan</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
+    <span class="na">parentOrganization</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
 
-        <span class="p">},</span>
-        <span class="dl">"</span><span class="s2">dataHolder</span><span class="dl">"</span><span class="p">:{</span>
-            <span class="dl">"</span><span class="s2">taxID</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">12243434-12</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">vatID</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">12243434-12</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">businessDomain</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Data Product Business</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">logoURL</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">https://mindmote.fi/logo.png</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">description</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Digital Economy services and tools</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">URL</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">https://mindmote.fi</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">telephone</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">+358 45 232 2323</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">streetAddress</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Koulukatu 1</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">postalCode</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">33100</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">addressRegion</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Pirkanmaa</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">addressLocality</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Tampere</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">addressCountry</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Finland</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">aggregateRating</span><span class="dl">"</span><span class="p">:</span><span class="dl">""</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">ratingCount</span><span class="dl">"</span><span class="p">:</span><span class="mi">1245</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">slogan</span><span class="dl">"</span><span class="p">:</span><span class="dl">""</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">parentOrganization</span><span class="dl">"</span><span class="p">:</span><span class="dl">""</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+
 </code></pre></div><h1 id='mandatory-only-example'>Mandatory-only example</h1>
 <p>Example data product with just the mandatory elements and attributes. This is the minimal representation of a data product metadata that is expected to be found from every data product following ODPS standard. This bare minimum can be expanded with other elements and attributes defined in the specification. Also the possibilty to use extensions exists if local additions are needed. </p>
 
 <blockquote>
-<p>Example of mandatory-only elements and attributes Data Product specification instance:</p>
+<p>Example of mandatory-only elements and attributes Open Data Product specification instance:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
-    <span class="dl">"</span><span class="s2">$schema</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">https://raw.githubusercontent.com/Open-Data-Product-Initiative/open-data-product-spec-dev/ddbc069196a664d0e28a0f3dc7c1c7fb49b64591/source/schema/odps-dev-json-schema.json</span><span class="dl">"</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">$version</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">dev</span><span class="dl">"</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">product</span><span class="dl">"</span><span class="p">:{</span>
-        <span class="dl">"</span><span class="s2">en</span><span class="dl">"</span><span class="p">:{</span>
-            <span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Pets of the year</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">productID</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">123456are</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">visibility</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">private</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">status</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">draft</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">type</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">derived data</span><span class="dl">"</span>
-        <span class="p">},</span>
-        <span class="dl">"</span><span class="s2">pricingPlans</span><span class="dl">"</span><span class="p">:{</span>
-            <span class="dl">"</span><span class="s2">en</span><span class="dl">"</span><span class="p">:[</span>
-                <span class="p">{</span>
-                    <span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Freemium Package</span><span class="dl">"</span><span class="p">,</span>
-                    <span class="dl">"</span><span class="s2">priceCurrency</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">EUR</span><span class="dl">"</span><span class="p">,</span>
-                    <span class="dl">"</span><span class="s2">price</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">0.00</span><span class="dl">"</span><span class="p">,</span>
-                    <span class="dl">"</span><span class="s2">billingDuration</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">month</span><span class="dl">"</span><span class="p">,</span>
-                    <span class="dl">"</span><span class="s2">unit</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">recurring</span><span class="dl">"</span><span class="p">,</span>
-                    <span class="dl">"</span><span class="s2">maxTransactionQuantity</span><span class="dl">"</span><span class="p">:</span><span class="mi">1000</span>
-                <span class="p">}</span>
-            <span class="p">]</span>
-        <span class="p">},</span>
-        <span class="dl">"</span><span class="s2">dataHolder</span><span class="dl">"</span><span class="p">:{</span>
-            <span class="dl">"</span><span class="s2">legalName</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">MindMote Oy</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">businessId</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">12243434-12</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">email</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">contact@mindmote.fi</span><span class="dl">"</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight"><pre class="highlight yaml"><code>
+<span class="na">schema</span><span class="pi">:</span> <span class="s">https://raw.githubusercontent.com/Open-Data-Product-Initiative/open-data-product-spec-dev/ddbc069196a664d0e28a0f3dc7c1c7fb49b64591/source/schema/odps-dev-json-schema.json</span>
+<span class="na">version</span><span class="pi">:</span> <span class="s">dev</span>
+<span class="na">product</span><span class="pi">:</span>
+  <span class="na">en</span><span class="pi">:</span>
+    <span class="na">name</span><span class="pi">:</span> <span class="s">Pets of the year</span>
+    <span class="na">productID</span><span class="pi">:</span> <span class="s">123456are</span>
+    <span class="na">visibility</span><span class="pi">:</span> <span class="s">private</span>
+    <span class="na">status</span><span class="pi">:</span> <span class="s">draft</span>
+    <span class="na">type</span><span class="pi">:</span> <span class="s">derived data</span>
+  <span class="na">pricingPlans</span><span class="pi">:</span>
+    <span class="na">en</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Freemium Package</span>
+      <span class="na">priceCurrency</span><span class="pi">:</span> <span class="s">EUR</span>
+      <span class="na">price</span><span class="pi">:</span> <span class="s1">'</span><span class="s">0.00'</span>
+      <span class="na">billingDuration</span><span class="pi">:</span> <span class="s">month</span>
+      <span class="na">unit</span><span class="pi">:</span> <span class="s">recurring</span>
+      <span class="na">maxTransactionQuantity</span><span class="pi">:</span> <span class="m">1000</span>
+      <span class="na">offering</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">item </span><span class="m">1</span>
+  <span class="na">dataHolder</span><span class="pi">:</span>
+    <span class="na">legalName</span><span class="pi">:</span> <span class="s">MindMote Oy</span>
+    <span class="na">businessId</span><span class="pi">:</span> <span class="s">12243434-12</span>
+    <span class="na">email</span><span class="pi">:</span> <span class="s">contact@mindmote.fi</span>
+
 </code></pre></div><h1 id='terms-used'>Terms used</h1>
 <p>Here&#39;s list of terms used and what we mean with them. The meaning of terms is mostly taken from existing knowledge eg articles and other trusted sources. The source is always linked to the term. In some rare cases term is defined for the specification purposes only. </p>
 
