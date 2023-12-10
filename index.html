@@ -1236,53 +1236,41 @@ The YAML examples are not based on any real data product, but exemplify the usag
 <blockquote>
 <p>Example of Quality component usage:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight javascript tab-javascript"><code>   <span class="dl">"</span><span class="s2">SLA</span><span class="dl">"</span><span class="p">:{</span>
-      <span class="dl">"</span><span class="s2">updateFrequency</span><span class="dl">"</span><span class="p">:</span> 
-      <span class="p">{</span>
-         <span class="dl">"</span><span class="s2">unit</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">hours</span><span class="dl">"</span><span class="p">,</span>
-         <span class="dl">"</span><span class="s2">value</span><span class="dl">"</span><span class="p">:</span><span class="mi">1</span>
-      <span class="p">},</span>
-      <span class="dl">"</span><span class="s2">uptime</span><span class="dl">"</span><span class="p">:</span> 
-      <span class="p">{</span>
-         <span class="dl">"</span><span class="s2">unit</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">percentage</span><span class="dl">"</span><span class="p">,</span>
-         <span class="dl">"</span><span class="s2">value</span><span class="dl">"</span><span class="p">:</span><span class="mi">99</span>
-      <span class="p">},</span>
-      <span class="dl">"</span><span class="s2">responseTime</span><span class="dl">"</span><span class="p">:</span> 
-      <span class="p">{</span>
-         <span class="dl">"</span><span class="s2">unit</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">milliseconds</span><span class="dl">"</span><span class="p">,</span>
-         <span class="dl">"</span><span class="s2">value</span><span class="dl">"</span><span class="p">:</span><span class="mi">200</span>
-      <span class="p">},</span>
-      <span class="dl">"</span><span class="s2">support</span><span class="dl">"</span><span class="p">:</span> 
-      <span class="p">{</span>
-         <span class="dl">"</span><span class="s2">company</span><span class="dl">"</span><span class="p">:</span> 
-         <span class="p">{</span>
-            <span class="dl">"</span><span class="s2">phoneNumber</span><span class="dl">"</span><span class="p">:</span><span class="dl">""</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">phoneServiceHours</span><span class="dl">"</span><span class="p">:</span><span class="dl">""</span>
-            <span class="dl">"</span><span class="s2">chatURL</span><span class="dl">"</span><span class="p">:</span><span class="dl">""</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">chatServiceHours</span><span class="dl">"</span><span class="p">:</span><span class="dl">""</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">chatResponseTime</span><span class="dl">"</span><span class="p">:</span><span class="dl">""</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">email</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">support@support.org</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">emailServiceHours</span><span class="dl">"</span><span class="p">:</span><span class="dl">""</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">emailResponseTime</span><span class="dl">"</span><span class="p">:</span><span class="dl">""</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">documentationURL</span><span class="dl">"</span><span class="p">:</span><span class="dl">""</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">guidesURL</span><span class="dl">"</span><span class="p">:</span><span class="dl">""</span><span class="p">,</span>
-         <span class="p">},</span>
-         <span class="dl">"</span><span class="s2">community</span><span class="dl">"</span><span class="p">:</span> 
-         <span class="p">{</span>
-            <span class="dl">"</span><span class="s2">stackoverflowURL</span><span class="dl">"</span><span class="p">:</span><span class="dl">""</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">forumURL</span><span class="dl">"</span><span class="p">:</span><span class="dl">""</span> 
-            <span class="dl">"</span><span class="s2">slackURL</span><span class="dl">"</span><span class="p">:</span><span class="dl">""</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">twitterURL</span><span class="dl">"</span><span class="p">:</span><span class="dl">""</span>
-         <span class="p">}</span>
-      <span class="p">}</span>
-      <span class="dl">"</span><span class="s2">observability</span><span class="dl">"</span><span class="p">:</span>
-      <span class="p">{</span>
-         <span class="dl">"</span><span class="s2">healthStatus</span><span class="dl">"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
-         <span class="dl">"</span><span class="s2">logsURL</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">https://logs.com</span><span class="dl">"</span>
-         <span class="dl">"</span><span class="s2">dashboardURL</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">https://dashboard.com</span><span class="dl">"</span><span class="p">,</span>
-         <span class="dl">"</span><span class="s2">uptimeURL</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">https://uptime.com</span><span class="dl">"</span>
-      <span class="p">}</span> 
-   <span class="p">}</span>
+<div class="highlight"><pre class="highlight yaml"><code>
+<span class="na">SLA</span><span class="pi">:</span>
+  <span class="na">updateFrequency</span><span class="pi">:</span>
+    <span class="na">unit</span><span class="pi">:</span> <span class="s">hours</span>
+    <span class="na">value</span><span class="pi">:</span> <span class="m">1</span>
+  <span class="na">uptime</span><span class="pi">:</span>
+    <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
+    <span class="na">value</span><span class="pi">:</span> <span class="m">99</span>
+  <span class="na">responseTime</span><span class="pi">:</span>
+    <span class="na">unit</span><span class="pi">:</span> <span class="s">milliseconds</span>
+    <span class="na">value</span><span class="pi">:</span> <span class="m">200</span>
+  <span class="na">support</span><span class="pi">:</span>
+    <span class="na">company</span><span class="pi">:</span>
+      <span class="na">phoneNumber</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
+      <span class="na">phoneServiceHours</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
+      <span class="na">chatURL</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
+      <span class="na">chatServiceHours</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
+      <span class="na">chatResponseTime</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
+      <span class="na">email</span><span class="pi">:</span> <span class="s">support@opendataproducts.org</span>
+      <span class="na">emailServiceHours</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
+      <span class="na">emailResponseTime</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
+      <span class="na">documentationURL</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
+      <span class="na">guidesURL</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
+    <span class="na">community</span><span class="pi">:</span>
+      <span class="na">stackoverflowURL</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
+      <span class="na">forumURL</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
+      <span class="na">slackURL</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
+      <span class="na">twitterURL</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
+  <span class="na">observability</span><span class="pi">:</span>
+    <span class="na">healthStatus</span><span class="pi">:</span> <span class="no">true</span>
+    <span class="na">logsURL</span><span class="pi">:</span> <span class="s">https://logs.opendataproducts.org</span>
+    <span class="na">dashboardURL</span><span class="pi">:</span> <span class="s">https://dashboard.opendataproducts.org</span>
+    <span class="na">uptimeURL</span><span class="pi">:</span> <span class="s">https://uptime.opendataproducts.org</span>
+
+
 </code></pre></div>
 <table><thead>
 <tr>
