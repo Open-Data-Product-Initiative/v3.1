@@ -1148,17 +1148,15 @@ The YAML examples are not based on any real data product, but exemplify the usag
 <blockquote>
 <p>Example of Data Access component usage:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight javascript tab-javascript"><code>
- <span class="dl">"</span><span class="s2">dataAccess</span><span class="dl">"</span><span class="p">:{</span>
-  <span class="dl">"</span><span class="s2">interface</span><span class="dl">"</span><span class="p">{</span>
-    <span class="dl">"</span><span class="s2">outputPorttype</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">API</span><span class="dl">"</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">authenticationMethod</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">OAuth</span><span class="dl">"</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">specification</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">OAS</span><span class="dl">"</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">format</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">GraphQL</span><span class="dl">"</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">specsURL</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">http://192.168.10.1/petshop.json</span><span class="dl">"</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">documentationURL</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">http://192.168.10.1/petshop</span><span class="dl">"</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight"><pre class="highlight yaml"><code>
+<span class="na">dataAccess</span><span class="pi">:</span>
+  <span class="na">interface</span><span class="pi">:</span>
+    <span class="na">outputPorttype</span><span class="pi">:</span> <span class="s">API</span>
+    <span class="na">authenticationMethod</span><span class="pi">:</span> <span class="s">OAuth</span>
+    <span class="na">specification</span><span class="pi">:</span> <span class="s">OAS</span>
+    <span class="na">format</span><span class="pi">:</span> <span class="s">GraphQL</span>
+    <span class="na">specsURL</span><span class="pi">:</span> <span class="s">http://192.168.10.1/petshop.json</span>
+    <span class="na">documentationURL</span><span class="pi">:</span> <span class="s">http://192.168.10.1/petshop</span>
 
 </code></pre></div>
 <table><thead>
