@@ -821,43 +821,50 @@ The YAML examples are not based on any real data product, but exemplify the usag
 <blockquote>
 <p>Example of Pricing component usage with manadatory elements and attributes. Example language is english.:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight javascript tab-javascript"><code>
- <span class="dl">"</span><span class="s2">pricingPlans</span><span class="dl">"</span><span class="p">:{</span>
-    <span class="dl">"</span><span class="s2">en</span><span class="dl">"</span><span class="p">:[</span>
-        <span class="p">{</span>
-            <span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Premium subscription 1 year</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">priceCurrency</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">EUR</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">price</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">50.00</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">billingDuration</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">year</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">unit</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">recurring</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">maxTransactionQuantity</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">unlimited</span><span class="dl">"</span>
-        <span class="p">},</span>
-        <span class="p">{</span>
-            <span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Premium Package Monthly</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">priceCurrency</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">EUR</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">price</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">5.00</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">billingDuration</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">month</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">unit</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">recurring</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">maxTransactionQuantity</span><span class="dl">"</span><span class="p">:</span><span class="mi">10000</span>
-        <span class="p">},</span>
-        <span class="p">{</span>
-            <span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Freemium Package</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">priceCurrency</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">EUR</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">price</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">0.00</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">billingDuration</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">month</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">unit</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">recurring</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">maxTransactionQuantity</span><span class="dl">"</span><span class="p">:</span><span class="mi">1000</span>
-        <span class="p">},</span>
-        <span class="p">{</span>
-            <span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Revenue sharing</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">priceCurrency</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">percentage</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">price</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">5.50</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">billingDuration</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">month</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">unit</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">revenue-sharing</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">maxTransactionQuantity</span><span class="dl">"</span><span class="p">:</span><span class="mi">20000</span>
-        <span class="p">}</span>
-    <span class="p">]</span>
-<span class="p">}</span>
+<div class="highlight"><pre class="highlight yaml"><code>
+<span class="na">pricingPlans</span><span class="pi">:</span>
+  <span class="na">en</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Premium subscription 1 year</span>
+    <span class="na">priceCurrency</span><span class="pi">:</span> <span class="s">EUR</span>
+    <span class="na">price</span><span class="pi">:</span> <span class="m">50.00</span>
+    <span class="na">billingDuration</span><span class="pi">:</span> <span class="s">year</span>
+    <span class="na">unit</span><span class="pi">:</span> <span class="s">recurring</span>
+    <span class="na">maxTransactionQuantity</span><span class="pi">:</span> <span class="s">unlimited</span>
+    <span class="na">offering</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">High Quality Pets data</span>
+      <span class="pi">-</span> <span class="s">Unlimited transactions</span>
+      <span class="pi">-</span> <span class="s">Billed annually</span> 
+  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Premium Package Monthly</span>
+    <span class="na">priceCurrency</span><span class="pi">:</span> <span class="s">EUR</span>
+    <span class="na">price</span><span class="pi">:</span> <span class="m">5.00</span>
+    <span class="na">billingDuration</span><span class="pi">:</span> <span class="s">month</span>
+    <span class="na">unit</span><span class="pi">:</span> <span class="s">recurring</span>
+    <span class="na">maxTransactionQuantity</span><span class="pi">:</span> <span class="s">unlimited</span>
+    <span class="na">offering</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">High Quality Pets data</span>
+      <span class="pi">-</span> <span class="s">Unlimited transactions</span>
+      <span class="pi">-</span> <span class="s">Billed monthly</span> 
+  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Freemium Package</span>
+    <span class="na">priceCurrency</span><span class="pi">:</span> <span class="s">EUR</span>
+    <span class="na">price</span><span class="pi">:</span> <span class="m">0.00</span>
+    <span class="na">billingDuration</span><span class="pi">:</span> <span class="s">month</span>
+    <span class="na">unit</span><span class="pi">:</span> <span class="s">recurring</span>
+    <span class="na">maxTransactionQuantity</span><span class="pi">:</span> <span class="m">1000</span>
+    <span class="na">offering</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">High Quality Pets data</span>
+      <span class="pi">-</span> <span class="s">Free to use, no cost at all!</span>
+      <span class="pi">-</span> <span class="s">Fair amount of transactions for testing and small business</span> 
+  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Revenue sharing</span>
+    <span class="na">priceCurrency</span><span class="pi">:</span> <span class="s">percentage</span>
+    <span class="na">price</span><span class="pi">:</span> <span class="m">5.50</span>
+    <span class="na">billingDuration</span><span class="pi">:</span> <span class="s">month</span>
+    <span class="na">unit</span><span class="pi">:</span> <span class="s">revenue-sharing</span>
+    <span class="na">maxTransactionQuantity</span><span class="pi">:</span> <span class="m">20000</span>
+    <span class="na">offering</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">High Quality Pets data</span>
+      <span class="pi">-</span> <span class="s">No upfront fee</span>
+      <span class="pi">-</span> <span class="s">Billed monthly</span> 
+
 </code></pre></div>
 <table><thead>
 <tr>
@@ -922,25 +929,21 @@ The YAML examples are not based on any real data product, but exemplify the usag
 <blockquote>
 <p>Example of Pricing component usage with some of the optional elements and attributes:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight javascript tab-javascript"><code>   <span class="dl">"</span><span class="s2">pricingPlans</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
-      <span class="dl">"</span><span class="s2">en</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span>
-         <span class="p">{</span>
-            <span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Premium subscription 1 year</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">priceCurrency</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">EUR</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">price</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">10.00</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">minPrice</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">5.00</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">maxPrice</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">15.000</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">additionalPrice</span><span class="dl">"</span><span class="p">:</span> <span class="mf">0.02</span>
-         <span class="p">},</span>
-         <span class="p">{</span>
-            <span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Premium Package</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">priceCurrency</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">EUR</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">price</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">10.00</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">maxPrice</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">20.00</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">valueAddedTaxIncluded</span><span class="dl">"</span><span class="p">:</span> <span class="kc">false</span>
-         <span class="p">}</span>
-      <span class="p">]</span>
-   <span class="p">}</span>
+<div class="highlight"><pre class="highlight yaml"><code>
+<span class="na">pricingPlans</span><span class="pi">:</span>
+  <span class="na">en</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Premium subscription 1 year</span>
+    <span class="na">priceCurrency</span><span class="pi">:</span> <span class="s">EUR</span>
+    <span class="na">price</span><span class="pi">:</span> <span class="m">10.00</span>
+    <span class="na">minPrice</span><span class="pi">:</span> <span class="m">5.00</span>
+    <span class="na">maxPrice</span><span class="pi">:</span> <span class="m">15.000</span>
+    <span class="na">additionalPrice</span><span class="pi">:</span> <span class="m">0.02</span>
+  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Premium Package</span>
+    <span class="na">priceCurrency</span><span class="pi">:</span> <span class="s">EUR</span>
+    <span class="na">price</span><span class="pi">:</span> <span class="m">10.00</span>
+    <span class="na">maxPrice</span><span class="pi">:</span> <span class="m">20.00</span>
+    <span class="na">valueAddedTaxIncluded</span><span class="pi">:</span> <span class="s">False</span>
+
 </code></pre></div>
 <table><thead>
 <tr>
