@@ -1564,7 +1564,8 @@ The YAML examples are not based on any real data product, but exemplify the usag
     <span class="pi">-</span> <span class="s">Sublicensing</span>
     <span class="pi">-</span> <span class="s">Transferring</span>
   <span class="na">termination</span><span class="pi">:</span>
-    <span class="na">terminationConditions</span><span class="pi">:</span> <span class="s">Cancellation before 30 days. After the expiry of the right</span>
+    <span class="na">noticePeriod</span><span class="pi">:</span> <span class="m">90</span>
+    <span class="na">terminationConditions</span><span class="pi">:</span> <span class="s">After the expiry of the right</span>
       <span class="s">of use, the product and its derivatives must be removed.</span>
     <span class="na">continuityConditions</span><span class="pi">:</span> <span class="s">Expired license will automatically continued without written</span>
       <span class="s">cancellation (termination) by Data Holder</span>
@@ -1662,6 +1663,12 @@ The YAML examples are not based on any real data product, but exemplify the usag
 <td>element</td>
 <td>-</td>
 <td>Licence termination and continuity related conditions.</td>
+</tr>
+<tr>
+<td>noticePeriod</td>
+<td>integer</td>
+<td>unit is days</td>
+<td>The notice period is a particular time that an data product provider or consumer must give before ending the contract. This time window allows both sides to make the necessary preparations, guaranteeing an unhindered transfer.</td>
 </tr>
 <tr>
 <td>terminationConditions</td>
