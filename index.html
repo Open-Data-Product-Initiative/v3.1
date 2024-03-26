@@ -1447,7 +1447,7 @@ The YAML examples are not based on any real data product, but exemplify the usag
 </blockquote>
 <div class="highlight"><pre class="highlight yaml"><code>
 <span class="na">dataQuality</span><span class="pi">:</span>
-  <span class="na">accuracy</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">accuracy</span>
     <span class="na">objective</span><span class="pi">:</span> <span class="m">98</span>
     <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
     <span class="na">monitoring</span><span class="pi">:</span>
@@ -1455,7 +1455,7 @@ The YAML examples are not based on any real data product, but exemplify the usag
       <span class="na">spec</span><span class="pi">:</span>
         <span class="pi">-</span> <span class="s">require_unique(member_id)</span> 
         <span class="pi">-</span> <span class="s">require_range(age_band, 18, 100)</span>
-  <span class="na">completeness</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">completeness</span>
     <span class="na">objective</span><span class="pi">:</span> <span class="m">98</span>
     <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
     <span class="na">monitoring</span><span class="pi">:</span>
@@ -1466,10 +1466,21 @@ The YAML examples are not based on any real data product, but exemplify the usag
             <span class="na">checks</span><span class="pi">:</span>
               <span class="pi">-</span> <span class="na">not null</span><span class="pi">:</span>
                   <span class="na">fail</span><span class="pi">:</span> <span class="s">when &gt; 2%</span> <span class="c1"># Fail if more than 2% of records are null</span>
-  <span class="na">consistency</span><span class="pi">:</span> <span class="m">100</span>
-  <span class="na">timeliness</span><span class="pi">:</span> <span class="s">high</span>
-  <span class="na">validity</span><span class="pi">:</span> <span class="m">100</span>
-  <span class="na">uniqueness</span><span class="pi">:</span> <span class="m">100</span>
+  <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">consistency</span>
+    <span class="na">objective</span><span class="pi">:</span> <span class="m">98</span>
+    <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
+
+  <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">timeliness</span>
+    <span class="na">objective</span><span class="pi">:</span> <span class="m">100</span>
+    <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
+
+  <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">validity</span>
+    <span class="na">objective</span><span class="pi">:</span> <span class="m">98</span>
+    <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
+
+  <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">uniqueness</span>
+    <span class="na">objective</span><span class="pi">:</span> <span class="m">100</span>
+    <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
 
 </code></pre></div>
 <table><thead>
@@ -1484,61 +1495,43 @@ The YAML examples are not based on any real data product, but exemplify the usag
 <td>dataQuality</td>
 <td>element</td>
 <td>-</td>
-<td>Binds the data quality related elements and attributes together</td>
+<td>Contains array of data quality dimensions with optional computational monotoring object. Binds the data quality related elements and attributes together</td>
 </tr>
 <tr>
-<td>accuracy</td>
+<td>dimension</td>
+<td>attribute</td>
+<td>string, one of</td>
+<td>Defines the data quality dimension. Can be one of: accuracy, completeness, consistency, timeliness, validity, or uniqueness</td>
+</tr>
+<tr>
+<td>objective</td>
+<td>attribute</td>
 <td>integer</td>
-<td>percentage</td>
-<td>The term “accuracy” refers to the degree to which information accurately reflects an event or object described. For example, if a customer’s age is 32, but the system says she’s 34, that information is inaccurate.</td>
+<td>Defines the target value for the data quality dimension</td>
 </tr>
 <tr>
-<td>completeness</td>
-<td>integer</td>
-<td>percentage</td>
-<td>Data is considered “complete” when it fulfills expectations of comprehensiveness. Let’s say that you ask the customer to supply his or her name. You might make a customer’s middle name optional, but as long as you have the first and last name, the data is complete.</td>
-</tr>
-<tr>
-<td>consistency</td>
-<td>integer</td>
-<td>percentage</td>
-<td>At many companies, the same information may be stored in more than one place. If that information matches, it’s considered “consistent.” For example, if your human resources information systems say an employee doesn’t work there anymore, yet your payroll says he’s still receiving a check, that’s inconsistent.</td>
-</tr>
-<tr>
-<td>timeliness</td>
+<td>unit</td>
+<td>attribute</td>
 <td>string</td>
-<td>one of: low, medium, high</td>
-<td>Is your information available right when it’s needed? That data quality dimension is called “timeliness.” Let’s say that you need financial information every quarter; if the data is ready when it’s supposed to be, it’s timely. The data quality dimension of timeliness is a user expectation.</td>
+<td>Defines the unit used in stating the target quality level. One of: percentage, number</td>
 </tr>
 <tr>
-<td>validity</td>
-<td>integer</td>
-<td>percentage</td>
-<td>Validity is a data quality dimension that refers to information that doesn’t conform to a specific format or doesn’t follow business rules. A popular example is birthdays – many systems ask you to enter your birthday in a specific format, and if you don’t, it’s invalid. To meet this data quality dimension, you must check if all of your information follows a specific format or business rules.</td>
+<td>monitoring</td>
+<td>element</td>
+<td>-</td>
+<td>Contains the monitoring (computational &quot;as code&quot;) structure to validate target state for the selected data quality dimension.</td>
 </tr>
 <tr>
-<td>uniqueness</td>
-<td>integer</td>
-<td>percentage</td>
-<td>“Unique” information means that there’s only one instance of it appearing in a database. As we know, data duplication is a frequent occurrence. “Daniel A. Robertson” and “Dan A. Robertson” may well be the same person. Meeting this data quality dimension involves reviewing your information to ensure that none of it is duplicated.</td>
-</tr>
-<tr>
-<td>dataQualityAssuranceMethods</td>
+<td>type</td>
+<td>attribute</td>
 <td>string</td>
-<td>text content, max length 512 chars</td>
-<td>Description of the data product quality assurance methods and tools used. Promotes data reliability engineering as-code approach.</td>
+<td>monitoring system name name such as SodaCL and Montecarlo. The systems enable as code approach to monitor data quality.</td>
 </tr>
 <tr>
-<td>dataQualityMonitoring</td>
-<td>string</td>
-<td>text content, max length 512 chars</td>
-<td>The tool used for assessing data quality, like <a href="https://docs.soda.io/soda-cl/soda-cl-overview.html">Soda tools: SodaCL</a> or SQL queries.</td>
-</tr>
-<tr>
-<td>monitoringScriptURL</td>
-<td>URL</td>
-<td>valid URL</td>
-<td>The URL of the data quality assessment and monitoring script.</td>
+<td>spec</td>
+<td>element</td>
+<td>-</td>
+<td>contains the as code part for monitoring. Content is intended to be in a form that can be injected as is to defined monitoring system.</td>
 </tr>
 </tbody></table>
 
