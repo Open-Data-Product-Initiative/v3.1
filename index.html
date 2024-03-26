@@ -1447,21 +1447,29 @@ The YAML examples are not based on any real data product, but exemplify the usag
 </blockquote>
 <div class="highlight"><pre class="highlight yaml"><code>
 <span class="na">dataQuality</span><span class="pi">:</span>
-  <span class="na">accuracy</span><span class="pi">:</span> <span class="m">100</span>
-  <span class="na">completeness</span><span class="pi">:</span> <span class="m">100</span>
+  <span class="na">accuracy</span><span class="pi">:</span>
+    <span class="na">objective</span><span class="pi">:</span> <span class="m">98</span>
+    <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
+    <span class="na">monitoring</span><span class="pi">:</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s">SodaCL</span> 
+      <span class="na">spec</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">require_unique(member_id)</span> 
+        <span class="pi">-</span> <span class="s">require_range(age_band, 18, 100)</span>
+  <span class="na">completeness</span><span class="pi">:</span>
+    <span class="na">objective</span><span class="pi">:</span> <span class="m">98</span>
+    <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
+    <span class="na">monitoring</span><span class="pi">:</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s">SodaCL</span> 
+      <span class="na">spec</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">for each column</span><span class="pi">:</span>
+            <span class="na">name</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">member_id</span><span class="pi">,</span> <span class="nv">gender</span><span class="pi">,</span> <span class="nv">age_band</span><span class="pi">]</span>
+            <span class="na">checks</span><span class="pi">:</span>
+              <span class="pi">-</span> <span class="na">not null</span><span class="pi">:</span>
+                  <span class="na">fail</span><span class="pi">:</span> <span class="s">when &gt; 2%</span> <span class="c1"># Fail if more than 2% of records are null</span>
   <span class="na">consistency</span><span class="pi">:</span> <span class="m">100</span>
   <span class="na">timeliness</span><span class="pi">:</span> <span class="s">high</span>
   <span class="na">validity</span><span class="pi">:</span> <span class="m">100</span>
   <span class="na">uniqueness</span><span class="pi">:</span> <span class="m">100</span>
-  <span class="na">dataQualityAssuranceMethods</span><span class="pi">:</span> <span class="pi">&gt;</span> 
-    <span class="s">Data quality assurance suite of tools and methods include</span>
-    <span class="s">both data quality auditing (DQA) tools designed for </span>
-    <span class="s">use by external audit teams and routine data quality </span>
-    <span class="s">assessment (RDQA) tools </span>
-    <span class="s">designed for capacity building</span>
-    <span class="s">and self-assessment.</span>
-  <span class="na">dataQualityMonitoring</span><span class="pi">:</span> <span class="s">SodaCL</span>
-  <span class="na">monitoringScriptURL</span><span class="pi">:</span> <span class="s">http://monitoring.opendataproducts.org/soda/petshop</span> 
 
 </code></pre></div>
 <table><thead>
