@@ -1020,21 +1020,37 @@ The YAML examples are not based on any real data product, but exemplify the usag
 </blockquote>
 <div class="highlight"><pre class="highlight yaml"><code>
 <span class="na">dataOps</span><span class="pi">:</span>
+  <span class="na">data</span><span class="pi">:</span>
+    <span class="na">schemaLocationURL</span><span class="pi">:</span> <span class="s">http://http://192.168.10.1/schemas/2016/petshopML-2.3/schema/petstore.xsd</span>
+    <span class="na">origin</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">source</span><span class="pi">:</span> <span class="s">human</span> <span class="c1"># sensor, human, analytics</span>
+        <span class="na">sourceId</span><span class="pi">:</span> 
+        <span class="na">type</span><span class="pi">:</span> <span class="s">raw</span> <span class="c1"># raw, cleansed</span>
+        <span class="na">description</span><span class="pi">:</span> 
+        <span class="na">checksum</span><span class="pi">:</span> <span class="c1"># ?</span>
+      <span class="pi">-</span> <span class="na">source</span><span class="pi">:</span> <span class="s">sensor</span> <span class="c1"># sensor, human, analytics</span>
+        <span class="na">sourceId</span><span class="pi">:</span> 
+        <span class="na">type</span><span class="pi">:</span> <span class="s">cleansed</span> <span class="c1"># raw, cleansed</span>
+        <span class="na">description</span><span class="pi">:</span> 
+        <span class="na">checksum</span><span class="pi">:</span> <span class="c1"># ?</span>
+    <span class="na">lineage</span><span class="pi">:</span>
+      <span class="na">dataLineageTool</span><span class="pi">:</span> <span class="s">Collibra</span>
+      <span class="na">dataLineageOutput</span><span class="pi">:</span> <span class="s">http://192.168.10.1/lineage.json</span>
+
   <span class="na">infrastructure</span><span class="pi">:</span>
     <span class="na">platform</span><span class="pi">:</span> <span class="s">Azure</span>
     <span class="na">region</span><span class="pi">:</span> <span class="s">West US 2 (Washington)</span>
     <span class="na">storageTechnology</span><span class="pi">:</span> <span class="s">Azure SQL</span>
     <span class="na">storageType</span><span class="pi">:</span> <span class="s">sql</span>
     <span class="na">containerTool</span><span class="pi">:</span> <span class="s">helm</span>
+
+  <span class="na">build</span><span class="pi">:</span>
     <span class="na">format</span><span class="pi">:</span> <span class="s">yaml</span>
-    <span class="na">schemaLocationURL</span><span class="pi">:</span> <span class="s">http://http://192.168.10.1/schemas/2016/petshopML-2.3/schema/petstore.xsd</span>
-    <span class="na">scriptURL</span><span class="pi">:</span> <span class="s">http://192.168.10.1/rundatapipeline.yml</span>
-    <span class="na">deploymentDocumentationURL</span><span class="pi">:</span> <span class="s">http://192.168.10.1/datapipeline</span>
-    <span class="na">dataLineageTool</span><span class="pi">:</span> <span class="s">Collibra</span>
-    <span class="na">dataLineageOutput</span><span class="pi">:</span> <span class="s">http://192.168.10.1/lineage.json</span>
     <span class="na">hashType</span><span class="pi">:</span> <span class="s">SHA-2</span>
     <span class="na">checksum</span><span class="pi">:</span> <span class="s">7b7444ab8f5832e9ae8f54834782af995d0a83b4a1d77a75833eda7e19b4c921</span>
     <span class="na">signatureType</span><span class="pi">:</span> <span class="s">JWK</span>
+    <span class="na">scriptURL</span><span class="pi">:</span> <span class="s">http://192.168.10.1/rundatapipeline.yml</span>
+    <span class="na">deploymentDocumentationURL</span><span class="pi">:</span> <span class="s">http://192.168.10.1/datapipeline</span>
 
 </code></pre></div>
 <table><thead>
