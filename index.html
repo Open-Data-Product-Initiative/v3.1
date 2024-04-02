@@ -1024,15 +1024,13 @@ The YAML examples are not based on any real data product, but exemplify the usag
     <span class="na">schemaLocationURL</span><span class="pi">:</span> <span class="s">http://http://192.168.10.1/schemas/2016/petshopML-2.3/schema/petstore.xsd</span>
     <span class="na">origin</span><span class="pi">:</span>
       <span class="pi">-</span> <span class="na">source</span><span class="pi">:</span> <span class="s">human</span> <span class="c1"># sensor, human, analytics</span>
-        <span class="na">sourceId</span><span class="pi">:</span> 
-        <span class="na">type</span><span class="pi">:</span> <span class="s">raw</span> <span class="c1"># raw, cleansed</span>
-        <span class="na">description</span><span class="pi">:</span> 
+        <span class="na">sourceId</span><span class="pi">:</span> <span class="c1"># </span>
+        <span class="na">type</span><span class="pi">:</span>  <span class="c1"># analog to digital, synthetic generated (informative). </span>
+        <span class="na">description</span><span class="pi">:</span> <span class="c1"># </span>
+        <span class="na">creationTimestamp</span><span class="pi">:</span> <span class="c1">#</span>
+        <span class="na">creator</span><span class="pi">:</span> <span class="c1"># internal use, ability to attribute data generation to exact device or hw, related to sourceId perhaps  </span>
         <span class="na">checksum</span><span class="pi">:</span> <span class="c1"># ?</span>
-      <span class="pi">-</span> <span class="na">source</span><span class="pi">:</span> <span class="s">sensor</span> <span class="c1"># sensor, human, analytics</span>
-        <span class="na">sourceId</span><span class="pi">:</span> 
-        <span class="na">type</span><span class="pi">:</span> <span class="s">cleansed</span> <span class="c1"># raw, cleansed</span>
-        <span class="na">description</span><span class="pi">:</span> 
-        <span class="na">checksum</span><span class="pi">:</span> <span class="c1"># ?</span>
+
     <span class="na">lineage</span><span class="pi">:</span>
       <span class="na">dataLineageTool</span><span class="pi">:</span> <span class="s">Collibra</span>
       <span class="na">dataLineageOutput</span><span class="pi">:</span> <span class="s">http://192.168.10.1/lineage.json</span>
@@ -1254,37 +1252,46 @@ The YAML examples are not based on any real data product, but exemplify the usag
 </blockquote>
 <div class="highlight"><pre class="highlight yaml"><code>
 <span class="na">SLA</span><span class="pi">:</span>
-  <span class="na">updateFrequency</span><span class="pi">:</span>
-    <span class="na">unit</span><span class="pi">:</span> <span class="s">hours</span>
-    <span class="na">value</span><span class="pi">:</span> <span class="m">1</span>
-  <span class="na">uptime</span><span class="pi">:</span>
-    <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
-    <span class="na">value</span><span class="pi">:</span> <span class="m">99</span>
-  <span class="na">responseTime</span><span class="pi">:</span>
-    <span class="na">unit</span><span class="pi">:</span> <span class="s">milliseconds</span>
-    <span class="na">value</span><span class="pi">:</span> <span class="m">200</span>
-  <span class="na">support</span><span class="pi">:</span>
-    <span class="na">company</span><span class="pi">:</span>
-      <span class="na">phoneNumber</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
-      <span class="na">phoneServiceHours</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
-      <span class="na">chatURL</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
-      <span class="na">chatServiceHours</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
-      <span class="na">chatResponseTime</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
-      <span class="na">email</span><span class="pi">:</span> <span class="s">support@opendataproducts.org</span>
-      <span class="na">emailServiceHours</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
-      <span class="na">emailResponseTime</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
-      <span class="na">documentationURL</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
-      <span class="na">guidesURL</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
-    <span class="na">community</span><span class="pi">:</span>
-      <span class="na">stackoverflowURL</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
-      <span class="na">forumURL</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
-      <span class="na">slackURL</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
-      <span class="na">twitterURL</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
-  <span class="na">observability</span><span class="pi">:</span>
-    <span class="na">healthStatus</span><span class="pi">:</span> <span class="no">true</span>
-    <span class="na">logsURL</span><span class="pi">:</span> <span class="s">https://logs.opendataproducts.org</span>
-    <span class="na">dashboardURL</span><span class="pi">:</span> <span class="s">https://dashboard.opendataproducts.org</span>
-    <span class="na">uptimeURL</span><span class="pi">:</span> <span class="s">https://uptime.opendataproducts.org</span>
+<span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">updateFrequency</span>
+  <span class="na">objective</span><span class="pi">:</span> <span class="m">30</span>
+  <span class="na">unit</span><span class="pi">:</span> <span class="s">minutes</span>
+  <span class="na">monitoring</span><span class="pi">:</span>
+    <span class="na">type</span><span class="pi">:</span> <span class="s">Prometheus</span> 
+    <span class="na">spec</span><span class="pi">:</span> <span class="pi">|</span> <span class="c1"># expressed as string or inline yaml </span>
+      <span class="s">time() - max_over_time(timestamp(changes(table[5m]) &gt; 0)[1d:1m])</span>
+
+<span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">uptime</span>
+  <span class="na">objective</span><span class="pi">:</span> <span class="m">99.9</span>
+  <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
+  <span class="na">monitoring</span><span class="pi">:</span>
+    <span class="na">type</span><span class="pi">:</span> <span class="s">Prometheus</span> 
+    <span class="na">spec</span><span class="pi">:</span> <span class="pi">|</span> <span class="c1"># expressed as string or inline yaml</span>
+      <span class="s">avg_over_time(</span>
+        <span class="s">(</span>
+          <span class="s">sum without() (up{job="prometheus"})</span>
+            <span class="s">or</span>
+          <span class="s">(0 * sum_over_time(up{job="prometheus"}[7d]))</span>
+        <span class="s">)[7d:5m]</span>
+      <span class="s">)      </span>
+
+<span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">responseTime</span>
+  <span class="na">objective</span><span class="pi">:</span> <span class="m">300</span>
+  <span class="na">unit</span><span class="pi">:</span> <span class="s">milliseconds</span>
+    <span class="s">monitoring</span><span class="pi">:</span>
+    <span class="na">type</span><span class="pi">:</span> <span class="s">Prometheus</span> 
+    <span class="na">spec</span><span class="pi">:</span> <span class="pi">|</span> <span class="c1"># expressed as string or inline yaml</span>
+      <span class="s">sum(rate(http_request_duration_seconds_bucket{le="0.3"}[5m])) by (job)</span>
+
+<span class="na">dashboardURL</span><span class="pi">:</span> <span class="s">https://uptime.opendataproducts.org</span>
+<span class="na">support</span><span class="pi">:</span>  
+  <span class="na">phoneNumber</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
+  <span class="na">phoneServiceHours</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
+  <span class="na">chatURL</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
+  <span class="na">chatServiceHours</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
+  <span class="na">email</span><span class="pi">:</span> <span class="s">support@opendataproducts.org</span>
+  <span class="na">emailServiceHours</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
+  <span class="na">guidesURL</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
+
 
 
 </code></pre></div>
@@ -1303,28 +1310,16 @@ The YAML examples are not based on any real data product, but exemplify the usag
 <td>Binds the SLA related elements and attributes together</td>
 </tr>
 <tr>
-<td>updateFrequency</td>
-<td>element</td>
-<td>Options for <em>unit</em> are: milliseconds, seconds, minutes, days, weeks, months, years, never, null. <br/><br/> <em>Value</em> attribute is Integer.</td>
+<td>unit</td>
+<td>attribute</td>
+<td>Options for <em>unit</em> are: milliseconds, seconds, minutes, days, weeks, months, years, never, null. <br/><br/></td>
 <td>Name of the quality attribute indicating the timely interval how often data is updated.</td>
-</tr>
-<tr>
-<td>uptime</td>
-<td>element</td>
-<td>Options for <em>unit</em> are: percentage, string, null. <br/><br/> The <em>value</em> attribute can be integer or string &quot;best effort&quot;.</td>
-<td>Uptime is the amount of time that a service is online available and operational. Guaranteed uptime is expressed as SLA level and is generally the most important metric to measure the quality of a hosting provider. An SLA level of 99.99% for example equates to 52 minutes and 36 seconds of downtime per year. in this context uptime is SLA.</td>
-</tr>
-<tr>
-<td>responseTime</td>
-<td>element</td>
-<td><em>Unit</em> options are: milliseconds, seconds, null. <br/><br/><em>Value</em> can be integer or null</td>
-<td>Response time is the total amount of time it takes to respond to a request for service.</td>
 </tr>
 <tr>
 <td>support</td>
 <td>element</td>
 <td>-</td>
-<td>Support element describes how the customer can reach for help in case of difficulties in usage, billing, or otherwise. Support can be based on company provided support and community driven support.</td>
+<td>Support element describes how the customer can reach for help in case of difficulties in usage, billing, or otherwise.</td>
 </tr>
 <tr>
 <td>phoneNumber</td>
@@ -1351,12 +1346,6 @@ The YAML examples are not based on any real data product, but exemplify the usag
 <td>Describes the chat service hours company provides. Contains information often in week level eg Mon-Fri at 8am - 4pm.</td>
 </tr>
 <tr>
-<td>chatResponseTime</td>
-<td>string</td>
-<td>-</td>
-<td>Describes aimed maximum delay in responding to chat support requests. This doesn&#39;t normally guarantee a resolution to the problem.</td>
-</tr>
-<tr>
 <td>email</td>
 <td>string</td>
 <td>-</td>
@@ -1369,82 +1358,16 @@ The YAML examples are not based on any real data product, but exemplify the usag
 <td>Describes the email service hours company provides. Contains information often in week level eg Mon-Fri at 8am - 4pm.</td>
 </tr>
 <tr>
-<td>emailResponseTime</td>
-<td>string</td>
-<td>-</td>
-<td>Describes aimed maximum delay in responding to email support requests. This doesn&#39;t normally guarantee a resolution to the problem.</td>
-</tr>
-<tr>
-<td>documentationURL</td>
-<td>URL</td>
-<td>-</td>
-<td>URL to the documentation of the product.</td>
-</tr>
-<tr>
 <td>guidesURL</td>
 <td>URL</td>
 <td>Valid URL</td>
 <td>URL to the guides offering more information and examples about how to use the data product. Guides might be platform specific.</td>
 </tr>
 <tr>
-<td>community</td>
-<td>Element</td>
-<td>-</td>
-<td>Element that contains community based support function information.</td>
-</tr>
-<tr>
-<td>stackoverflowURL</td>
-<td>URL</td>
-<td>Valid URL</td>
-<td>URL to the Stack Overflow. Could be for example list of resolved issues related to the product.</td>
-</tr>
-<tr>
-<td>forumURL</td>
-<td>URL</td>
-<td>Valid URL</td>
-<td>URL to the community forum in which product related support requests can be raised.</td>
-</tr>
-<tr>
-<td>slackURL</td>
-<td>URL</td>
-<td>Valid URL</td>
-<td>URL to the Slack workspace in which product related support requests can be raised.</td>
-</tr>
-<tr>
-<td>twitterURL</td>
-<td>URL</td>
-<td>Valid URL</td>
-<td>URL to the Twitter account for which product related support requests can be raised.</td>
-</tr>
-<tr>
-<td>observability</td>
-<td>element</td>
-<td>-</td>
-<td>Observability is a superset of monitoring. It provides not only high-level overviews of the system’s health but also highly granular insights into the implicit failure modes of the system. In addition, an observable system furnishes ample context about its inner workings, unlocking the ability to uncover deeper, systemic issues.</td>
-</tr>
-<tr>
-<td>healthStatus</td>
-<td>boolean</td>
-<td>true/false</td>
-<td>The usability of the data product can be determined through (an automated) review that assesses the data quality, accuracy, and other characteristics to ensure its usability. In this process, a value of &#39;true&#39; indicates that the review has deemed the product to be usable. Conversely, a value of &#39;false&#39; signifies that the automated review has identified deficiencies or errors that render the product unusable.</td>
-</tr>
-<tr>
-<td>logsURL</td>
-<td>URL</td>
-<td>Valid URL</td>
-<td>URL to service which offers access to event logs including errors, response times, call information.</td>
-</tr>
-<tr>
 <td>dashboardURL</td>
 <td>URL</td>
 <td>Valid URL</td>
-<td>URL to dashboard application which visualizes product behaviour. This service should support at least part of the given product quality indicators.</td>
-</tr>
-<tr>
-<td>uptimeURL</td>
-<td>URL</td>
-<td>Valid URL</td>
-<td>URL to service which shows uptime statistics as well as other statistical information. This service should support at least part of the given product quality indicators.</td>
+<td>URL to dashboard application which visualizes product behaviour. This service should support the given indicators.</td>
 </tr>
 </tbody></table>
 
