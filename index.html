@@ -505,6 +505,7 @@
 <li>increase the speed of designing, testing, and implementing data products. </li>
 <li>speed up tools development around data product design, development and management.</li>
 <li>enable creation of automated data product deployment with standard methods (DataOps)</li>
+<li>enable Everything as Code approach for SLA and Data Quality monitoring</li>
 </ul>
 
 <p><strong>Note!</strong> In the &quot;Open Data Product&quot; focus is on the latter words and the prefix  &#39;open&#39; refers to the openness of the standard. Any kind of connotations to open data (a different thing) are not intentional, intended, or desirable.</p>
@@ -2058,72 +2059,145 @@ not feasable or possible to arrange for various reasons. Type attribute indicate
       <span class="na">offering</span><span class="pi">:</span>
         <span class="pi">-</span> <span class="s">item </span><span class="m">1</span>
   <span class="na">dataOps</span><span class="pi">:</span>
+    <span class="na">data</span><span class="pi">:</span>
+      <span class="na">schemaLocationURL</span><span class="pi">:</span> <span class="s">http://http://192.168.10.1/schemas/2016/petshopML-2.3/schema/petstore.xsd</span>
+
+    <span class="na">lineage</span><span class="pi">:</span>
+      <span class="na">dataLineageTool</span><span class="pi">:</span> <span class="s">Collibra</span>
+      <span class="na">dataLineageOutput</span><span class="pi">:</span> <span class="s">http://192.168.10.1/lineage.json</span>
+
     <span class="na">infrastructure</span><span class="pi">:</span>
       <span class="na">platform</span><span class="pi">:</span> <span class="s">Azure</span>
+      <span class="na">region</span><span class="pi">:</span> <span class="s">West US 2 (Washington)</span>
       <span class="na">storageTechnology</span><span class="pi">:</span> <span class="s">Azure SQL</span>
       <span class="na">storageType</span><span class="pi">:</span> <span class="s">sql</span>
       <span class="na">containerTool</span><span class="pi">:</span> <span class="s">helm</span>
+
+    <span class="na">build</span><span class="pi">:</span>
       <span class="na">format</span><span class="pi">:</span> <span class="s">yaml</span>
-      <span class="na">schemaLocationURL</span><span class="pi">:</span> <span class="s">http://http://192.168.10.1/schemas/2016/petshopML-2.3/schema/petstore.xsd</span>
-      <span class="na">scriptURL</span><span class="pi">:</span> <span class="s">http://192.168.10.1/rundatapipeline.yml</span>
-      <span class="na">deploymentDocumentationURL</span><span class="pi">:</span> <span class="s">http://192.168.10.1/datapipeline</span>
-      <span class="na">dataLineageTool</span><span class="pi">:</span> <span class="s">Collibra</span>
-      <span class="na">dataLineageOutput</span><span class="pi">:</span> <span class="s">http://192.168.10.1/lineage.json</span>
       <span class="na">hashType</span><span class="pi">:</span> <span class="s">SHA-2</span>
       <span class="na">checksum</span><span class="pi">:</span> <span class="s">7b7444ab8f5832e9ae8f54834782af995d0a83b4a1d77a75833eda7e19b4c921</span>
+      <span class="na">signatureType</span><span class="pi">:</span> <span class="s">JWK</span>
+      <span class="na">scriptURL</span><span class="pi">:</span> <span class="s">http://192.168.10.1/rundatapipeline.yml</span>
+      <span class="na">deploymentDocumentationURL</span><span class="pi">:</span> <span class="s">http://192.168.10.1/datapipeline</span>
+
   <span class="na">dataAccess</span><span class="pi">:</span>
     <span class="na">type</span><span class="pi">:</span> <span class="s">API</span>
     <span class="na">authenticationMethod</span><span class="pi">:</span> <span class="s">OAuth</span>
     <span class="na">specification</span><span class="pi">:</span> <span class="s">OAS</span>
     <span class="na">format</span><span class="pi">:</span> <span class="s">JSON</span>
     <span class="na">documentationURL</span><span class="pi">:</span> <span class="s">https://swagger.com/petstore.json</span>
+
   <span class="na">SLA</span><span class="pi">:</span>
-    <span class="na">updateFrequency</span><span class="pi">:</span>
-      <span class="na">unit</span><span class="pi">:</span> <span class="s">hours</span>
-      <span class="na">value</span><span class="pi">:</span> <span class="m">1</span>
-    <span class="na">uptime</span><span class="pi">:</span>
-      <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
-      <span class="na">value</span><span class="pi">:</span> <span class="m">99</span>
-    <span class="na">responseTime</span><span class="pi">:</span>
-      <span class="na">unit</span><span class="pi">:</span> <span class="s">milliseconds</span>
-      <span class="na">value</span><span class="pi">:</span> <span class="m">200</span>
-    <span class="na">nullValues</span><span class="pi">:</span>
-      <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
-      <span class="na">value</span><span class="pi">:</span> <span class="m">0.01</span>
-    <span class="na">support</span><span class="pi">:</span>
-      <span class="na">company</span><span class="pi">:</span>
-        <span class="na">phoneNumber</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
-        <span class="na">phoneServiceHours</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
-        <span class="na">chatURL</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
-        <span class="na">chatServiceHours</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
-        <span class="na">chatResponseTime</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
-        <span class="na">email</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
-        <span class="na">emailServiceHours</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
-        <span class="na">emailResponseTime</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
-        <span class="na">documentationURL</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
-        <span class="na">guidesURL</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
-      <span class="na">community</span><span class="pi">:</span>
-        <span class="na">stackoverflowURL</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
-        <span class="na">forumURL</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
-        <span class="na">slackURL</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
-        <span class="na">twitterURL</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
-    <span class="na">observability</span><span class="pi">:</span>
-      <span class="na">logsURL</span><span class="pi">:</span> <span class="s">https://logs.com</span>
-      <span class="na">dashboardURL</span><span class="pi">:</span> <span class="s">https://dashboard.com</span>
-      <span class="na">uptimeURL</span><span class="pi">:</span> <span class="s">https://uptime.com</span>
+  <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">latency</span>
+    <span class="na">displaytitle</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Latency</span>
+    <span class="na">objective</span><span class="pi">:</span> <span class="m">100</span>
+    <span class="na">unit</span><span class="pi">:</span> <span class="s">milliseconds</span>
+    <span class="na">monitoring</span><span class="pi">:</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s">prometheus</span>
+      <span class="na">reference</span><span class="pi">:</span> <span class="s">https://prometheus.io/docs/prometheus/latest/querying/basics/</span> 
+      <span class="na">spec</span><span class="pi">:</span>  
+        <span class="s">myTimer.observeDuration();</span>
+
+  <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">uptime</span>
+    <span class="na">displaytitle</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Uptime</span>
+    <span class="na">objective</span><span class="pi">:</span> <span class="m">99</span>
+    <span class="na">unit</span><span class="pi">:</span> <span class="s">percent</span>
+
+  <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">responseTime</span>
+    <span class="na">objective</span><span class="pi">:</span> <span class="m">200</span>
+    <span class="na">unit</span><span class="pi">:</span> <span class="s">milliseconds</span>
+    <span class="na">monitoring</span><span class="pi">:</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s">prometheus</span>
+      <span class="na">reference</span><span class="pi">:</span> <span class="s">https://prometheus.io/docs/prometheus/latest/querying/basics/</span> 
+      <span class="na">spec</span><span class="pi">:</span>  
+       <span class="s">rate(http_server_requests_seconds_sum[$__rate_interval]) / rate(http_server_requests_seconds_count[$__rate_interval])</span>
+
+  <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">errorRate</span>
+    <span class="na">objective</span><span class="pi">:</span> <span class="m">0.1</span>
+    <span class="na">unit</span><span class="pi">:</span> <span class="s">percent</span>
+
+  <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">endOfSupport</span>
+    <span class="na">objective</span><span class="pi">:</span> <span class="s">01/01/2025</span> <span class="c1"># dd/mm/yyyy</span>
+    <span class="na">unit</span><span class="pi">:</span> <span class="s">date</span>
+
+  <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">endOfLife</span>
+    <span class="na">objective</span><span class="pi">:</span> <span class="s">01/03/2025</span> <span class="c1"># dd/mm/yyyy</span>
+    <span class="na">unit</span><span class="pi">:</span> <span class="s">date</span>
+
+  <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">updateFrequency</span>
+    <span class="na">objective</span><span class="pi">:</span> <span class="m">7</span>
+    <span class="na">unit</span><span class="pi">:</span> <span class="s">days</span>
+
+  <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">timeToDetect</span>
+    <span class="na">objective</span><span class="pi">:</span> <span class="m">60</span>
+    <span class="na">unit</span><span class="pi">:</span> <span class="s">minutes</span>
+
+  <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">timeToNotify</span>
+    <span class="na">objective</span><span class="pi">:</span> <span class="m">120</span>
+    <span class="na">unit</span><span class="pi">:</span> <span class="s">minutes</span>
+
+  <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">timeToRepair</span>
+    <span class="na">objective</span><span class="pi">:</span> <span class="m">24</span>
+    <span class="na">unit</span><span class="pi">:</span> <span class="s">hours</span>
+
+  <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">emailResponseTime</span>
+    <span class="na">objective</span><span class="pi">:</span> <span class="m">12</span>
+    <span class="na">unit</span><span class="pi">:</span> <span class="s">hours</span>
+
+  <span class="na">support</span><span class="pi">:</span>
+      <span class="na">phoneNumber</span><span class="pi">:</span> <span class="s1">'</span><span class="s">+971508976456'</span>
+      <span class="na">phoneServiceHours</span><span class="pi">:</span> <span class="s1">'</span><span class="s">Mon-Fri</span><span class="nv"> </span><span class="s">8am-4pm</span><span class="nv"> </span><span class="s">(GMT)'</span>
+      <span class="na">email</span><span class="pi">:</span> <span class="s">support@opendataproducts.org</span>
+      <span class="na">emailServiceHours</span><span class="pi">:</span> <span class="s1">'</span><span class="s">Mon-Fri</span><span class="nv"> </span><span class="s">8am-4pm</span><span class="nv"> </span><span class="s">(GMT)'</span>
+      <span class="na">documentationURL</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
+
   <span class="na">dataQuality</span><span class="pi">:</span>
-    <span class="na">accuracy</span><span class="pi">:</span> <span class="m">100</span>
-    <span class="na">completeness</span><span class="pi">:</span> <span class="m">100</span>
-    <span class="na">consistency</span><span class="pi">:</span> <span class="m">100</span>
-    <span class="na">timeliness</span><span class="pi">:</span> <span class="s">high</span>
-    <span class="na">validity</span><span class="pi">:</span> <span class="m">100</span>
-    <span class="na">uniqueness</span><span class="pi">:</span> <span class="m">100</span>
-    <span class="na">dataQualityAssuranceMethods</span><span class="pi">:</span> <span class="s">Data quality assurance suite of tools and methods</span>
-      <span class="s">include both data quality auditing (DQA) tools designed for use by external</span>
-      <span class="s">audit teams and routine data quality assessment (RDQA) tools designed for capacity</span>
-      <span class="s">building and self-assessment.</span>
-    <span class="na">dataQualityMonitoring</span><span class="pi">:</span> <span class="s">Soda</span>
-    <span class="na">monitoringScriptURL</span><span class="pi">:</span> <span class="s">http://192.168.10.1/soda-petshop.py</span>
+  <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">accuracy</span>
+    <span class="na">displaytitle</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Data Accuracy (percent)</span>
+    <span class="pi">-</span> <span class="na">fi</span><span class="pi">:</span> <span class="s">Datan virheettömyys (prosenttia)</span>
+    <span class="na">objective</span><span class="pi">:</span> <span class="m">98</span>
+    <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
+    <span class="na">monitoring</span><span class="pi">:</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s">SodaCL</span> 
+      <span class="na">reference</span><span class="pi">:</span> <span class="s">https://docs.soda.io/soda-cl/soda-cl-overview.html</span>
+      <span class="na">spec</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">require_unique(member_id)</span> 
+        <span class="pi">-</span> <span class="s">require_range(age_band, 18, 100)</span>
+
+  <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">completeness</span>
+    <span class="na">displaytitle</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Data Completeness</span>
+    <span class="na">objective</span><span class="pi">:</span> <span class="m">99.9</span>
+    <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
+    <span class="na">monitoring</span><span class="pi">:</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s">SodaCL</span> 
+      <span class="na">reference</span><span class="pi">:</span> <span class="s">https://docs.soda.io/soda-cl/soda-cl-overview.html</span>
+      <span class="na">spec</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">for each column</span><span class="pi">:</span>
+            <span class="na">name</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">member_id</span><span class="pi">,</span> <span class="nv">gender</span><span class="pi">,</span> <span class="nv">age_band</span><span class="pi">]</span>
+            <span class="na">checks</span><span class="pi">:</span>
+              <span class="pi">-</span> <span class="na">not null</span><span class="pi">:</span>
+                  <span class="na">fail</span><span class="pi">:</span> <span class="s">when &gt; 0.1%</span> <span class="c1"># Fail if more than 0.1% of records are null</span>
+
+  <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">consistency</span>
+    <span class="na">objective</span><span class="pi">:</span> <span class="m">98</span>
+    <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
+
+  <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">timeliness</span>
+    <span class="na">objective</span><span class="pi">:</span> <span class="m">100</span>
+    <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
+
+  <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">validity</span>
+    <span class="na">objective</span><span class="pi">:</span> <span class="m">98</span>
+    <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
+
+  <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">uniqueness</span>
+    <span class="na">objective</span><span class="pi">:</span> <span class="m">100</span>
+    <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
   <span class="na">license</span><span class="pi">:</span>
     <span class="na">scope</span><span class="pi">:</span>
       <span class="na">definition</span><span class="pi">:</span> <span class="s">The purpose of this license is to determine the terms and conditions</span>
