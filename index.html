@@ -313,7 +313,7 @@
 
   </head>
 
-  <body class="index" data-languages="[&quot;yml&quot;,&quot;json&quot;]">
+  <body class="index" data-languages="[&quot;yml&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -324,7 +324,6 @@
       <img src="images/logo-dps-new-4bb33ca5.png" class="logo" alt="" />
         <div class="lang-selector">
               <a href="#" data-language-name="yml">yml</a>
-              <a href="#" data-language-name="json">json</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -492,6 +491,8 @@
 
 <p>Open Data Product Specification (ODPS) changes the data product metadata model towards a standalone model, which helps to decouple data product from the systems often directly associated with it. With help of the ODPS data product can be presented and described to the customer also as such without any need for marketplace or other systems. </p>
 
+<p>This version signifies a step towards embracing Everything as Code paradigm, but is still experimental. Both SLA and Data quality support now &quot;as code&quot; monitoring.   </p>
+
 <p>Development of the standard is coordinated in Open Data Product Initiative (ODPI) which was established in July 2022 to make it possible for the specification to grow and become institutionlized. The ODPI was taken under the wings of open source chapter of Open Collective.</p>
 
 <p><img src="images/features-c4ef38cd.png" alt="odps-features" /></p>
@@ -532,7 +533,8 @@
 <p>Example of YAML formatted snippet from the Open Data Product Specification:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight yaml"><code><span class="na">monitoring</span><span class="pi">:</span>
-  <span class="na">url</span><span class="pi">:</span> <span class="s">https://monitoring.com</span>
+  <span class="na">space</span><span class="pi">:</span> 
+    <span class="s">https://monitoring.com</span>
 </code></pre></div>
 <aside class="notice">
 The YAML examples are not based on any real data product, but exemplify the usage of Open Data Product Specification. 
@@ -544,7 +546,7 @@ The YAML examples are not based on any real data product, but exemplify the usag
 <blockquote>
 <p>Example of document level attribute usage and structure:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight yaml"><code><span class="na">schema</span><span class="pi">:</span> <span class="s">https://raw.githubusercontent.com/Open-Data-Product-Initiative/open-data-product-spec-dev/ddbc069196a664d0e28a0f3dc7c1c7fb49b64591/source/schema/odps-dev-json-schema.json</span>
+<div class="highlight"><pre class="highlight yaml"><code><span class="s">$schema</span><span class="pi">:</span> <span class="s">https://raw.githubusercontent.com/Open-Data-Product-Initiative/open-data-product-spec-dev/ddbc069196a664d0e28a0f3dc7c1c7fb49b64591/source/schema/odps-dev-json-schema.json</span>
 <span class="na">version</span><span class="pi">:</span> <span class="s">dev</span>
 <span class="na">product</span><span class="pi">:</span>
   <span class="na">en</span><span class="pi">:</span>
@@ -1263,7 +1265,7 @@ The YAML examples are not based on any real data product, but exemplify the usag
 <p>Each dimension has objective value, a unit and then monitoring &quot;as code&quot; to verify objective. In some cases monitoring is 
 not feasable or possible to arrange for various reasons. Type attribute indicates which monitoring system is used. Reference attribute contains url for reference documentation regarding the monitoring spec. Spec contains the actucal &quot;as code&quot; part which can be executed in selected monitoring system as is. </p>
 
-<p>Also basic email and phone support information can be expressed inside the SLA component. </p>
+<p>Also basic email and phone support information can be expressed inside the SLA component. <strong>Note!</strong> The &quot;as code&quot; part of the component is the initial step towards embracing Everything as Code paradigm, but is still experimental. </p>
 
 <p>No mandatory attributes at the moment. Optional attributes are listed in own table and an example is given in the right column. </p>
 <h2 id='optional-attributes-and-elements'>Optional attributes and elements</h2>
@@ -1346,79 +1348,91 @@ not feasable or possible to arrange for various reasons. Type attribute indicate
 </tr>
 </thead><tbody>
 <tr>
-<td>SLA</td>
+<td><strong>SLA</strong></td>
 <td>element</td>
 <td>-</td>
 <td>Binds the SLA related elements and attributes together</td>
 </tr>
 <tr>
-<td>dimension</td>
+<td><strong>dimension</strong></td>
 <td>attribute</td>
 <td>string, one of: <em>latency, uptime, responseTime, errorRate, endOfSupport, endOfLife, updateFrequency, timeToDetect, timeToNotify, timeToRepair, emailResponseTime</em></td>
 <td>Defines the SLA dimension.</td>
 </tr>
 <tr>
-<td>unit</td>
+<td><strong>unit</strong></td>
 <td>attribute</td>
 <td>Options for <em>unit</em> are: milliseconds, seconds, minutes, days, weeks, months, years, never, date, null. <br/><br/></td>
 <td>Name of the quality attribute indicating the timely interval. If date is given, format is dd/mm/yyyy</td>
 </tr>
 <tr>
-<td>monitoring</td>
+<td><strong>monitoring</strong></td>
 <td>element</td>
 <td>-</td>
 <td>Contains the monitoring (computational &quot;as code&quot;) structure to validate target state for the selected SLA dimension.</td>
 </tr>
 <tr>
-<td>type</td>
+<td><strong>displayTitle</strong></td>
+<td>array</td>
+<td>-</td>
+<td>Dimension title to be shown is various UIs. Keep it short and sweet.</td>
+</tr>
+<tr>
+<td><strong>en</strong></td>
+<td>attribute</td>
+<td><a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1</a> defined 2-letter codes</td>
+<td><strong>REQUIRED</strong> - <strong>NOTE! This is a dynamic element!</strong> This element binds together other product attributes and expresses the langugage used. In the example this is &quot;en&quot;, which indicates that product details are in English. If you would like to use French details, then name the element &quot;fr&quot;. The naming of this element follows options (language codes) listed in <a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1</a> standard. <br/><br/> You can have product details in multiple languages simply by adding similar sets like the example - just change the binding element name to matching language code. <br/><br/> The pattern to implement multilanguage support for data products was adopted from de facto UI translation practices. The attributes inside this element are commonly rendered in the UI for the consumer and providing a simple way to implement that was the driving reasoning. See for example  <a href="https://simplelocalize.io/docs/file-formats/multi-language-json/">JSON - Multi Language</a></td>
+</tr>
+<tr>
+<td><strong>type</strong></td>
 <td>attribute</td>
 <td>string</td>
 <td>monitoring system name name such as Prometheus. The systems enable as code approach to monitor SLA.</td>
 </tr>
 <tr>
-<td>spec</td>
+<td><strong>spec</strong></td>
 <td>element</td>
 <td>-</td>
 <td>contains the as code part for monitoring. Content is intended to be in a form that can be injected as is to defined monitoring system.</td>
 </tr>
 <tr>
-<td>reference</td>
+<td><strong>reference</strong></td>
 <td>URL</td>
 <td>Valid URL</td>
 <td>Provide URL for the reference documentation</td>
 </tr>
 <tr>
-<td>support</td>
+<td><strong>support</strong></td>
 <td>element</td>
 <td>-</td>
 <td>Support element describes how the customer can reach for help in case of difficulties in usage, billing, or otherwise.</td>
 </tr>
 <tr>
-<td>phoneNumber</td>
+<td><strong>phoneNumber</strong></td>
 <td>string</td>
 <td>-</td>
 <td>The support phone number</td>
 </tr>
 <tr>
-<td>phoneServiceHours</td>
+<td><strong>phoneServiceHours</strong></td>
 <td>string</td>
 <td>-</td>
 <td>Describes the service hours company provides. Contains information often in week level eg Mon-Fri at 8am - 4pm.</td>
 </tr>
 <tr>
-<td>email</td>
+<td><strong>email</strong></td>
 <td>string</td>
 <td>-</td>
 <td>Email information for support requests.</td>
 </tr>
 <tr>
-<td>emailServiceHours</td>
+<td><strong>emailServiceHours</strong></td>
 <td>string</td>
 <td>-</td>
 <td>Describes the email service hours company provides. Contains information often in week level eg Mon-Fri at 8am - 4pm.</td>
 </tr>
 <tr>
-<td>documentationURL</td>
+<td><strong>documentationURL</strong></td>
 <td>URL</td>
 <td>Valid URL</td>
 <td>URL to documentation</td>
@@ -1429,11 +1443,13 @@ not feasable or possible to arrange for various reasons. Type attribute indicate
 <h1 id='data-quality'>Data Quality</h1>
 <p>Data quality is essential for one main reason: You give customers the best experience when you make decisions using accurate data. A great customer experience leads to happy customers, brand loyalty, and higher revenue for your business. Information is only valuable if it is of high quality.  How can you assess your data quality? Data quality meets six dimensions: accuracy, completeness, consistency, timeliness, validity, and uniqueness. </p>
 
-<p>The values of the QA attributes are given by the vendor. Should you trust in the values, is the choice made by the data consumer. If possbile utilize automatic checking of data quality against the source and update the values accordingly. </p>
+<p>The values of the QA attributes are given by the vendor. Should you trust in the values, is the choice made by the data consumer. If possible utilize automatic checking of data quality against the source and update the values accordingly. </p>
 
 <p>The QA object is general in nature and should be enough for common (80%) of the use cases. Note that you can make extensions to the standard with &quot;x-&quot; mechanism in order to fulfill any industry specific needs. The &quot;Specification extensions&quot; section provides details on how to use this feature. </p>
 
 <p>Data integrity is the maintenance of, and the assurance of, data accuracy and consistency over its entire life-cycle. That is why <em>integrity</em> is not in the attributes, but accuracy and consistency as well as completeness are. </p>
+
+<p><strong>Note!</strong> The &quot;as code&quot; <em>spec</em> part of the component is the initial step towards embracing Everything as Code paradigm, but is still experimental. We need more vendors supporting the approach. In the mean while you can use custom solutions. </p>
 <h2 id='optional-attributes-and-elements'>Optional attributes and elements</h2>
 <blockquote>
 <p>Example of Data Quality component with some of the voluntary attributes:</p>
@@ -1445,6 +1461,7 @@ not feasable or possible to arrange for various reasons. Type attribute indicate
     <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
     <span class="na">monitoring</span><span class="pi">:</span>
       <span class="na">type</span><span class="pi">:</span> <span class="s">SodaCL</span> 
+      <span class="na">reference</span><span class="pi">:</span> <span class="s">https://docs.soda.io/soda-cl/soda-cl-overview.html</span>
       <span class="na">spec</span><span class="pi">:</span>
         <span class="pi">-</span> <span class="s">require_unique(member_id)</span> 
         <span class="pi">-</span> <span class="s">require_range(age_band, 18, 100)</span>
@@ -1454,6 +1471,7 @@ not feasable or possible to arrange for various reasons. Type attribute indicate
     <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
     <span class="na">monitoring</span><span class="pi">:</span>
       <span class="na">type</span><span class="pi">:</span> <span class="s">SodaCL</span> 
+      <span class="na">reference</span><span class="pi">:</span> <span class="s">https://docs.soda.io/soda-cl/soda-cl-overview.html</span>
       <span class="na">spec</span><span class="pi">:</span>
         <span class="pi">-</span> <span class="na">for each column</span><span class="pi">:</span>
             <span class="na">name</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">member_id</span><span class="pi">,</span> <span class="nv">gender</span><span class="pi">,</span> <span class="nv">age_band</span><span class="pi">]</span>
@@ -1487,49 +1505,61 @@ not feasable or possible to arrange for various reasons. Type attribute indicate
 </tr>
 </thead><tbody>
 <tr>
-<td>dataQuality</td>
+<td><strong>dataQuality</strong></td>
 <td>element</td>
 <td>-</td>
 <td>Contains array of data quality dimensions with optional computational monotoring object. Binds the data quality related elements and attributes together</td>
 </tr>
 <tr>
-<td>dimension</td>
+<td><strong>dimension</strong></td>
 <td>attribute</td>
 <td>string, one of: <em>accuracy, completeness, consistency, timeliness, validity, or uniqueness</em></td>
 <td>Defines the data quality dimension.</td>
 </tr>
 <tr>
-<td>objective</td>
+<td><strong>objective</strong></td>
 <td>attribute</td>
 <td>integer</td>
 <td>Defines the target value for the data quality dimension</td>
 </tr>
 <tr>
-<td>unit</td>
+<td><strong>unit</strong></td>
 <td>attribute</td>
 <td>string</td>
 <td>Defines the unit used in stating the target quality level. One of: percentage, number</td>
 </tr>
 <tr>
-<td>monitoring</td>
+<td><strong>monitoring</strong></td>
 <td>element</td>
 <td>-</td>
 <td>Contains the monitoring (computational &quot;as code&quot;) structure to validate target state for the selected data quality dimension.</td>
 </tr>
 <tr>
-<td>type</td>
+<td><strong>displayTitle</strong></td>
+<td>array</td>
+<td>-</td>
+<td>Dimension title to be shown is various UIs. Keep it short and sweet.</td>
+</tr>
+<tr>
+<td><strong>en</strong></td>
+<td>attribute</td>
+<td><a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1</a> defined 2-letter codes</td>
+<td><strong>REQUIRED</strong> - <strong>NOTE! This is a dynamic element!</strong> This element binds together other product attributes and expresses the langugage used. In the example this is &quot;en&quot;, which indicates that product details are in English. If you would like to use French details, then name the element &quot;fr&quot;. The naming of this element follows options (language codes) listed in <a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1</a> standard. <br/><br/> You can have product details in multiple languages simply by adding similar sets like the example - just change the binding element name to matching language code. <br/><br/> The pattern to implement multilanguage support for data products was adopted from de facto UI translation practices. The attributes inside this element are commonly rendered in the UI for the consumer and providing a simple way to implement that was the driving reasoning. See for example  <a href="https://simplelocalize.io/docs/file-formats/multi-language-json/">JSON - Multi Language</a></td>
+</tr>
+<tr>
+<td><strong>type</strong></td>
 <td>attribute</td>
 <td>string</td>
 <td>monitoring system name name such as SodaCL and Montecarlo. The systems enable as code approach to monitor data quality.</td>
 </tr>
 <tr>
-<td>reference</td>
+<td><strong>reference</strong></td>
 <td>URL</td>
 <td>Valid URL</td>
 <td>Provide URL for the reference documentation</td>
 </tr>
 <tr>
-<td>spec</td>
+<td><strong>spec</strong></td>
 <td>element</td>
 <td>-</td>
 <td>contains the as code part for monitoring. Content is intended to be in a form that can be injected as is to defined monitoring system.</td>
@@ -2251,7 +2281,6 @@ not feasable or possible to arrange for various reasons. Type attribute indicate
       <div class="dark-box">
           <div class="lang-selector">
                 <a href="#" data-language-name="yml">yml</a>
-                <a href="#" data-language-name="json">json</a>
           </div>
       </div>
     </div>
