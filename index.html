@@ -1381,7 +1381,7 @@ not feasable or possible to arrange for various reasons. Type attribute indicate
 <td><strong>en</strong></td>
 <td>attribute</td>
 <td><a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1</a> defined 2-letter codes</td>
-<td><strong>REQUIRED</strong> - <strong>NOTE! This is a dynamic element!</strong> This element binds together other product attributes and expresses the langugage used. In the example this is &quot;en&quot;, which indicates that product details are in English. If you would like to use French details, then name the element &quot;fr&quot;. The naming of this element follows options (language codes) listed in <a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1</a> standard. <br/><br/> You can have product details in multiple languages simply by adding similar sets like the example - just change the binding element name to matching language code. <br/><br/> The pattern to implement multilanguage support for data products was adopted from de facto UI translation practices. The attributes inside this element are commonly rendered in the UI for the consumer and providing a simple way to implement that was the driving reasoning. See for example  <a href="https://simplelocalize.io/docs/file-formats/multi-language-json/">JSON - Multi Language</a></td>
+<td>This element binds together other product attributes and expresses the langugage used. In the example this is &quot;en&quot;, which indicates that product details are in English. If you would like to use French details, then name the element &quot;fr&quot;. The naming of this element follows options (language codes) listed in <a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1</a> standard. <br/><br/> You can have product details in multiple languages simply by adding similar sets like the example - just change the binding element name to matching language code. <br/><br/> The pattern to implement multilanguage support for data products was adopted from de facto UI translation practices. The attributes inside this element are commonly rendered in the UI for the consumer and providing a simple way to implement that was the driving reasoning. See for example  <a href="https://simplelocalize.io/docs/file-formats/multi-language-json/">JSON - Multi Language</a></td>
 </tr>
 <tr>
 <td><strong>type</strong></td>
@@ -1410,8 +1410,8 @@ not feasable or possible to arrange for various reasons. Type attribute indicate
 <tr>
 <td><strong>phoneNumber</strong></td>
 <td>string</td>
-<td>-</td>
-<td>The support phone number</td>
+<td>valid phone number</td>
+<td>The support phone number. Use <a href="https://www.itu.int/rec/T-REC-E.164/en">E.164</a></td>
 </tr>
 <tr>
 <td><strong>phoneServiceHours</strong></td>
@@ -1422,8 +1422,8 @@ not feasable or possible to arrange for various reasons. Type attribute indicate
 <tr>
 <td><strong>email</strong></td>
 <td>string</td>
-<td>-</td>
-<td>Email information for support requests.</td>
+<td>valid email address</td>
+<td>Email information for support requests. Use <a href="https://datatracker.ietf.org/doc/html/rfc2822">RFC2822</a></td>
 </tr>
 <tr>
 <td><strong>emailServiceHours</strong></td>
@@ -1457,6 +1457,8 @@ not feasable or possible to arrange for various reasons. Type attribute indicate
 <div class="highlight"><pre class="highlight yaml"><code>
 <span class="na">dataQuality</span><span class="pi">:</span>
   <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">accuracy</span>
+    <span class="na">displaytitle</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Data Accuracy</span>
     <span class="na">objective</span><span class="pi">:</span> <span class="m">98</span>
     <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
     <span class="na">monitoring</span><span class="pi">:</span>
@@ -1467,7 +1469,9 @@ not feasable or possible to arrange for various reasons. Type attribute indicate
         <span class="pi">-</span> <span class="s">require_range(age_band, 18, 100)</span>
 
   <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">completeness</span>
-    <span class="na">objective</span><span class="pi">:</span> <span class="m">98</span>
+    <span class="na">displaytitle</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Data Completeness</span>
+    <span class="na">objective</span><span class="pi">:</span> <span class="m">99.9</span>
     <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
     <span class="na">monitoring</span><span class="pi">:</span>
       <span class="na">type</span><span class="pi">:</span> <span class="s">SodaCL</span> 
@@ -1477,7 +1481,7 @@ not feasable or possible to arrange for various reasons. Type attribute indicate
             <span class="na">name</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">member_id</span><span class="pi">,</span> <span class="nv">gender</span><span class="pi">,</span> <span class="nv">age_band</span><span class="pi">]</span>
             <span class="na">checks</span><span class="pi">:</span>
               <span class="pi">-</span> <span class="na">not null</span><span class="pi">:</span>
-                  <span class="na">fail</span><span class="pi">:</span> <span class="s">when &gt; 2%</span> <span class="c1"># Fail if more than 2% of records are null</span>
+                  <span class="na">fail</span><span class="pi">:</span> <span class="s">when &gt; 0.1%</span> <span class="c1"># Fail if more than 0.1% of records are null</span>
 
   <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">consistency</span>
     <span class="na">objective</span><span class="pi">:</span> <span class="m">98</span>
@@ -1544,7 +1548,7 @@ not feasable or possible to arrange for various reasons. Type attribute indicate
 <td><strong>en</strong></td>
 <td>attribute</td>
 <td><a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1</a> defined 2-letter codes</td>
-<td><strong>REQUIRED</strong> - <strong>NOTE! This is a dynamic element!</strong> This element binds together other product attributes and expresses the langugage used. In the example this is &quot;en&quot;, which indicates that product details are in English. If you would like to use French details, then name the element &quot;fr&quot;. The naming of this element follows options (language codes) listed in <a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1</a> standard. <br/><br/> You can have product details in multiple languages simply by adding similar sets like the example - just change the binding element name to matching language code. <br/><br/> The pattern to implement multilanguage support for data products was adopted from de facto UI translation practices. The attributes inside this element are commonly rendered in the UI for the consumer and providing a simple way to implement that was the driving reasoning. See for example  <a href="https://simplelocalize.io/docs/file-formats/multi-language-json/">JSON - Multi Language</a></td>
+<td>This element binds together other product attributes and expresses the langugage used. In the example this is &quot;en&quot;, which indicates that product details are in English. If you would like to use French details, then name the element &quot;fr&quot;. The naming of this element follows options (language codes) listed in <a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1</a> standard. <br/><br/> You can have product details in multiple languages simply by adding similar sets like the example - just change the binding element name to matching language code. <br/><br/> The pattern to implement multilanguage support for data products was adopted from de facto UI translation practices. The attributes inside this element are commonly rendered in the UI for the consumer and providing a simple way to implement that was the driving reasoning. See for example  <a href="https://simplelocalize.io/docs/file-formats/multi-language-json/">JSON - Multi Language</a></td>
 </tr>
 <tr>
 <td><strong>type</strong></td>
@@ -1562,7 +1566,7 @@ not feasable or possible to arrange for various reasons. Type attribute indicate
 <td><strong>spec</strong></td>
 <td>element</td>
 <td>-</td>
-<td>contains the as code part for monitoring. Content is intended to be in a form that can be injected as is to defined monitoring system.</td>
+<td>contains the as code part for monitoring. Content is intended to be in a form that can be injected as is to defined monitoring system. Content depends of the system used and reference attribute is expected to provide more information.</td>
 </tr>
 </tbody></table>
 
