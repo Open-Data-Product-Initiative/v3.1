@@ -957,55 +957,55 @@ The YAML examples are not based on any real data product, but exemplify the usag
 </tr>
 </thead><tbody>
 <tr>
-<td>minPrice</td>
+<td><strong>minPrice</strong></td>
 <td>string</td>
 <td>-</td>
 <td>The lowest price if the price is a range. If dynamic pricing is used with this product, this is the lowest price allowed. In dynamic pricing businesses are able to change prices based on algorithms that take into account competitor pricing, supply and demand, and other external factors in the market. Use &#39;.&#39; (Unicode &#39;FULL STOP&#39; (U+002E)) rather than &#39;,&#39; to indicate a decimal point. Avoid using these symbols as a readability separator. Use values from 0123456789 (Unicode &#39;DIGIT ZERO&#39; (U+0030) to &#39;DIGIT NINE&#39; (U+0039)) rather than superficially similiar Unicode symbols.</td>
 </tr>
 <tr>
-<td>maxPrice</td>
+<td><strong>maxPrice</strong></td>
 <td>string</td>
 <td>-</td>
 <td>The highest price if the price is a range. If dynamic pricing is used with this product, this is the highest price allowed. Use &#39;.&#39; (Unicode &#39;FULL STOP&#39; (U+002E)) rather than &#39;,&#39; to indicate a decimal point. Avoid using these symbols as a readability separator. Use values from 0123456789 (Unicode &#39;DIGIT ZERO&#39; (U+0030) to &#39;DIGIT NINE&#39; (U+0039)) rather than superficially similiar Unicode symbols.</td>
 </tr>
 <tr>
-<td>valueAddedTaxIncluded</td>
+<td><strong>valueAddedTaxIncluded</strong></td>
 <td>boolean</td>
 <td>true/false</td>
 <td>Specifies whether the applicable value-added tax (VAT) is included in the price specification or not.</td>
 </tr>
 <tr>
-<td>valueAddedTaxPercentage</td>
+<td><strong>valueAddedTaxPercentage</strong></td>
 <td>Integer</td>
 <td>Number percentage value, range 0-100</td>
 <td>Use &#39;.&#39; (Unicode &#39;FULL STOP&#39; (U+002E)) rather than &#39;,&#39; to indicate a decimal point. Avoid using these symbols as a readability separator. Use values from 0123456789 (Unicode &#39;DIGIT ZERO&#39; (U+0030) to &#39;DIGIT NINE&#39; (U+0039)) rather than superficially similiar Unicode symbols.</td>
 </tr>
 <tr>
-<td>validFrom</td>
+<td><strong>validFrom</strong></td>
 <td>DateTime</td>
 <td>A combination of date and time in <a href="https://www.ionos.com/digitalguide/websites/web-development/iso-8601/">ISO 8601</a> format yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ.</td>
 <td>The date when the item becomes valid.</td>
 </tr>
 <tr>
-<td>validTo</td>
+<td><strong>validTo</strong></td>
 <td>DateTime</td>
 <td>A combination of date and time in <a href="https://www.ionos.com/digitalguide/websites/web-development/iso-8601/">ISO 8601</a> format yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ.</td>
 <td>The date after when the item is not valid.</td>
 </tr>
 <tr>
-<td>additionalPrice</td>
+<td><strong>additionalPrice</strong></td>
 <td>string</td>
 <td>-</td>
 <td>This is used to define fees for usage which exceeds the defined max transaction quantity. This value is for each additional transaction. Use &#39;.&#39; (Unicode &#39;FULL STOP&#39; (U+002E)) rather than &#39;,&#39; to indicate a decimal point. Avoid using these symbols as a readability separator. Use values from 0123456789 (Unicode &#39;DIGIT ZERO&#39; (U+0030) to &#39;DIGIT NINE&#39; (U+0039)) rather than superficially similiar Unicode symbols.</td>
 </tr>
 <tr>
-<td>maxDataQuantity</td>
+<td><strong>maxDataQuantity</strong></td>
 <td>Integer</td>
 <td>-</td>
 <td>The maximum amount of data transferred during the billing duration. Unit is GB.</td>
 </tr>
 <tr>
-<td>valueSimulator</td>
+<td><strong>valueSimulator</strong></td>
 <td>url</td>
 <td>valid url</td>
 <td>Intended to be used with <em>value-based</em> pricing plan. Provide url to value simulator in which customer can see the value in various cases. In the simulator customer might be able to input own variables to match their exact case and see the gained value.</td>
@@ -1025,18 +1025,10 @@ The YAML examples are not based on any real data product, but exemplify the usag
 <span class="na">dataOps</span><span class="pi">:</span>
   <span class="na">data</span><span class="pi">:</span>
     <span class="na">schemaLocationURL</span><span class="pi">:</span> <span class="s">http://http://192.168.10.1/schemas/2016/petshopML-2.3/schema/petstore.xsd</span>
-    <span class="na">origin</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="na">source</span><span class="pi">:</span> <span class="s">human</span> <span class="c1"># sensor, human, analytics</span>
-        <span class="na">sourceId</span><span class="pi">:</span> <span class="c1"># </span>
-        <span class="na">type</span><span class="pi">:</span>  <span class="c1"># analog to digital, synthetic generated (informative). </span>
-        <span class="na">description</span><span class="pi">:</span> <span class="c1"># </span>
-        <span class="na">creationTimestamp</span><span class="pi">:</span> <span class="c1">#</span>
-        <span class="na">creator</span><span class="pi">:</span> <span class="c1"># internal use, ability to attribute data generation to exact device or hw, related to sourceId perhaps  </span>
-        <span class="na">checksum</span><span class="pi">:</span> <span class="c1"># ?</span>
 
-    <span class="na">lineage</span><span class="pi">:</span>
-      <span class="na">dataLineageTool</span><span class="pi">:</span> <span class="s">Collibra</span>
-      <span class="na">dataLineageOutput</span><span class="pi">:</span> <span class="s">http://192.168.10.1/lineage.json</span>
+  <span class="na">lineage</span><span class="pi">:</span>
+    <span class="na">dataLineageTool</span><span class="pi">:</span> <span class="s">Collibra</span>
+    <span class="na">dataLineageOutput</span><span class="pi">:</span> <span class="s">http://192.168.10.1/lineage.json</span>
 
   <span class="na">infrastructure</span><span class="pi">:</span>
     <span class="na">platform</span><span class="pi">:</span> <span class="s">Azure</span>
@@ -1063,97 +1055,97 @@ The YAML examples are not based on any real data product, but exemplify the usag
 </tr>
 </thead><tbody>
 <tr>
-<td>dataOps</td>
+<td><strong>dataOps</strong></td>
 <td>element</td>
 <td>-</td>
 <td>Binds the dataOps related elements and attributes together.</td>
 </tr>
 <tr>
-<td>infrastructure</td>
+<td><strong>infrastructure</strong></td>
 <td>element</td>
 <td>-</td>
 <td>Infrastructure is a process whereby a data product pipeline deployment method is defined.</td>
 </tr>
 <tr>
-<td>platform</td>
+<td><strong>platform</strong></td>
 <td>string</td>
 <td>any</td>
 <td>Platform infrastructure, such as AWS, GCP, Azure.</td>
 </tr>
 <tr>
-<td>region</td>
+<td><strong>region</strong></td>
 <td>string</td>
 <td>any</td>
 <td>Provide details of cloud region of AWS, Azure or alike. Examples for AWS: US West (Oregon), Canada (Central), US East (N. Virginia), US East (Ohio). Examples for Azure: Canada Central (Toronto), East US 2 (Virginia), West US 2 (Washington)</td>
 </tr>
 <tr>
-<td>storageTechnology</td>
+<td><strong>storageTechnology</strong></td>
 <td>string</td>
 <td>any</td>
 <td>Describes the internal storage area technology, such as Amazon S3, Google Cloud Storage, Azure Blob Storage, Azure SQL.</td>
 </tr>
 <tr>
-<td>storageType</td>
+<td><strong>storageType</strong></td>
 <td>string</td>
 <td>any</td>
 <td>Describes the internal storage type, such as files, sql, events, MQTT.</td>
 </tr>
 <tr>
-<td>containerTool</td>
+<td><strong>containerTool</strong></td>
 <td>string</td>
 <td>any</td>
 <td>A name of the package manager, container or infrastructure as code tool.</td>
 </tr>
 <tr>
-<td>format</td>
+<td><strong>format</strong></td>
 <td>string</td>
 <td>any</td>
 <td>Type of script language.</td>
 </tr>
 <tr>
-<td>schemaLocationURL</td>
+<td><strong>schemaLocationURL</strong></td>
 <td>URL</td>
 <td>Valid URL</td>
 <td>The URL of the data product schema, such as XSD, XML or JSON Schema.</td>
 </tr>
 <tr>
-<td>scriptURL</td>
+<td><strong>scriptURL</strong></td>
 <td>URL</td>
 <td>Valid URL</td>
 <td>The URL of the deployment script. Script can be used for implementing the data product. In a Data Mesh -model it can be used to define, for example, one or more outputs which take the data from source systems or other data products.</td>
 </tr>
 <tr>
-<td>deploymentDocumentationURL</td>
+<td><strong>deploymentDocumentationURL</strong></td>
 <td>URL</td>
 <td>Valid URL</td>
 <td>The URL of the deployment documentation.</td>
 </tr>
 <tr>
-<td>datalineageTool</td>
+<td><strong>datalineageTool</strong></td>
 <td>URL</td>
 <td>Valid URL</td>
 <td>A tool to view the data lineage.</td>
 </tr>
 <tr>
-<td>datalineageOutput</td>
+<td><strong>datalineageOutput</strong></td>
 <td>URL</td>
 <td>Valid URL</td>
 <td>The URL of the data lineage output. Data lineage output shows the mapping of source data to target output on a metadata level</td>
 </tr>
 <tr>
-<td>hashType</td>
+<td><strong>hashType</strong></td>
 <td>string</td>
 <td>One of: SHA-1, SHA-2, SHA-3</td>
 <td>Type of secure hash algorithm for checksum.</td>
 </tr>
 <tr>
-<td>checksum</td>
+<td><strong>checksum</strong></td>
 <td>string</td>
 <td>any</td>
 <td>Script checksum.</td>
 </tr>
 <tr>
-<td>signatureType</td>
+<td><strong>signatureType</strong></td>
 <td>string</td>
 <td>any</td>
 <td>A public-key cryptosystem,such as JWK, PKCS#12, or PEM.</td>
@@ -1185,61 +1177,61 @@ The YAML examples are not based on any real data product, but exemplify the usag
 </tr>
 </thead><tbody>
 <tr>
-<td>dataAccess</td>
+<td><strong>dataAccess</strong></td>
 <td>element</td>
 <td>-</td>
 <td>Binds the data access related elements and attributes together.</td>
 </tr>
 <tr>
-<td>interface</td>
+<td><strong>interface</strong></td>
 <td>element</td>
 <td>-</td>
 <td>Reference to the ability to use data.</td>
 </tr>
 <tr>
-<td>outputPorttype</td>
+<td><strong>outputPorttype</strong></td>
 <td>string</td>
 <td>any</td>
 <td>Type of data access, such as API, SQL, sFTP, gRPC.</td>
 </tr>
 <tr>
-<td>hashType</td>
+<td><strong>hashType</strong></td>
 <td>string</td>
 <td>any</td>
 <td>Type of secure hash algorithm, such as SHA-1, SHA-2, for checksum, when output is file(s).</td>
 </tr>
 <tr>
-<td>checksum</td>
+<td><strong>checksum</strong></td>
 <td>string</td>
 <td>any</td>
 <td>File checksum.</td>
 </tr>
 <tr>
-<td>authenticationMethod</td>
+<td><strong>authenticationMethod</strong></td>
 <td>string</td>
 <td>any</td>
 <td>Data access authentication method type, such as API key, HTTP Basic, OAuth, No authentication.</td>
 </tr>
 <tr>
-<td>specification</td>
+<td><strong>specification</strong></td>
 <td>string</td>
 <td>any</td>
 <td>Type of the data access specification, such as OAS, RAML, Slate.</td>
 </tr>
 <tr>
-<td>format</td>
+<td><strong>format</strong></td>
 <td>string</td>
 <td>any</td>
 <td>Data access file format type, such as JSON, XML, GraphQL, plain text.</td>
 </tr>
 <tr>
-<td>specsURL</td>
+<td><strong>specsURL</strong></td>
 <td>URL</td>
 <td>Valid URL</td>
 <td>The URL of the data access documentation, preferably in a machine-readable format, such as OpenAPI specs.</td>
 </tr>
 <tr>
-<td>documentationURL</td>
+<td><strong>documentationURL</strong></td>
 <td>URL</td>
 <td>Valid URL</td>
 <td>The URL of the separated data access documentation or guide. For example, it may contain instructions on how to create and manage api keys.</td>
@@ -1529,8 +1521,8 @@ not feasable or possible to arrange for various reasons. Type attribute indicate
 <tr>
 <td><strong>unit</strong></td>
 <td>attribute</td>
-<td>string</td>
-<td>Defines the unit used in stating the target quality level. One of: percentage, number</td>
+<td>string. One of: <em>percentage, number</em></td>
+<td>Defines the unit used in stating the target quality level.</td>
 </tr>
 <tr>
 <td><strong>monitoring</strong></td>
@@ -1641,127 +1633,127 @@ not feasable or possible to arrange for various reasons. Type attribute indicate
 </tr>
 </thead><tbody>
 <tr>
-<td>license</td>
+<td><strong>license</strong></td>
 <td>element</td>
 <td>-</td>
 <td>Binds the licensing related elements and attributes together.</td>
 </tr>
 <tr>
-<td>scope</td>
+<td><strong>scope</strong></td>
 <td>element</td>
 <td>-</td>
 <td>Extent, range, coverage, area or space of the license.</td>
 </tr>
 <tr>
-<td>definition</td>
+<td><strong>definition</strong></td>
 <td>string</td>
 <td>text content, max length 512 chars</td>
 <td>Background and purpose of the license.</td>
 </tr>
 <tr>
-<td>language</td>
+<td><strong>language</strong></td>
 <td>string</td>
 <td>ISO 639-1 standard language codes</td>
 <td>License language.</td>
 </tr>
 <tr>
-<td>restrictions</td>
+<td><strong>restrictions</strong></td>
 <td>string</td>
 <td>text content, max length 512 chars</td>
 <td>Restrictions of the license.</td>
 </tr>
 <tr>
-<td>geographicalArea</td>
+<td><strong>geographicalArea</strong></td>
 <td>string</td>
 <td>ISO 3166-1 alpha-2 codes</td>
 <td>License right restricted to the geographical area.</td>
 </tr>
 <tr>
-<td>permanent</td>
+<td><strong>permanent</strong></td>
 <td>boolean</td>
 <td>true/false</td>
 <td>License with no expiration date.</td>
 </tr>
 <tr>
-<td>exclusive</td>
+<td><strong>exclusive</strong></td>
 <td>boolean</td>
 <td>true/false</td>
 <td>The exclusive license holder is given complete control over the use of the data product, and no other person or organization is allowed to use it during the term of the license agreement.</td>
 </tr>
 <tr>
-<td>rights</td>
+<td><strong>rights</strong></td>
 <td>array</td>
 <td>Options: Reproduction <i>(rights to reproduce)</i>, Display <i>(disclose data to others)</i>, Distribution <i>(right to distribute)</i>, Adaptation <i>(right for derivate work)</i>, Reselling <i>(right to resell)</i>, Transferring <i>(transferable data license)</i>, Sublicensing <i>(license grant may include a right to sublicense)</i></td>
 <td>Rights granted by the licence. The texts in brackets and <i>italic</i> are intended to describe rights.</td>
 </tr>
 <tr>
-<td>termination</td>
+<td><strong>termination</strong></td>
 <td>element</td>
 <td>-</td>
 <td>Licence termination and continuity related conditions.</td>
 </tr>
 <tr>
-<td>noticePeriod</td>
+<td><strong>noticePeriod</strong></td>
 <td>integer</td>
 <td>unit is days</td>
 <td>The notice period is a particular time that an data product provider or consumer must give before ending the contract. This time window allows both sides to make the necessary preparations, guaranteeing an unhindered transfer.</td>
 </tr>
 <tr>
-<td>terminationConditions</td>
+<td><strong>terminationConditions</strong></td>
 <td>string</td>
 <td>text content, max length 512 chars</td>
 <td>Cancellation conditions of the license.</td>
 </tr>
 <tr>
-<td>continuityConditions</td>
+<td><strong>continuityConditions</strong></td>
 <td>string</td>
 <td>text content, max length 512 chars</td>
 <td>Continuity conditions of the license.</td>
 </tr>
 <tr>
-<td>governance</td>
+<td><strong>governance</strong></td>
 <td>element</td>
 <td>-</td>
 <td>Governance is the approach taken to ensure that the agreed outcomes are being fulfilled.</td>
 </tr>
 <tr>
-<td>ownership</td>
+<td><strong>ownership</strong></td>
 <td>string</td>
 <td>text content, max length 512 chars</td>
 <td>Data product licensing ownership.</td>
 </tr>
 <tr>
-<td>audit</td>
+<td><strong>audit</strong></td>
 <td>string</td>
 <td>text content, max length 512 chars</td>
 <td>License auditing terms.</td>
 </tr>
 <tr>
-<td>warranties</td>
+<td><strong>warranties</strong></td>
 <td>string</td>
 <td>text content, max length 512 chars</td>
 <td>License warranties.</td>
 </tr>
 <tr>
-<td>damages</td>
+<td><strong>damages</strong></td>
 <td>string</td>
 <td>text content, max length 512 chars</td>
 <td>Damages refers to the sum of money (i.e. indemnifications) for a breach of some duty or violation of license right.</td>
 </tr>
 <tr>
-<td>confidentiality</td>
+<td><strong>confidentiality</strong></td>
 <td>string</td>
 <td>text content, max length 512 chars</td>
 <td>Restrictions and requirements imposed on the Data User regarding e.g. the use and disclosure of the Data Holder&#39;s confidential information.</td>
 </tr>
 <tr>
-<td>applicableLaws</td>
+<td><strong>applicableLaws</strong></td>
 <td>string</td>
 <td>text content, max length 512 chars</td>
 <td>Applicable laws not covered in <strong>applicaplePrivacyLaws</strong>, i.e local acts, degrees or law.</td>
 </tr>
 <tr>
-<td>forceMajeure</td>
+<td><strong>forceMajeure</strong></td>
 <td>string</td>
 <td>text content, max length 512 chars</td>
 <td>Force majeure is a clause that is included in contracts to remove liability for unforeseeable and unavoidable catastrophes that interrupt the expected course of events and prevent participants from fulfilling obligations. These clauses generally cover both natural disasters and catastrophes created by humans.</td>
@@ -1856,97 +1848,97 @@ not feasable or possible to arrange for various reasons. Type attribute indicate
 </tr>
 </thead><tbody>
 <tr>
-<td>taxID</td>
+<td><strong>taxID</strong></td>
 <td>string</td>
 <td>-</td>
 <td>The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.</td>
 </tr>
 <tr>
-<td>vatID</td>
+<td><strong>vatID</strong></td>
 <td>string</td>
 <td>-</td>
 <td>The Value-added Tax ID of the organization or person.</td>
 </tr>
 <tr>
-<td>businessDomain</td>
+<td><strong>businessDomain</strong></td>
 <td>string</td>
 <td>-</td>
 <td>In a data mesh architecture, data (or data product) ownership and management are distributed across self-contained business domains.</td>
 </tr>
 <tr>
-<td>logoURL</td>
+<td><strong>logoURL</strong></td>
 <td>URL</td>
 <td>Valid URL. See more from <a href="https://datatracker.ietf.org/doc/html/rfc3986">RFC 3986</a>.</td>
 <td>The URL pointing to organisation logo.</td>
 </tr>
 <tr>
-<td>description</td>
+<td><strong>description</strong></td>
 <td>string</td>
 <td>Max length 512 chars</td>
 <td>The introduction to the organization. Often contains information of what the organisation does and focuses on.</td>
 </tr>
 <tr>
-<td>URL</td>
+<td><strong>URL</strong></td>
 <td>URL</td>
 <td>Valid URL. See more from <a href="https://datatracker.ietf.org/doc/html/rfc3986">RFC 3986</a>.</td>
 <td>The URL of the organization&#39;s website.</td>
 </tr>
 <tr>
-<td>telephone</td>
+<td><strong>telephone</strong></td>
 <td>string</td>
 <td>Valid telephone number</td>
 <td>The telephone number. Use <a href="https://www.itu.int/rec/T-REC-E.164-201011-I/en">E.164</a> standard.</td>
 </tr>
 <tr>
-<td>streetAddress</td>
+<td><strong>streetAddress</strong></td>
 <td>string</td>
 <td>-</td>
 <td>The street address. For example, 1600 Amphitheatre Pkwy.</td>
 </tr>
 <tr>
-<td>postalCode</td>
+<td><strong>postalCode</strong></td>
 <td>string</td>
 <td>-</td>
 <td>The postal code. For example, 94043.</td>
 </tr>
 <tr>
-<td>addressRegion</td>
+<td><strong>addressRegion</strong></td>
 <td>string</td>
 <td>-</td>
 <td>The region in which the locality is, and which is in the country. For example, California or another appropriate first-level Administrative division</td>
 </tr>
 <tr>
-<td>addressLocality</td>
+<td><strong>addressLocality</strong></td>
 <td>string</td>
 <td>-</td>
 <td>The locality in which the street address is, and which is in the region. For example, Mountain View.</td>
 </tr>
 <tr>
-<td>addressCountry</td>
+<td><strong>addressCountry</strong></td>
 <td>string</td>
 <td>two-letter ISO 3166-1 alpha-2 country code</td>
 <td>The country.</td>
 </tr>
 <tr>
-<td>aggregateRating</td>
+<td><strong>aggregateRating</strong></td>
 <td>string</td>
 <td>-</td>
 <td>The average rating based on multiple ratings or reviews.</td>
 </tr>
 <tr>
-<td>ratingCount</td>
+<td><strong>ratingCount</strong></td>
 <td>integer</td>
 <td>-</td>
 <td>The amount of ratigns and reviews used in calculating the aggregateRating.</td>
 </tr>
 <tr>
-<td>slogan</td>
+<td><strong>slogan</strong></td>
 <td>string</td>
 <td>Max length 256 chars</td>
 <td>The slogan of the organization. This is often related to showing the brand</td>
 </tr>
 <tr>
-<td>parentOrganization</td>
+<td><strong>parentOrganization</strong></td>
 <td>string</td>
 <td>-</td>
 <td>The larger organization that this organization is a subOrganization of, if any.</td>
@@ -1981,7 +1973,7 @@ not feasable or possible to arrange for various reasons. Type attribute indicate
 </tr>
 </thead><tbody>
 <tr>
-<td>^x-</td>
+<td><strong>^x-</strong></td>
 <td>any</td>
 <td></td>
 <td>Allows extensions to the Open Data Product Schema. The field name MUST begin with x-, for example, x-internal-id. The value can be null, a primitive, an array or an object. Can have any valid JSON format value.</td>
