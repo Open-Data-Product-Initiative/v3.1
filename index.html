@@ -362,10 +362,7 @@
             <a href="#data-pricing-plans" class="toc-h1 toc-link" data-title="Data Pricing Plans">Data Pricing Plans</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#mandatory-attributes-and-elements" class="toc-h2 toc-link" data-title="Mandatory attributes and elements">Mandatory attributes and elements</a>
-                  </li>
-                  <li>
-                    <a href="#optional-attributes-and-elements" class="toc-h2 toc-link" data-title="Optional attributes and elements">Optional attributes and elements</a>
+                    <a href="#attributes-and-elements" class="toc-h2 toc-link" data-title="Attributes and elements">Attributes and elements</a>
                   </li>
               </ul>
           </li>
@@ -412,9 +409,6 @@
           <li>
             <a href="#data-holder" class="toc-h1 toc-link" data-title="Data Holder">Data Holder</a>
               <ul class="toc-list-h2">
-                  <li>
-                    <a href="#mandatory-attributes-and-elements" class="toc-h2 toc-link" data-title="Mandatory attributes and elements">Mandatory attributes and elements</a>
-                  </li>
                   <li>
                     <a href="#optional-attributes-and-elements" class="toc-h2 toc-link" data-title="Optional attributes and elements">Optional attributes and elements</a>
                   </li>
@@ -800,11 +794,7 @@ The YAML examples are not based on any real data product, but exemplify the usag
 <h1 id='data-pricing-plans'>Data Pricing Plans</h1>
 <p>Pricing is the process whereby a business sets the price at which it will sell its products and services. Pricing <strong>OBJECT</strong> consists of mandatory and optional attributes. This element contains pricing plans related data to be used for example in displaying the items in a marketplace. If needed the standard metadata is converted to marketplace internal format. We encourage all data product owners to enforce usage of this standard.  </p>
 
-<p>Mandatory attributes are listed in separate table and marked with <strong>bolded names</strong> and asterix <strong>*</strong>. Next to the mandatory attributes is an example. </p>
-
-<p>The same logic applies to the optional attributes as well. Optional attributes are listed in own table and an example is given in the right column. </p>
-
-<p>Supported pricing models include:</p>
+<p><strong>11 supported pricing models include:</strong></p>
 
 <ol>
 <li>Recurring time period based (day, week, month, year) plans</li>
@@ -821,9 +811,9 @@ The YAML examples are not based on any real data product, but exemplify the usag
 </ol>
 
 <p><button data-tf-popup="Q1Zo6wE5" data-tf-iframe-props="title=Customer Feedback Survey" style="all:unset;font-family:Helvetica,Arial,sans-serif;display:inline-block;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;background-color:#FA6B05;color:#000000;font-size:17px;border-radius:3px;padding:0 28px;font-weight:bold;height:42.5px;cursor:pointer;line-height:42.5px;text-align:center;margin:0;text-decoration:none;">Raise an issue</button><script src="//embed.typeform.com/next/embed.js"></script></p>
-<h2 id='mandatory-attributes-and-elements'>Mandatory attributes and elements</h2>
+<h2 id='attributes-and-elements'>Attributes and elements</h2>
 <blockquote>
-<p>Example of Pricing component usage with manadatory elements and attributes. Example language is english.:</p>
+<p>Example of Pricing component usage in english:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight yaml"><code>
 <span class="na">pricingPlans</span><span class="pi">:</span>
@@ -926,37 +916,6 @@ The YAML examples are not based on any real data product, but exemplify the usag
 <td>array</td>
 <td><strong>REQUIRED</strong> The element that contains pricing plan content as array of strings. Think of this as the list of what is included in the pricing plan and what you offer in return to the price asked. Use the language defined in the <em>plan</em></td>
 </tr>
-</tbody></table>
-
-<p>If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, <a href="https://github.com/Open-Data-Product-Initiative/open-data-product-spec-dev/issues">raise an issue in Github</a></p>
-<h2 id='optional-attributes-and-elements'>Optional attributes and elements</h2>
-<blockquote>
-<p>Example of Pricing component usage with some of the optional elements and attributes:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight yaml"><code>
-<span class="na">pricingPlans</span><span class="pi">:</span>
-  <span class="na">en</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Premium subscription 1 year</span>
-    <span class="na">priceCurrency</span><span class="pi">:</span> <span class="s">EUR</span>
-    <span class="na">price</span><span class="pi">:</span> <span class="m">10.00</span>
-    <span class="na">minPrice</span><span class="pi">:</span> <span class="m">5.00</span>
-    <span class="na">maxPrice</span><span class="pi">:</span> <span class="m">15.000</span>
-    <span class="na">additionalPrice</span><span class="pi">:</span> <span class="m">0.02</span>
-  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Premium Package</span>
-    <span class="na">priceCurrency</span><span class="pi">:</span> <span class="s">EUR</span>
-    <span class="na">price</span><span class="pi">:</span> <span class="m">10.00</span>
-    <span class="na">maxPrice</span><span class="pi">:</span> <span class="m">20.00</span>
-    <span class="na">valueAddedTaxIncluded</span><span class="pi">:</span> <span class="s">False</span>
-
-</code></pre></div>
-<table><thead>
-<tr>
-<th><div style="width:150px">Element name</div></th>
-<th>Type</th>
-<th>Options</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
 <tr>
 <td><strong>minPrice</strong></td>
 <td>string</td>
@@ -1573,57 +1532,57 @@ not feasable or possible to arrange for various reasons. Type attribute indicate
 </blockquote>
 <div class="highlight"><pre class="highlight yaml"><code>
 <span class="na">license</span><span class="pi">:</span>
-  <span class="na">scope</span><span class="pi">:</span>
-    <span class="na">definition</span><span class="pi">:</span> <span class="s">The purpose of this license is to determine the terms and conditions</span>
-      <span class="s">applicable to the licensing of the data product, whereby Data Holder grants</span>
-      <span class="s">Data User the right to use the data.</span>
-    <span class="na">language</span><span class="pi">:</span> <span class="s">en-us</span>
-    <span class="na">restrictions</span><span class="pi">:</span> <span class="s">Data User agrees not to, directly or indirectly, participate in</span>
-      <span class="s">the unauthorized use, disclosure or conversion of any confidential information.</span>
-    <span class="na">geographicalArea</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="s">EU</span>
-    <span class="pi">-</span> <span class="s">US</span>
-    <span class="na">permanent</span><span class="pi">:</span> <span class="s">False</span>
-    <span class="na">exclusive</span><span class="pi">:</span> <span class="s">False</span>
-    <span class="na">rights</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="s">Reproduction</span>
-    <span class="pi">-</span> <span class="s">Display</span>
-    <span class="pi">-</span> <span class="s">Distribution</span>
-    <span class="pi">-</span> <span class="s">Adaptation</span>
-    <span class="pi">-</span> <span class="s">Reselling</span>
-    <span class="pi">-</span> <span class="s">Sublicensing</span>
-    <span class="pi">-</span> <span class="s">Transferring</span>
-  <span class="na">termination</span><span class="pi">:</span>
-    <span class="na">noticePeriod</span><span class="pi">:</span> <span class="m">90</span>
-    <span class="na">terminationConditions</span><span class="pi">:</span> <span class="s">After the expiry of the right</span>
-      <span class="s">of use, the product and its derivatives must be removed.</span>
-    <span class="na">continuityConditions</span><span class="pi">:</span> <span class="s">Expired license will automatically continued without written</span>
-      <span class="s">cancellation (termination) by Data Holder</span>
-  <span class="na">governance</span><span class="pi">:</span>
-    <span class="na">ownership</span><span class="pi">:</span> <span class="s">Mindmote Oy, a company specializing in pet industry insights, owns</span>
-      <span class="s">the license to its proprietary data product 'Pets of the Year'.</span>
-    <span class="na">damages</span><span class="pi">:</span> <span class="s">During the term of license, except for the force majeure or the Data</span>
-      <span class="s">Holders reasons, Data User is required to follow strictly in accordance with</span>
-      <span class="s">the license. If Data User wants to terminate the license early, it needs to</span>
-      <span class="s">pay a certain amount of liquidated damages.</span>
-    <span class="na">confidentiality</span><span class="pi">:</span> <span class="s">Data User undertakes to maintain confidentiality as regards all</span>
-      <span class="s">information of a technical (such as, by way of a non-limiting example, drawings,</span>
-      <span class="s">tables, documentation, formulas and correspondence) and commercial nature (including</span>
-      <span class="s">contractual conditions, prices, payment conditions) gained during the performance</span>
-      <span class="s">of this license.</span>
-    <span class="na">applicableLaws</span><span class="pi">:</span> <span class="s">This license shall be interpreted, construed and enforced in accordance</span>
-      <span class="s">with the law of Finland, including Copyright Act 404/1961.</span>
-    <span class="na">warranties</span><span class="pi">:</span> <span class="s">Data Holder makes no warranties, express or implied, guarantees or</span>
-      <span class="s">conditions with respect to your use of the data product. To the extent permitted</span>
-      <span class="s">under local law, Data Holder disclaims all liability for any damages or losses,</span>
-      <span class="s">including direct, consequential, special, indirect, incidental or punitive,</span>
-      <span class="s">resulting from Data User use of the data product.</span>
-    <span class="na">audit</span><span class="pi">:</span> <span class="s">Data Holder will reasonably cooperate with Data Users by providing available</span>
-      <span class="s">additional information about the data product. Both parties will bear their</span>
-      <span class="s">own audit-related costs.</span>
-    <span class="na">forceMajeure</span><span class="pi">:</span> <span class="s">Both parties may suspend their contractual obligations when fulfillment</span>
-      <span class="s">becomes impossible or excessively costly due to unforeseeable events beyond</span>
-      <span class="s">their control, such as strikes, fires, wars, and other force majeure events.</span>
+  <span class="na">en</span><span class="pi">:</span>
+    <span class="na">scope</span><span class="pi">:</span>
+      <span class="na">definition</span><span class="pi">:</span> <span class="s">The purpose of this license is to determine the terms and conditions</span>
+        <span class="s">applicable to the licensing of the data product, whereby Data Holder grants</span>
+        <span class="s">Data User the right to use the data.</span>
+      <span class="na">restrictions</span><span class="pi">:</span> <span class="s">Data User agrees not to, directly or indirectly, participate in</span>
+        <span class="s">the unauthorized use, disclosure or conversion of any confidential information.</span>
+      <span class="na">geographicalArea</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">EU</span>
+      <span class="pi">-</span> <span class="s">US</span>
+      <span class="na">permanent</span><span class="pi">:</span> <span class="s">False</span>
+      <span class="na">exclusive</span><span class="pi">:</span> <span class="s">False</span>
+      <span class="na">rights</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">Reproduction</span>
+      <span class="pi">-</span> <span class="s">Display</span>
+      <span class="pi">-</span> <span class="s">Distribution</span>
+      <span class="pi">-</span> <span class="s">Adaptation</span>
+      <span class="pi">-</span> <span class="s">Reselling</span>
+      <span class="pi">-</span> <span class="s">Sublicensing</span>
+      <span class="pi">-</span> <span class="s">Transferring</span>
+    <span class="na">termination</span><span class="pi">:</span>
+      <span class="na">noticePeriod</span><span class="pi">:</span> <span class="m">90</span>
+      <span class="na">terminationConditions</span><span class="pi">:</span> <span class="s">After the expiry of the right</span>
+        <span class="s">of use, the product and its derivatives must be removed.</span>
+      <span class="na">continuityConditions</span><span class="pi">:</span> <span class="s">Expired license will automatically continued without written</span>
+        <span class="s">cancellation (termination) by Data Holder</span>
+    <span class="na">governance</span><span class="pi">:</span>
+      <span class="na">ownership</span><span class="pi">:</span> <span class="s">Mindmote Oy, a company specializing in pet industry insights, owns</span>
+        <span class="s">the license to its proprietary data product 'Pets of the Year'.</span>
+      <span class="na">damages</span><span class="pi">:</span> <span class="s">During the term of license, except for the force majeure or the Data</span>
+        <span class="s">Holders reasons, Data User is required to follow strictly in accordance with</span>
+        <span class="s">the license. If Data User wants to terminate the license early, it needs to</span>
+        <span class="s">pay a certain amount of liquidated damages.</span>
+      <span class="na">confidentiality</span><span class="pi">:</span> <span class="s">Data User undertakes to maintain confidentiality as regards all</span>
+        <span class="s">information of a technical (such as, by way of a non-limiting example, drawings,</span>
+        <span class="s">tables, documentation, formulas and correspondence) and commercial nature (including</span>
+        <span class="s">contractual conditions, prices, payment conditions) gained during the performance</span>
+        <span class="s">of this license.</span>
+      <span class="na">applicableLaws</span><span class="pi">:</span> <span class="s">This license shall be interpreted, construed and enforced in accordance</span>
+        <span class="s">with the law of Finland, including Copyright Act 404/1961.</span>
+      <span class="na">warranties</span><span class="pi">:</span> <span class="s">Data Holder makes no warranties, express or implied, guarantees or</span>
+        <span class="s">conditions with respect to your use of the data product. To the extent permitted</span>
+        <span class="s">under local law, Data Holder disclaims all liability for any damages or losses,</span>
+        <span class="s">including direct, consequential, special, indirect, incidental or punitive,</span>
+        <span class="s">resulting from Data User use of the data product.</span>
+      <span class="na">audit</span><span class="pi">:</span> <span class="s">Data Holder will reasonably cooperate with Data Users by providing available</span>
+        <span class="s">additional information about the data product. Both parties will bear their</span>
+        <span class="s">own audit-related costs.</span>
+      <span class="na">forceMajeure</span><span class="pi">:</span> <span class="s">Both parties may suspend their contractual obligations when fulfillment</span>
+        <span class="s">becomes impossible or excessively costly due to unforeseeable events beyond</span>
+        <span class="s">their control, such as strikes, fires, wars, and other force majeure events.</span>
 
 </code></pre></div>
 <table><thead>
@@ -1639,6 +1598,12 @@ not feasable or possible to arrange for various reasons. Type attribute indicate
 <td>element</td>
 <td>-</td>
 <td>Binds the licensing related elements and attributes together.</td>
+</tr>
+<tr>
+<td><strong>en</strong></td>
+<td>attribute</td>
+<td><a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1</a> defined 2-letter codes</td>
+<td>This element binds together other product attributes and expresses the langugage used. In the example this is &quot;en&quot;, which indicates that product details are in English. If you would like to use Arabic details, then name the element &quot;ar&quot;. The naming of this element follows options (language codes) listed in <a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1</a> standard. <br/><br/> You can have product details in multiple languages simply by adding similar sets like the example - just change the binding element name to matching language code. <br/><br/> The pattern to implement multilanguage support for data products was adopted from de facto UI translation practices. The attributes inside this element are commonly rendered in the UI for the consumer and providing a simple way to implement that was the driving reasoning. See for example  <a href="https://simplelocalize.io/docs/file-formats/multi-language-json/">JSON - Multi Language</a></td>
 </tr>
 <tr>
 <td><strong>scope</strong></td>
@@ -1768,18 +1733,32 @@ not feasable or possible to arrange for various reasons. Type attribute indicate
 
 <p>The <em>data holder</em> might not be the original IPR owner of the data used, but has rights operate with it. The contract or other agreement between Provider and possible data owner is not part of the standard as metadata or licence wise.</p>
 
-<p>Mandatory attributes are listed in separate table and marked with <strong>REQUIRED</strong> text. Next to the mandatory attributes is an example. </p>
-
-<p>The same logic applies to the optional attributes as well. Optional attributes are listed in own table and an example is given in the right column. </p>
-<h2 id='mandatory-attributes-and-elements'>Mandatory attributes and elements</h2>
+<p>If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, <a href="https://github.com/Open-Data-Product-Initiative/open-data-product-spec-dev/issues">raise an issue in Github</a></p>
+<h2 id='optional-attributes-and-elements'>Optional attributes and elements</h2>
 <blockquote>
-<p>Example of Holder component mandatory attributes usage:</p>
+<p>Example of Holder component with some of the voluntary attributes:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight yaml"><code>
 <span class="na">dataHolder</span><span class="pi">:</span>
-  <span class="na">legalName</span><span class="pi">:</span> <span class="s">MindMote Oy</span>
-  <span class="na">businessId</span><span class="pi">:</span> <span class="s">12243434-12</span>
-  <span class="na">email</span><span class="pi">:</span> <span class="s">contact@mindmote.fi</span>
+  <span class="na">en</span><span class="pi">:</span>
+    <span class="na">legalName</span><span class="pi">:</span> <span class="s">MindMote Oy</span>
+    <span class="na">businessId</span><span class="pi">:</span> <span class="s">12243434-12</span>
+    <span class="na">email</span><span class="pi">:</span> <span class="s">contact@mindmote.fi</span>
+    <span class="na">taxID</span><span class="pi">:</span> <span class="s2">"</span><span class="s">12243434-12"</span>
+    <span class="na">vatID</span><span class="pi">:</span> <span class="s2">"</span><span class="s">12243434-12"</span>
+    <span class="na">logoURL</span><span class="pi">:</span> <span class="s2">"</span><span class="s">https://mindmote.fi/logo.png"</span>
+    <span class="na">description</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Digital</span><span class="nv"> </span><span class="s">Economy</span><span class="nv"> </span><span class="s">services</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">tools"</span>
+    <span class="na">URL</span><span class="pi">:</span> <span class="s2">"</span><span class="s">https://mindmote.fi"</span>
+    <span class="na">telephone</span><span class="pi">:</span> <span class="s2">"</span><span class="s">+35845</span><span class="nv"> </span><span class="s">0232</span><span class="nv"> </span><span class="s">2323"</span>
+    <span class="na">streetAddress</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Koulukatu</span><span class="nv"> </span><span class="s">1"</span>
+    <span class="na">postalCode</span><span class="pi">:</span> <span class="s2">"</span><span class="s">33100"</span>
+    <span class="na">addressRegion</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Pirkanmaa"</span>
+    <span class="na">addressLocality</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Tampere"</span>
+    <span class="na">addressCountry</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Finland"</span>
+    <span class="na">aggregateRating</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span>
+    <span class="na">ratingCount</span><span class="pi">:</span> <span class="s2">"</span><span class="s">1245"</span>
+    <span class="na">slogan</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span>
+    <span class="na">parentOrganization</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span>
 
 </code></pre></div>
 <table><thead>
@@ -1795,6 +1774,12 @@ not feasable or possible to arrange for various reasons. Type attribute indicate
 <td>element</td>
 <td>-</td>
 <td><strong>REQUIRED</strong> Binds the provider related business elements and attributes together</td>
+</tr>
+<tr>
+<td><strong>en</strong></td>
+<td>attribute</td>
+<td><a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1</a> defined 2-letter codes</td>
+<td>This element binds together other product attributes and expresses the langugage used. In the example this is &quot;en&quot;, which indicates that product details are in English. If you would like to use French details, then name the element &quot;fr&quot;. The naming of this element follows options (language codes) listed in <a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1</a> standard. <br/><br/> You can have product details in multiple languages simply by adding similar sets like the example - just change the binding element name to matching language code. <br/><br/> The pattern to implement multilanguage support for data products was adopted from de facto UI translation practices. The attributes inside this element are commonly rendered in the UI for the consumer and providing a simple way to implement that was the driving reasoning. See for example  <a href="https://simplelocalize.io/docs/file-formats/multi-language-json/">JSON - Multi Language</a></td>
 </tr>
 <tr>
 <td><strong>legalName</strong></td>
@@ -1814,41 +1799,6 @@ not feasable or possible to arrange for various reasons. Type attribute indicate
 <td>-</td>
 <td><strong>REQUIRED</strong> Email to be used in contacting the organization.</td>
 </tr>
-</tbody></table>
-
-<p>If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, <a href="https://github.com/Open-Data-Product-Initiative/open-data-product-spec-dev/issues">raise an issue in Github</a></p>
-<h2 id='optional-attributes-and-elements'>Optional attributes and elements</h2>
-<blockquote>
-<p>Example of Holder component with some of the voluntary attributes:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight yaml"><code>
-<span class="na">dataHolder</span><span class="pi">:</span>
-  <span class="na">taxID</span><span class="pi">:</span> <span class="s">12243434-12</span>
-  <span class="na">vatID</span><span class="pi">:</span> <span class="s">12243434-12</span>
-  <span class="na">businessDomain</span><span class="pi">:</span> <span class="s">Product catalogs</span>
-  <span class="na">logoURL</span><span class="pi">:</span> <span class="s">https://mindmote.fi/logo.png</span>
-  <span class="na">description</span><span class="pi">:</span> <span class="s">Digital Economy services and tools</span>
-  <span class="na">URL</span><span class="pi">:</span> <span class="s">https://mindmote.fi</span>
-  <span class="na">telephone</span><span class="pi">:</span> <span class="s2">"</span><span class="s">+35845</span><span class="nv"> </span><span class="s">0232</span><span class="nv"> </span><span class="s">2323"</span>
-  <span class="na">streetAddress</span><span class="pi">:</span> <span class="s">Koulukatu </span><span class="m">1</span>
-  <span class="na">postalCode</span><span class="pi">:</span> <span class="m">33100</span>
-  <span class="na">addressRegion</span><span class="pi">:</span> <span class="s">Pirkanmaa</span>
-  <span class="na">addressLocality</span><span class="pi">:</span> <span class="s">Tampere</span>
-  <span class="na">addressCountry</span><span class="pi">:</span> <span class="s">Finland</span>
-  <span class="na">aggregateRating</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
-  <span class="na">ratingCount</span><span class="pi">:</span> <span class="m">1245</span>
-  <span class="na">slogan</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
-  <span class="na">parentOrganization</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
-
-</code></pre></div>
-<table><thead>
-<tr>
-<th><div style="width:150px">Element name</div></th>
-<th>Type</th>
-<th>Options</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
 <tr>
 <td><strong>taxID</strong></td>
 <td>string</td>
@@ -2294,10 +2244,6 @@ not feasable or possible to arrange for various reasons. Type attribute indicate
       <span class="na">maxTransactionQuantity</span><span class="pi">:</span> <span class="m">1000</span>
       <span class="na">offering</span><span class="pi">:</span>
         <span class="pi">-</span> <span class="s">item </span><span class="m">1</span>
-  <span class="na">dataHolder</span><span class="pi">:</span>
-    <span class="na">legalName</span><span class="pi">:</span> <span class="s">MindMote Oy</span>
-    <span class="na">businessId</span><span class="pi">:</span> <span class="s">12243434-12</span>
-    <span class="na">email</span><span class="pi">:</span> <span class="s">contact@mindmote.fi</span>
 
 </code></pre></div><h1 id='terms-used'>Terms used</h1>
 <p>Here&#39;s list of terms used and what we mean with them. The meaning of terms is mostly taken from existing knowledge eg articles and other trusted sources. The source is always linked to the term. In some rare cases term is defined for the specification purposes only. </p>
