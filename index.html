@@ -544,18 +544,19 @@ The YAML examples are not based on any real data product, but exemplify the usag
 <div class="highlight"><pre class="highlight yaml"><code><span class="s">$schema</span><span class="pi">:</span> <span class="s">https://raw.githubusercontent.com/Open-Data-Product-Initiative/open-data-product-spec-dev/ddbc069196a664d0e28a0f3dc7c1c7fb49b64591/source/schema/odps-dev-json-schema.json</span>
 <span class="na">version</span><span class="pi">:</span> <span class="s">dev</span>
 <span class="na">product</span><span class="pi">:</span>
-  <span class="na">en</span><span class="pi">:</span>
-    <span class="na">name</span><span class="pi">:</span> <span class="s">Pets of the year</span>
-    <span class="na">productID</span><span class="pi">:</span> <span class="s">123456are</span>
-    <span class="na">visibility</span><span class="pi">:</span> <span class="s">private</span>
-    <span class="s">status"</span><span class="pi">:</span> <span class="s">draft</span>
-    <span class="na">type</span><span class="pi">:</span> <span class="s">dataset</span>
-  <span class="na">fi</span><span class="pi">:</span>
-    <span class="na">name</span><span class="pi">:</span> <span class="s">Vuoden suosituimmat lemmikit</span>
-    <span class="na">productID</span><span class="pi">:</span> <span class="s">123456are</span>
-    <span class="na">visibility</span><span class="pi">:</span> <span class="s">private</span>
-    <span class="na">status</span><span class="pi">:</span> <span class="s">draft</span>
-    <span class="na">type</span><span class="pi">:</span> <span class="s">dataset</span>
+  <span class="na">details</span><span class="pi">:</span>
+    <span class="na">en</span><span class="pi">:</span>
+      <span class="na">name</span><span class="pi">:</span> <span class="s">Pets of the year</span>
+      <span class="na">productID</span><span class="pi">:</span> <span class="s">123456are</span>
+      <span class="na">visibility</span><span class="pi">:</span> <span class="s">private</span>
+      <span class="s">status"</span><span class="pi">:</span> <span class="s">draft</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s">dataset</span>
+    <span class="na">fi</span><span class="pi">:</span>
+      <span class="na">name</span><span class="pi">:</span> <span class="s">Vuoden suosituimmat lemmikit</span>
+      <span class="na">productID</span><span class="pi">:</span> <span class="s">123456are</span>
+      <span class="na">visibility</span><span class="pi">:</span> <span class="s">private</span>
+      <span class="na">status</span><span class="pi">:</span> <span class="s">draft</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s">dataset</span>
 </code></pre></div>
 <table><thead>
 <tr>
@@ -582,6 +583,12 @@ The YAML examples are not based on any real data product, but exemplify the usag
 <td>element</td>
 <td>root element</td>
 <td><strong>REQUIRED</strong> Root element to tie all together.</td>
+</tr>
+<tr>
+<td><strong>details</strong></td>
+<td>element</td>
+<td>product business details</td>
+<td><strong>REQUIRED</strong> Binds together business details in different languages.</td>
 </tr>
 <tr>
 <td><strong>en</strong></td>
@@ -631,45 +638,46 @@ The YAML examples are not based on any real data product, but exemplify the usag
 <div class="highlight"><pre class="highlight yaml"><code><span class="na">schema</span><span class="pi">:</span> <span class="s">https://raw.githubusercontent.com/Open-Data-Product-Initiative/open-data-product-spec-dev/ddbc069196a664d0e28a0f3dc7c1c7fb49b64591/source/schema/odps-dev-json-schema.json</span>
 <span class="na">version</span><span class="pi">:</span> <span class="s">dev</span>
 <span class="na">product</span><span class="pi">:</span>
-  <span class="na">en</span><span class="pi">:</span>
-    <span class="na">name</span><span class="pi">:</span> <span class="s">Pets of the year</span>
-    <span class="na">productID</span><span class="pi">:</span> <span class="s">123456are</span>
-    <span class="na">valueProposition</span><span class="pi">:</span> <span class="s">Design a customised petstore using a data product that describes</span>
-      <span class="s">pets with their habits, preferences and characteristics.</span>
-    <span class="na">description</span><span class="pi">:</span> <span class="s">This is an example of a Petstore product.</span>
-    <span class="na">productSeries</span><span class="pi">:</span> <span class="s">Lovely pets data products</span>
-    <span class="na">visibility</span><span class="pi">:</span> <span class="s">private</span>
-    <span class="na">status</span><span class="pi">:</span> <span class="s">draft</span>
-    <span class="na">productVersion</span><span class="pi">:</span> <span class="s1">'</span><span class="s">0.1.0'</span>
-    <span class="na">versionNotes</span><span class="pi">:</span> <span class="s">New version with additional details such more accurate pet details</span>
-    <span class="na">issues</span><span class="pi">:</span> <span class="s">The current issues include incorrect information in the dog breeds. The</span>
-      <span class="s">resolution for these problems is planned for the next     update, scheduled</span>
-      <span class="s">to be released on July 15th, 2023.</span>
-    <span class="na">categories</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="s">pets</span>
-    <span class="na">standards</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="s">ISO 24631-6</span>
-    <span class="na">tags</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="s">pet</span>
-    <span class="na">brandSlogan</span><span class="pi">:</span> <span class="s">Passion for the data monetization</span>
-    <span class="na">type</span><span class="pi">:</span> <span class="s">dataset</span>
-    <span class="na">contentSample</span><span class="pi">:</span> <span class="s">https://download.com/pets.json</span>
-    <span class="na">logoURL</span><span class="pi">:</span> <span class="s">https://data-product-business.github.io/open-data-product-spec/images/logo-dps-ebd5a97d.png</span>
-    <span class="na">OutputFileFormats</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="s">JSON</span>
-    <span class="pi">-</span> <span class="s">XML</span>
-    <span class="pi">-</span> <span class="s">CSV</span>
-    <span class="pi">-</span> <span class="s">ZIP</span>
-    <span class="pi">-</span> <span class="s">PDF</span>
-    <span class="na">useCases</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="na">useCase</span><span class="pi">:</span>
-        <span class="na">useCaseTitle</span><span class="pi">:</span> <span class="s">Build attractive and lucrative petstore!</span>
-        <span class="na">useCaseDescription</span><span class="pi">:</span> <span class="s">Use case description how succesfull petstore chain was</span>
-          <span class="s">established in Abu Dhabi</span>
-        <span class="na">useCaseURL</span><span class="pi">:</span> <span class="s">https://marketplace.com/usecase1</span>
-    <span class="na">recommendedDataProducts</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="s">https://marketplace.com/dataproduct.json</span>
-    <span class="pi">-</span> <span class="s">https://marketplace.com/dataproduct-another.json</span>
+  <span class="na">details</span><span class="pi">:</span> 
+    <span class="na">en</span><span class="pi">:</span>
+      <span class="na">name</span><span class="pi">:</span> <span class="s">Pets of the year</span>
+      <span class="na">productID</span><span class="pi">:</span> <span class="s">123456are</span>
+      <span class="na">valueProposition</span><span class="pi">:</span> <span class="s">Design a customised petstore using a data product that describes</span>
+        <span class="s">pets with their habits, preferences and characteristics.</span>
+      <span class="na">description</span><span class="pi">:</span> <span class="s">This is an example of a Petstore product.</span>
+      <span class="na">productSeries</span><span class="pi">:</span> <span class="s">Lovely pets data products</span>
+      <span class="na">visibility</span><span class="pi">:</span> <span class="s">private</span>
+      <span class="na">status</span><span class="pi">:</span> <span class="s">draft</span>
+      <span class="na">productVersion</span><span class="pi">:</span> <span class="s1">'</span><span class="s">0.1.0'</span>
+      <span class="na">versionNotes</span><span class="pi">:</span> <span class="s">New version with additional details such more accurate pet details</span>
+      <span class="na">issues</span><span class="pi">:</span> <span class="s">The current issues include incorrect information in the dog breeds. The</span>
+        <span class="s">resolution for these problems is planned for the next     update, scheduled</span>
+        <span class="s">to be released on July 15th, 2023.</span>
+      <span class="na">categories</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">pets</span>
+      <span class="na">standards</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">ISO 24631-6</span>
+      <span class="na">tags</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">pet</span>
+      <span class="na">brandSlogan</span><span class="pi">:</span> <span class="s">Passion for the data monetization</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s">dataset</span>
+      <span class="na">contentSample</span><span class="pi">:</span> <span class="s">https://download.com/pets.json</span>
+      <span class="na">logoURL</span><span class="pi">:</span> <span class="s">https://data-product-business.github.io/open-data-product-spec/images/logo-dps-ebd5a97d.png</span>
+      <span class="na">OutputFileFormats</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">JSON</span>
+      <span class="pi">-</span> <span class="s">XML</span>
+      <span class="pi">-</span> <span class="s">CSV</span>
+      <span class="pi">-</span> <span class="s">ZIP</span>
+      <span class="pi">-</span> <span class="s">PDF</span>
+      <span class="na">useCases</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">useCase</span><span class="pi">:</span>
+          <span class="na">useCaseTitle</span><span class="pi">:</span> <span class="s">Build attractive and lucrative petstore!</span>
+          <span class="na">useCaseDescription</span><span class="pi">:</span> <span class="s">Use case description how succesfull petstore chain was</span>
+            <span class="s">established in Abu Dhabi</span>
+          <span class="na">useCaseURL</span><span class="pi">:</span> <span class="s">https://marketplace.com/usecase1</span>
+      <span class="na">recommendedDataProducts</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">https://marketplace.com/dataproduct.json</span>
+      <span class="pi">-</span> <span class="s">https://marketplace.com/dataproduct-another.json</span>
 
 </code></pre></div>
 <table><thead>
@@ -683,14 +691,14 @@ The YAML examples are not based on any real data product, but exemplify the usag
 <tr>
 <td><strong>created</strong></td>
 <td>date</td>
-<td>When prodcut was created. Use <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a></td>
-<td></td>
+<td>Use <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a></td>
+<td>When prodcut was created.</td>
 </tr>
 <tr>
 <td><strong>updated</strong></td>
 <td>date</td>
-<td>When prodcut was last updated Use Use <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a></td>
-<td></td>
+<td>Use <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a></td>
+<td>When prodcut was last updated.</td>
 </tr>
 <tr>
 <td><strong>valueProposition</strong></td>
