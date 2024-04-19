@@ -1198,18 +1198,20 @@ The YAML examples are not based on any real data product, but exemplify the usag
 </tr>
 </tbody></table>
 <h1 id='data-sla'>Data SLA</h1>
-<p>Data Service Level Agreement (SLA) <strong>Object</strong> contains attributes which define the desired and promised quality of the data product. SLA can be defined with 11 dimentions: </p>
+<p>Data Service Level Agreement (SLA) <strong>Object</strong> contains attributes which define the desired and promised quality of the data product. </p>
+
+<p><strong>SLA can be defined with 11 standardized dimentions:</strong></p>
 
 <ol>
-<li>latency (minimal amount of time before getting any response) </li>
-<li>uptime (Uptime is a measure of system reliability, expressed as the percentage of time a machine, typically a computer, has been working and available. See more https://uptime.is/) </li>
-<li>responseTime (amount of time to process external request) </li>
-<li>errorRate (Maximum tolerated errors in data, percentage) </li>
+<li>latency (minimal amount of time before getting any response.) </li>
+<li>uptime (Uptime is a measure of system reliability, expressed as the percentage of time a machine, typically a computer, has been working and available. See more https://uptime.is/.) </li>
+<li>responseTime (amount of time to process external request.) </li>
+<li>errorRate (Maximum tolerated errors in data, percentage.) </li>
 <li>endOfSupport (The date at which your product will not have support anymore.) </li>
 <li>endOfLife (The date at which your product will not be available anymore. No support, no access.) </li>
-<li>updateFrequency (how often data is updates) </li>
-<li>timeToDetect (How fast can you detect a problem? ) </li>
-<li>timeToNotify (Once you see a problem, how much time do you need to notify your users? ) </li>
+<li>updateFrequency (how often data is updates.) </li>
+<li>timeToDetect (How fast can you detect a problem?) </li>
+<li>timeToNotify (Once you see a problem, how much time do you need to notify your users?) </li>
 <li>timeToRepair (How long do you need to fix the issue once it is detected?) </li>
 <li>emailResponseTime (How long do you need to respond to email support requests?) </li>
 </ol>
@@ -1393,9 +1395,9 @@ not feasable or possible to arrange for various reasons. Type attribute indicate
 
 <p>If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, <a href="https://github.com/Open-Data-Product-Initiative/open-data-product-spec-dev/issues">raise an issue in Github</a></p>
 <h1 id='data-quality'>Data Quality</h1>
-<p>Data quality is essential for one main reason: You give customers the best experience when you make decisions using accurate data. A great customer experience leads to happy customers, brand loyalty, and higher revenue for your business. Information is only valuable if it is of high quality.  How can you assess your data quality? </p>
+<p>Data quality is essential for one main reason: You give customers the best experience when you make decisions using accurate data. A great customer experience leads to happy customers, brand loyalty, and higher revenue for your business. Information is only valuable if it is of high quality.  How can you assess your data quality? ODPS is compatible with EDM Council data quality model. </p>
 
-<p>ODPS offers 8 options to define and measure data quality: </p>
+<p><strong>ODPS offers 8 options to define and measure data quality:</strong> </p>
 
 <ol>
 <li>accuracy, </li>
