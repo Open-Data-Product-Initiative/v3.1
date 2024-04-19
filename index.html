@@ -1393,7 +1393,22 @@ not feasable or possible to arrange for various reasons. Type attribute indicate
 
 <p>If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, <a href="https://github.com/Open-Data-Product-Initiative/open-data-product-spec-dev/issues">raise an issue in Github</a></p>
 <h1 id='data-quality'>Data Quality</h1>
-<p>Data quality is essential for one main reason: You give customers the best experience when you make decisions using accurate data. A great customer experience leads to happy customers, brand loyalty, and higher revenue for your business. Information is only valuable if it is of high quality.  How can you assess your data quality? Data quality meets six dimensions: accuracy, completeness, consistency, timeliness, validity, and uniqueness. </p>
+<p>Data quality is essential for one main reason: You give customers the best experience when you make decisions using accurate data. A great customer experience leads to happy customers, brand loyalty, and higher revenue for your business. Information is only valuable if it is of high quality.  How can you assess your data quality? </p>
+
+<p>ODPS offers 8 options to define and measure data quality: </p>
+
+<ol>
+<li>accuracy, </li>
+<li>completeness, </li>
+<li>conformity,</li>
+<li>consistency,</li>
+<li>coverage, </li>
+<li>timeliness, </li>
+<li>validity, </li>
+<li>uniqueness. </li>
+</ol>
+
+<p>The above list most likely covers majority of the cases and needs of organizations. In case additional indicators are needed, then use specification extensions (x-) described in the specification separately. </p>
 
 <p>The values of the QA attributes are given by the vendor. Should you trust in the values, is the choice made by the data consumer. If possible utilize automatic checking of data quality against the source and update the values accordingly. </p>
 
@@ -1404,7 +1419,7 @@ not feasable or possible to arrange for various reasons. Type attribute indicate
 <p><strong>Note!</strong> The &quot;as code&quot; <em>spec</em> part of the component is the initial step towards embracing Everything as Code paradigm, but is still experimental. We need more vendors supporting the approach. In the mean while you can use custom solutions. </p>
 <h2 id='optional-attributes-and-elements'>Optional attributes and elements</h2>
 <blockquote>
-<p>Example of Data Quality component with some of the voluntary attributes:</p>
+<p>Example of Data Quality component with some of the data quality dimensions:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight yaml"><code>
 <span class="na">dataQuality</span><span class="pi">:</span>
@@ -1470,7 +1485,7 @@ not feasable or possible to arrange for various reasons. Type attribute indicate
 <tr>
 <td><strong>dimension</strong></td>
 <td>attribute</td>
-<td>string, one of: <em>accuracy, completeness, consistency, timeliness, validity, or uniqueness</em></td>
+<td>string, one of: <em>accuracy, completeness, conformity, consistency, coverage, timeliness, validity, or uniqueness.</em></td>
 <td>Defines the data quality dimension.</td>
 </tr>
 <tr>
