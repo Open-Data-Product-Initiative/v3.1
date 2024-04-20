@@ -359,30 +359,6 @@
               </ul>
           </li>
           <li>
-            <a href="#data-pricing-plans" class="toc-h1 toc-link" data-title="Data Pricing Plans">Data Pricing Plans</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#optional-attributes-and-elements" class="toc-h2 toc-link" data-title="Optional attributes and elements">Optional attributes and elements</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#dataops" class="toc-h1 toc-link" data-title="DataOps">DataOps</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#optional-attributes-and-elements" class="toc-h2 toc-link" data-title="Optional attributes and elements">Optional attributes and elements</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#data-access" class="toc-h1 toc-link" data-title="Data Access">Data Access</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#optional-attributes-and-elements" class="toc-h2 toc-link" data-title="Optional attributes and elements">Optional attributes and elements</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
             <a href="#data-sla" class="toc-h1 toc-link" data-title="Data SLA">Data SLA</a>
               <ul class="toc-list-h2">
                   <li>
@@ -399,7 +375,31 @@
               </ul>
           </li>
           <li>
+            <a href="#data-pricing-plans" class="toc-h1 toc-link" data-title="Data Pricing Plans">Data Pricing Plans</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#optional-attributes-and-elements" class="toc-h2 toc-link" data-title="Optional attributes and elements">Optional attributes and elements</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#data-licensing" class="toc-h1 toc-link" data-title="Data Licensing">Data Licensing</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#optional-attributes-and-elements" class="toc-h2 toc-link" data-title="Optional attributes and elements">Optional attributes and elements</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#dataops" class="toc-h1 toc-link" data-title="DataOps">DataOps</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#optional-attributes-and-elements" class="toc-h2 toc-link" data-title="Optional attributes and elements">Optional attributes and elements</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#data-access" class="toc-h1 toc-link" data-title="Data Access">Data Access</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#optional-attributes-and-elements" class="toc-h2 toc-link" data-title="Optional attributes and elements">Optional attributes and elements</a>
@@ -499,7 +499,7 @@
 <li>increase the speed of designing, testing, and implementing data products. </li>
 <li>speed up tools development around data product design, development and management.</li>
 <li>enable creation of automated data product deployment with standard methods (DataOps)</li>
-<li>enable Everything as Code approach for SLA and Data Quality monitoring</li>
+<li>enable <a href="https://www.cloudbees.com/blog/what-is-everything-as-code-eac">Everything as Code</a> approach for SLA and Data Quality monitoring</li>
 </ul>
 
 <p><strong>Note!</strong> In the &quot;Open Data Product&quot; focus is on the latter words and the prefix  &#39;open&#39; refers to the openness of the standard. Any kind of connotations to open data (a different thing) are not intentional, intended, or desirable.</p>
@@ -692,13 +692,13 @@ The YAML examples are not based on any real data product, but exemplify the usag
 <td><strong>created</strong></td>
 <td>date</td>
 <td>Use <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a></td>
-<td>When prodcut was created.</td>
+<td>When product was created.</td>
 </tr>
 <tr>
 <td><strong>updated</strong></td>
 <td>date</td>
 <td>Use <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a></td>
-<td>When prodcut was last updated.</td>
+<td>When product was last updated.</td>
 </tr>
 <tr>
 <td><strong>valueProposition</strong></td>
@@ -803,7 +803,7 @@ The YAML examples are not based on any real data product, but exemplify the usag
 <td>Valid URL of the more detailed usecase description.</td>
 </tr>
 <tr>
-<td>recommendedDataProducts**</td>
+<td><strong>recommendedDataProducts</strong></td>
 <td>array</td>
 <td>Array of valid URLs (<a href="https://datatracker.ietf.org/doc/html/rfc3986">RFC 3986</a>)</td>
 <td>Data products to recommend use next to this data product or even as replacement (for comparison). The URL provided MUST reference a description of a data product following this same standard</td>
@@ -811,412 +811,6 @@ The YAML examples are not based on any real data product, but exemplify the usag
 </tbody></table>
 
 <p>If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, <a href="https://github.com/Open-Data-Product-Initiative/open-data-product-spec-dev/issues">raise an issue in Github</a></p>
-<h1 id='data-pricing-plans'>Data Pricing Plans</h1>
-<p>Pricing is the process whereby a business sets the price at which it will sell its products and services. Pricing <strong>OBJECT</strong> consists of mandatory and optional attributes. This element contains pricing plans related data to be used for example in displaying the items in a marketplace. If needed the standard metadata is converted to marketplace internal format. We encourage all data product owners to enforce usage of this standard.  </p>
-
-<p><strong>11 supported pricing models include:</strong></p>
-
-<ol>
-<li>Recurring time period based (day, week, month, year) plans</li>
-<li>One time payments plans</li>
-<li>Pay-as-you-go plans</li>
-<li>Revenue sharing plans</li>
-<li>Data volume plan</li>
-<li>Dynamic pricing (high and low limits for automated pricing)</li>
-<li>Pay what you want plans</li>
-<li>Freemium</li>
-<li>Open data</li>
-<li>Value-based</li>
-<li>On Request</li>
-</ol>
-
-<p><button data-tf-popup="Q1Zo6wE5" data-tf-iframe-props="title=Customer Feedback Survey" style="all:unset;font-family:Helvetica,Arial,sans-serif;display:inline-block;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;background-color:#FA6B05;color:#000000;font-size:17px;border-radius:3px;padding:0 28px;font-weight:bold;height:42.5px;cursor:pointer;line-height:42.5px;text-align:center;margin:0;text-decoration:none;">Raise an issue</button><script src="//embed.typeform.com/next/embed.js"></script></p>
-<h2 id='optional-attributes-and-elements'>Optional attributes and elements</h2>
-<blockquote>
-<p>Example of Pricing component usage in english:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight yaml"><code>
-<span class="na">pricingPlans</span><span class="pi">:</span>
-  <span class="na">en</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Premium subscription 1 year</span>
-    <span class="na">priceCurrency</span><span class="pi">:</span> <span class="s">EUR</span>
-    <span class="na">price</span><span class="pi">:</span> <span class="m">50.00</span>
-    <span class="na">billingDuration</span><span class="pi">:</span> <span class="s">year</span>
-    <span class="na">unit</span><span class="pi">:</span> <span class="s">recurring</span>
-    <span class="na">maxTransactionQuantity</span><span class="pi">:</span> <span class="s">unlimited</span>
-    <span class="na">offering</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="s">High Quality Pets data</span>
-      <span class="pi">-</span> <span class="s">Unlimited transactions</span>
-      <span class="pi">-</span> <span class="s">Billed annually</span> 
-  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Premium Package Monthly</span>
-    <span class="na">priceCurrency</span><span class="pi">:</span> <span class="s">EUR</span>
-    <span class="na">price</span><span class="pi">:</span> <span class="m">5.00</span>
-    <span class="na">billingDuration</span><span class="pi">:</span> <span class="s">month</span>
-    <span class="na">unit</span><span class="pi">:</span> <span class="s">recurring</span>
-    <span class="na">maxTransactionQuantity</span><span class="pi">:</span> <span class="s">unlimited</span>
-    <span class="na">offering</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="s">High Quality Pets data</span>
-      <span class="pi">-</span> <span class="s">Unlimited transactions</span>
-      <span class="pi">-</span> <span class="s">Billed monthly</span> 
-  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Freemium Package</span>
-    <span class="na">priceCurrency</span><span class="pi">:</span> <span class="s">EUR</span>
-    <span class="na">price</span><span class="pi">:</span> <span class="m">0.00</span>
-    <span class="na">billingDuration</span><span class="pi">:</span> <span class="s">month</span>
-    <span class="na">unit</span><span class="pi">:</span> <span class="s">recurring</span>
-    <span class="na">maxTransactionQuantity</span><span class="pi">:</span> <span class="m">1000</span>
-    <span class="na">offering</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="s">High Quality Pets data</span>
-      <span class="pi">-</span> <span class="s">Free to use, no cost at all!</span>
-      <span class="pi">-</span> <span class="s">Fair amount of transactions for testing and small business</span> 
-  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Revenue sharing</span>
-    <span class="na">priceCurrency</span><span class="pi">:</span> <span class="s">percentage</span>
-    <span class="na">price</span><span class="pi">:</span> <span class="m">5.50</span>
-    <span class="na">billingDuration</span><span class="pi">:</span> <span class="s">month</span>
-    <span class="na">unit</span><span class="pi">:</span> <span class="s">revenue-sharing</span>
-    <span class="na">maxTransactionQuantity</span><span class="pi">:</span> <span class="m">20000</span>
-    <span class="na">offering</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="s">High Quality Pets data</span>
-      <span class="pi">-</span> <span class="s">No upfront fee</span>
-      <span class="pi">-</span> <span class="s">Billed monthly</span> 
-
-</code></pre></div>
-<table><thead>
-<tr>
-<th><div style="width:150px">Element name</div></th>
-<th>Type</th>
-<th>Options</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td><strong>pricingPlans</strong></td>
-<td>element</td>
-<td>-</td>
-<td>Binds the pricing plans related elements and attributes together</td>
-</tr>
-<tr>
-<td><strong>en</strong></td>
-<td>element</td>
-<td><a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1</a> defined 2-letter codes</td>
-<td><strong>REQUIRED</strong> - <strong>NOTE! This is a dynamic element!</strong> This element binds together other product pricing plan attributes and expresses the langugage used. In the example this is &quot;en&quot;, which indicates that pricing plan details are in English. If you would like to use French details, then name the element &quot;fr&quot;. The naming of this element follows options (language codes) listed in <a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1</a> standard. <br/><br/> You can have product pricing plan details in multiple languages simply by adding similar sets like the example - just change the binding element name to matching language code. <br/><br/> The pattern to implement multilanguage support for data products was adopted from de facto UI translation practices. The attributes inside this element are commonly rendered in the UI for the consumer and providing a simple way to implement that was the driving reasoning. See for example  <a href="https://simplelocalize.io/docs/file-formats/multi-language-json/">JSON - Multi Language</a></td>
-</tr>
-<tr>
-<td><strong>priceCurrency</strong></td>
-<td>string</td>
-<td>Use standard formats: <a href="https://en.wikipedia.org/wiki/ISO_4217">ISO 4217</a> currency format e.g. &quot;USD&quot;; Ticker symbol for cryptocurrencies e.g. &quot;BTC&quot;</td>
-<td><strong>REQUIRED</strong> The primary currency used in pricing. Platforms are assumed to use this as primary currency if currency conversions are used to display product pricing in different locations for various currencies. If the <em>unit</em> is revenue-sharing, then this attribute value MUST be percentage.</td>
-</tr>
-<tr>
-<td><strong>price</strong></td>
-<td>string</td>
-<td>-</td>
-<td><strong>REQUIRED</strong> The offer price of a product, or of a price component, or revenue-sharing percentage. <br/><br/> If the <em>unit</em> of pricing is revenue-sharing, then this <em>price</em> attribute value is percentage value. <br/><br/> Use &#39;.&#39; (Unicode &#39;FULL STOP&#39; (U+002E)) rather than &#39;,&#39; to indicate a decimal point. Avoid using these symbols as a readability separator. Use values from 0123456789 (Unicode &#39;DIGIT ZERO&#39; (U+0030) to &#39;DIGIT NINE&#39; (U+0039)) rather than superficially similiar Unicode symbols. <br/><br/>With <em>data-volume</em> the price is for each 1GB of data.</td>
-</tr>
-<tr>
-<td><strong>billingDuration</strong></td>
-<td>string</td>
-<td>options: instant, day, week, month, year</td>
-<td><strong>REQUIRED</strong> Specifies for how long this price (or price component) will be billed. Can be used, for example, to model the contractual duration of a subscription or payment plan.</td>
-</tr>
-<tr>
-<td><strong>unit</strong></td>
-<td>string</td>
-<td>One of: One-time-payment, Pay-per-use, Recurring, Revenue-sharing, Data-volume , Pay-what-you-want, Freemium, Open-data, Value-based, On-request</td>
-<td><strong>REQUIRED</strong> One-time-payment is for single time purchase purposes, further purchaces are not intended to continue under same agreement. <br/><br/> <em>Pay-per-use</em> is intended for continuous usage and price set is for each successful usage action. <br/><br/> <em>Recurrring</em> is intended for continuous time period plans. <br/><br/><em>Revenue sharing</em> is a performance-based income model. An effective revenue sharing deal structure is offering your expertise to a business owner to help them grow their business. In return, you get paid a percentage of the revenue as a royalty fee. <br/><br/> <em>Freemium</em> is for free access. Use this option also for open data. <br/><br/> <em>Data-volume</em> is for data amount based pricing in which customer pays based on the served data amount. The price is always for 1GB of data. <br/><br/> <em>Pay-what-you-want</em>  is a pricing system where buyers pay any desired amount for a given commodity, sometimes including zero. In some cases, a minimum (floor) price may be set, and/or a suggested price may be indicated as guidance for the buyer. The buyer can also select an amount higher than the standard price for the commodity. If the floor price is set, use <em>minPrice</em> attribute. <br/><br/> <em>Open-data</em>  is an explicit pricing plan category for open data. By default open data should be free, but in some cases it can have a price. <br/><br/> <em>Value-based</em> is value-based selling unit. Present the outcome of your story with solid data and a measurable impact with help of <em>offering</em> attribute. Example: “We can lower the energy bill in heating by $8-13/square meter in a year. Try out simulator to calculate your value!”. Use optional <em>valueSimulator</em> attribute to provide link (URL) to value simulator you have created. In order to set base fee for value-based plan, you can for example set monthly (<em>billingDuration</em>) plan with base see with help of <em>minPrice</em> attribute. <br/><br/> <em>On-request</em> is for plans in which customer is given access to data product after contacting provider. Use provider contact information in providing means to contact data product provider for access permissions request.</td>
-</tr>
-<tr>
-<td><strong>maxTransactionQuantity</strong></td>
-<td>Integer</td>
-<td>Integer</td>
-<td><strong>REQUIRED</strong> The maximum transaction quantity for the given billing duration. Use this to define for example monthly (or any other period) request limit to the data product. Note! If you want to set unlimited use, value must be 0 (zero).</td>
-</tr>
-<tr>
-<td><strong>offering</strong></td>
-<td>string</td>
-<td>array</td>
-<td><strong>REQUIRED</strong> The element that contains pricing plan content as array of strings. Think of this as the list of what is included in the pricing plan and what you offer in return to the price asked. Use the language defined in the <em>plan</em></td>
-</tr>
-<tr>
-<td><strong>minPrice</strong></td>
-<td>string</td>
-<td>-</td>
-<td>The lowest price if the price is a range. If dynamic pricing is used with this product, this is the lowest price allowed. In dynamic pricing businesses are able to change prices based on algorithms that take into account competitor pricing, supply and demand, and other external factors in the market. Use &#39;.&#39; (Unicode &#39;FULL STOP&#39; (U+002E)) rather than &#39;,&#39; to indicate a decimal point. Avoid using these symbols as a readability separator. Use values from 0123456789 (Unicode &#39;DIGIT ZERO&#39; (U+0030) to &#39;DIGIT NINE&#39; (U+0039)) rather than superficially similiar Unicode symbols.</td>
-</tr>
-<tr>
-<td><strong>maxPrice</strong></td>
-<td>string</td>
-<td>-</td>
-<td>The highest price if the price is a range. If dynamic pricing is used with this product, this is the highest price allowed. Use &#39;.&#39; (Unicode &#39;FULL STOP&#39; (U+002E)) rather than &#39;,&#39; to indicate a decimal point. Avoid using these symbols as a readability separator. Use values from 0123456789 (Unicode &#39;DIGIT ZERO&#39; (U+0030) to &#39;DIGIT NINE&#39; (U+0039)) rather than superficially similiar Unicode symbols.</td>
-</tr>
-<tr>
-<td><strong>valueAddedTaxIncluded</strong></td>
-<td>boolean</td>
-<td>true/false</td>
-<td>Specifies whether the applicable value-added tax (VAT) is included in the price specification or not.</td>
-</tr>
-<tr>
-<td><strong>valueAddedTaxPercentage</strong></td>
-<td>Integer</td>
-<td>Number percentage value, range 0-100</td>
-<td>Use &#39;.&#39; (Unicode &#39;FULL STOP&#39; (U+002E)) rather than &#39;,&#39; to indicate a decimal point. Avoid using these symbols as a readability separator. Use values from 0123456789 (Unicode &#39;DIGIT ZERO&#39; (U+0030) to &#39;DIGIT NINE&#39; (U+0039)) rather than superficially similiar Unicode symbols.</td>
-</tr>
-<tr>
-<td><strong>validFrom</strong></td>
-<td>DateTime</td>
-<td>A combination of date and time in <a href="https://www.ionos.com/digitalguide/websites/web-development/iso-8601/">ISO 8601</a> format yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ.</td>
-<td>The date when the item becomes valid.</td>
-</tr>
-<tr>
-<td><strong>validTo</strong></td>
-<td>DateTime</td>
-<td>A combination of date and time in <a href="https://www.ionos.com/digitalguide/websites/web-development/iso-8601/">ISO 8601</a> format yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ.</td>
-<td>The date after when the item is not valid.</td>
-</tr>
-<tr>
-<td><strong>additionalPrice</strong></td>
-<td>string</td>
-<td>-</td>
-<td>This is used to define fees for usage which exceeds the defined max transaction quantity. This value is for each additional transaction. Use &#39;.&#39; (Unicode &#39;FULL STOP&#39; (U+002E)) rather than &#39;,&#39; to indicate a decimal point. Avoid using these symbols as a readability separator. Use values from 0123456789 (Unicode &#39;DIGIT ZERO&#39; (U+0030) to &#39;DIGIT NINE&#39; (U+0039)) rather than superficially similiar Unicode symbols.</td>
-</tr>
-<tr>
-<td><strong>maxDataQuantity</strong></td>
-<td>Integer</td>
-<td>-</td>
-<td>The maximum amount of data transferred during the billing duration. Unit is GB.</td>
-</tr>
-<tr>
-<td><strong>valueSimulator</strong></td>
-<td>url</td>
-<td>valid url</td>
-<td>Intended to be used with <em>value-based</em> pricing plan. Provide url to value simulator in which customer can see the value in various cases. In the simulator customer might be able to input own variables to match their exact case and see the gained value.</td>
-</tr>
-</tbody></table>
-
-<p>If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, <a href="https://github.com/Open-Data-Product-Initiative/open-data-product-spec-dev/issues">raise an issue in Github</a></p>
-<h1 id='dataops'>DataOps</h1>
-<p>DataOps is a process whereby a data product pipeline deployment method is defined. Usually the deployment script contains the logic of the individual steps as well as the code chaining the steps together.</p>
-
-<p>DataOps <strong>OBJECT</strong> describes building, deploying, and running data product&#39;s code, and storing and giving access to data and metadata. This principle has been adopted from the <a href="https://towardsdatascience.com/what-is-a-data-mesh-and-how-not-to-mesh-it-up-210710bb41e0">Data Mesh</a>.</p>
-<h2 id='optional-attributes-and-elements'>Optional attributes and elements</h2>
-<blockquote>
-<p>Example of DataOps component usage:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight yaml"><code>
-<span class="na">dataOps</span><span class="pi">:</span>
-  <span class="na">data</span><span class="pi">:</span>
-    <span class="na">schemaLocationURL</span><span class="pi">:</span> <span class="s">http://http://192.168.10.1/schemas/2016/petshopML-2.3/schema/petstore.xsd</span>
-
-  <span class="na">lineage</span><span class="pi">:</span>
-    <span class="na">dataLineageTool</span><span class="pi">:</span> <span class="s">Collibra</span>
-    <span class="na">dataLineageOutput</span><span class="pi">:</span> <span class="s">http://192.168.10.1/lineage.json</span>
-
-  <span class="na">infrastructure</span><span class="pi">:</span>
-    <span class="na">platform</span><span class="pi">:</span> <span class="s">Azure</span>
-    <span class="na">region</span><span class="pi">:</span> <span class="s">West US 2 (Washington)</span>
-    <span class="na">storageTechnology</span><span class="pi">:</span> <span class="s">Azure SQL</span>
-    <span class="na">storageType</span><span class="pi">:</span> <span class="s">sql</span>
-    <span class="na">containerTool</span><span class="pi">:</span> <span class="s">helm</span>
-
-  <span class="na">build</span><span class="pi">:</span>
-    <span class="na">format</span><span class="pi">:</span> <span class="s">yaml</span>
-    <span class="na">hashType</span><span class="pi">:</span> <span class="s">SHA-2</span>
-    <span class="na">checksum</span><span class="pi">:</span> <span class="s">7b7444ab8f5832e9ae8f54834782af995d0a83b4a1d77a75833eda7e19b4c921</span>
-    <span class="na">signatureType</span><span class="pi">:</span> <span class="s">JWK</span>
-    <span class="na">scriptURL</span><span class="pi">:</span> <span class="s">http://192.168.10.1/rundatapipeline.yml</span>
-    <span class="na">deploymentDocumentationURL</span><span class="pi">:</span> <span class="s">http://192.168.10.1/datapipeline</span>
-
-</code></pre></div>
-<table><thead>
-<tr>
-<th><div style="width:150px">Element name</div></th>
-<th>Type</th>
-<th>Options</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td><strong>dataOps</strong></td>
-<td>element</td>
-<td>-</td>
-<td>Binds the dataOps related elements and attributes together.</td>
-</tr>
-<tr>
-<td><strong>infrastructure</strong></td>
-<td>element</td>
-<td>-</td>
-<td>Infrastructure is a process whereby a data product pipeline deployment method is defined.</td>
-</tr>
-<tr>
-<td><strong>platform</strong></td>
-<td>string</td>
-<td>any</td>
-<td>Platform infrastructure, such as AWS, GCP, Azure.</td>
-</tr>
-<tr>
-<td><strong>region</strong></td>
-<td>string</td>
-<td>any</td>
-<td>Provide details of cloud region of AWS, Azure or alike. Examples for AWS: US West (Oregon), Canada (Central), US East (N. Virginia), US East (Ohio). Examples for Azure: Canada Central (Toronto), East US 2 (Virginia), West US 2 (Washington)</td>
-</tr>
-<tr>
-<td><strong>storageTechnology</strong></td>
-<td>string</td>
-<td>any</td>
-<td>Describes the internal storage area technology, such as Amazon S3, Google Cloud Storage, Azure Blob Storage, Azure SQL.</td>
-</tr>
-<tr>
-<td><strong>storageType</strong></td>
-<td>string</td>
-<td>any</td>
-<td>Describes the internal storage type, such as files, sql, events, MQTT.</td>
-</tr>
-<tr>
-<td><strong>containerTool</strong></td>
-<td>string</td>
-<td>any</td>
-<td>A name of the package manager, container or infrastructure as code tool.</td>
-</tr>
-<tr>
-<td><strong>format</strong></td>
-<td>string</td>
-<td>any</td>
-<td>Type of script language.</td>
-</tr>
-<tr>
-<td><strong>schemaLocationURL</strong></td>
-<td>URL</td>
-<td>Valid URL</td>
-<td>The URL of the data product schema, such as XSD, XML or JSON Schema.</td>
-</tr>
-<tr>
-<td><strong>scriptURL</strong></td>
-<td>URL</td>
-<td>Valid URL</td>
-<td>The URL of the deployment script. Script can be used for implementing the data product. In a Data Mesh -model it can be used to define, for example, one or more outputs which take the data from source systems or other data products.</td>
-</tr>
-<tr>
-<td><strong>deploymentDocumentationURL</strong></td>
-<td>URL</td>
-<td>Valid URL</td>
-<td>The URL of the deployment documentation.</td>
-</tr>
-<tr>
-<td><strong>datalineageTool</strong></td>
-<td>URL</td>
-<td>Valid URL</td>
-<td>A tool to view the data lineage.</td>
-</tr>
-<tr>
-<td><strong>datalineageOutput</strong></td>
-<td>URL</td>
-<td>Valid URL</td>
-<td>The URL of the data lineage output. Data lineage output shows the mapping of source data to target output on a metadata level</td>
-</tr>
-<tr>
-<td><strong>hashType</strong></td>
-<td>string</td>
-<td>One of: SHA-1, SHA-2, SHA-3</td>
-<td>Type of secure hash algorithm for checksum.</td>
-</tr>
-<tr>
-<td><strong>checksum</strong></td>
-<td>string</td>
-<td>any</td>
-<td>Script checksum.</td>
-</tr>
-<tr>
-<td><strong>signatureType</strong></td>
-<td>string</td>
-<td>any</td>
-<td>A public-key cryptosystem,such as JWK, PKCS#12, or PEM.</td>
-</tr>
-</tbody></table>
-<h1 id='data-access'>Data Access</h1>
-<p>Data Access <strong>OBJECT</strong> describes the authorised ability to retrieve, edit, copy or transfer data from IT systems.</p>
-<h2 id='optional-attributes-and-elements'>Optional attributes and elements</h2>
-<blockquote>
-<p>Example of Data Access component usage:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight yaml"><code>
-<span class="na">dataAccess</span><span class="pi">:</span>
-  <span class="na">interface</span><span class="pi">:</span>
-    <span class="na">outputPorttype</span><span class="pi">:</span> <span class="s">API</span>
-    <span class="na">authenticationMethod</span><span class="pi">:</span> <span class="s">OAuth</span>
-    <span class="na">specification</span><span class="pi">:</span> <span class="s">OAS</span>
-    <span class="na">format</span><span class="pi">:</span> <span class="s">GraphQL</span>
-    <span class="na">specsURL</span><span class="pi">:</span> <span class="s">http://192.168.10.1/petshop.json</span>
-    <span class="na">documentationURL</span><span class="pi">:</span> <span class="s">http://192.168.10.1/petshop</span>
-
-</code></pre></div>
-<table><thead>
-<tr>
-<th><div style="width:150px">Element name</div></th>
-<th>Type</th>
-<th>Options</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td><strong>dataAccess</strong></td>
-<td>element</td>
-<td>-</td>
-<td>Binds the data access related elements and attributes together.</td>
-</tr>
-<tr>
-<td><strong>interface</strong></td>
-<td>element</td>
-<td>-</td>
-<td>Reference to the ability to use data.</td>
-</tr>
-<tr>
-<td><strong>outputPorttype</strong></td>
-<td>string</td>
-<td>any</td>
-<td>Type of data access, such as API, SQL, sFTP, gRPC.</td>
-</tr>
-<tr>
-<td><strong>hashType</strong></td>
-<td>string</td>
-<td>any</td>
-<td>Type of secure hash algorithm, such as SHA-1, SHA-2, for checksum, when output is file(s).</td>
-</tr>
-<tr>
-<td><strong>checksum</strong></td>
-<td>string</td>
-<td>any</td>
-<td>File checksum.</td>
-</tr>
-<tr>
-<td><strong>authenticationMethod</strong></td>
-<td>string</td>
-<td>any</td>
-<td>Data access authentication method type, such as API key, HTTP Basic, OAuth, No authentication.</td>
-</tr>
-<tr>
-<td><strong>specification</strong></td>
-<td>string</td>
-<td>any</td>
-<td>Type of the data access specification, such as OAS, RAML, Slate.</td>
-</tr>
-<tr>
-<td><strong>format</strong></td>
-<td>string</td>
-<td>any</td>
-<td>Data access file format type, such as JSON, XML, GraphQL, plain text.</td>
-</tr>
-<tr>
-<td><strong>specsURL</strong></td>
-<td>URL</td>
-<td>Valid URL</td>
-<td>The URL of the data access documentation, preferably in a machine-readable format, such as OpenAPI specs.</td>
-</tr>
-<tr>
-<td><strong>documentationURL</strong></td>
-<td>URL</td>
-<td>Valid URL</td>
-<td>The URL of the separated data access documentation or guide. For example, it may contain instructions on how to create and manage api keys.</td>
-</tr>
-</tbody></table>
 <h1 id='data-sla'>Data SLA</h1>
 <p>Data Service Level Agreement (SLA) <strong>Object</strong> contains attributes which define the desired and promised quality of the data product. </p>
 
@@ -1289,7 +883,7 @@ The YAML examples are not based on any real data product, but exemplify the usag
 <p>Each dimension has objective value, a unit and then <em>monitoring</em> &quot;as code&quot; to verify objective. In some cases monitoring is 
 not feasable or possible to arrange for various reasons. <em>Type</em> attribute indicates which monitoring system is used. <em>Reference</em> attribute contains url for reference documentation regarding the monitoring spec. <em>Spec</em> contains the actucal &quot;as code&quot; part as YAML or string which can be executed in selected monitoring system as is. <strong>Note!</strong> The &quot;as code&quot; part of the component is the initial step towards embracing Everything as Code paradigm, but is still experimental.</p>
 
-<p>The SLA object is general in nature and should be enough for common (80%) use cases. Note that you can make extensions to the standard with &quot;x-&quot; mechanism in order to fulfill any industry specific needs. The &quot;Specification extensions&quot; section provides details on how to use this feature. </p>
+<p>The SLA object is general in nature and should be enough for common (80%) use cases. Note that you can make extensions to the standard with &quot;x-&quot; mechanism in order to fulfill any industry specific needs. The <a href="#specification-extensions">&quot;Specification extensions&quot;</a> section provides details on how to use this feature. </p>
 
 <p>Also basic email and phone support information can be expressed inside the SLA component.  </p>
 
@@ -1675,6 +1269,228 @@ not feasable or possible to arrange for various reasons. <em>Type</em> attribute
 </tbody></table>
 
 <p>If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, <a href="https://github.com/Open-Data-Product-Initiative/open-data-product-spec-dev/issues">raise an issue in Github</a></p>
+<h1 id='data-pricing-plans'>Data Pricing Plans</h1>
+<p>Pricing is the process whereby a business sets the price at which it will sell its products and services. Pricing <strong>OBJECT</strong> consists of mandatory and optional attributes. This element contains pricing plans related data to be used for example in displaying the items in a marketplace. If needed the standard metadata is converted to marketplace internal format. We encourage all data product owners to enforce usage of this standard.  </p>
+
+<p><strong>12 standardized pricing models include:</strong></p>
+
+<table><thead>
+<tr>
+<th><div style="width:150px">Pricing plan</div></th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>Recurring time period based</strong></td>
+<td>In the simplest terms, recurring payments (also known as subscription payments, automatic payments, or recurring billing) take place when customers authorize a merchant to charge them repeatedly for goods or services on a prearranged schedule.</td>
+</tr>
+<tr>
+<td><strong>One time payments plans</strong></td>
+<td>One Time Fee Revenue Model is a business model that generates revenue through a single payment for perpetual product use or service access. The One Time Fee Revenue Model is a fundamental concept in the world of small businesses and entrepreneurship.</td>
+</tr>
+<tr>
+<td><strong>Pay-as-you-go plans</strong></td>
+<td>The Pay As You Go Plan is a flexible alternative to a monthly plan. Instead of paying a recurring monthly charge, you buy credits as needed.</td>
+</tr>
+<tr>
+<td><strong>Revenue sharing plans</strong></td>
+<td>Revenue sharing is a performance-based income model that involves sharing business profits or losses among participating partners. Revenue sharing is a profit-sharing system that ensures all parties involved are compensated for their contribution to the business.</td>
+</tr>
+<tr>
+<td><strong>Data volume plan</strong></td>
+<td>Volume pricing is a pricing strategy in which an item&#39;s price per unit decreases as the purchase quantity increases.</td>
+</tr>
+<tr>
+<td><strong>Trial</strong></td>
+<td>A free trial pricing strategy offers target customers a chance to try your product for free for a limited time. It is a sales promotion technique that uses the product to market itself.</td>
+</tr>
+<tr>
+<td><strong>Dynamic pricing</strong></td>
+<td>Dynamic pricing is a pricing strategy that applies variable prices instead of fixed prices. Instead of deciding on a set price for a season, retailers can update their prices multiple times per day to capitalize on the ever-changing market.</td>
+</tr>
+<tr>
+<td><strong>Pay what you want plans</strong></td>
+<td>Also known as PWYW pricing, is a pricing strategy in which buyers pay the desired price for a particular product, commodity, or service. The approach may sometimes lead to the value of zero. Following the buyer&#39;s guidance, one can set a suggested price and a minimum price.</td>
+</tr>
+<tr>
+<td><strong>Freemium</strong></td>
+<td>A type of business model that offers basic features of a product or service to users at no cost and charges a premium for supplemental or advanced features.</td>
+</tr>
+<tr>
+<td><strong>Open data</strong></td>
+<td>Access to open data is expected to be free of cost, but in some cases it is also possible to collect fees to cover costs of the service.</td>
+</tr>
+<tr>
+<td><strong>Value-based</strong></td>
+<td>Value-based pricing is a strategy of setting prices primarily based on a consumer&#39;s perceived value of a product or service. Value-based pricing is customer-focused, meaning companies base their pricing on how much the customer believes a product is worth. Often worth to provide customer a value simulator to see expected value gains and possibly set the price based on that. Pricing would be customized per customer.</td>
+</tr>
+<tr>
+<td><strong>On Request</strong></td>
+<td>Access to data product is given only on request. Often provider expects customer to meet provider first. In the discussions conditions, pricing etc are agreed.</td>
+</tr>
+</tbody></table>
+<h2 id='optional-attributes-and-elements'>Optional attributes and elements</h2>
+<blockquote>
+<p>Example of Pricing component usage in english:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml"><code>
+<span class="na">pricingPlans</span><span class="pi">:</span>
+  <span class="na">en</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Premium subscription 1 year</span>
+    <span class="na">priceCurrency</span><span class="pi">:</span> <span class="s">EUR</span>
+    <span class="na">price</span><span class="pi">:</span> <span class="m">50.00</span>
+    <span class="na">billingDuration</span><span class="pi">:</span> <span class="s">year</span>
+    <span class="na">unit</span><span class="pi">:</span> <span class="s">recurring</span>
+    <span class="na">maxTransactionQuantity</span><span class="pi">:</span> <span class="s">unlimited</span>
+    <span class="na">offering</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">High Quality Pets data</span>
+      <span class="pi">-</span> <span class="s">Unlimited transactions</span>
+      <span class="pi">-</span> <span class="s">Billed annually</span> 
+  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Premium Package Monthly</span>
+    <span class="na">priceCurrency</span><span class="pi">:</span> <span class="s">EUR</span>
+    <span class="na">price</span><span class="pi">:</span> <span class="m">5.00</span>
+    <span class="na">billingDuration</span><span class="pi">:</span> <span class="s">month</span>
+    <span class="na">unit</span><span class="pi">:</span> <span class="s">recurring</span>
+    <span class="na">maxTransactionQuantity</span><span class="pi">:</span> <span class="s">unlimited</span>
+    <span class="na">offering</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">High Quality Pets data</span>
+      <span class="pi">-</span> <span class="s">Unlimited transactions</span>
+      <span class="pi">-</span> <span class="s">Billed monthly</span> 
+  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Freemium Package</span>
+    <span class="na">priceCurrency</span><span class="pi">:</span> <span class="s">EUR</span>
+    <span class="na">price</span><span class="pi">:</span> <span class="m">0.00</span>
+    <span class="na">billingDuration</span><span class="pi">:</span> <span class="s">month</span>
+    <span class="na">unit</span><span class="pi">:</span> <span class="s">recurring</span>
+    <span class="na">maxTransactionQuantity</span><span class="pi">:</span> <span class="m">1000</span>
+    <span class="na">offering</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">High Quality Pets data</span>
+      <span class="pi">-</span> <span class="s">Free to use, no cost at all!</span>
+      <span class="pi">-</span> <span class="s">Fair amount of transactions for testing and small business</span> 
+  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Revenue sharing</span>
+    <span class="na">priceCurrency</span><span class="pi">:</span> <span class="s">percentage</span>
+    <span class="na">price</span><span class="pi">:</span> <span class="m">5.50</span>
+    <span class="na">billingDuration</span><span class="pi">:</span> <span class="s">month</span>
+    <span class="na">unit</span><span class="pi">:</span> <span class="s">revenue-sharing</span>
+    <span class="na">maxTransactionQuantity</span><span class="pi">:</span> <span class="m">20000</span>
+    <span class="na">offering</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">High Quality Pets data</span>
+      <span class="pi">-</span> <span class="s">No upfront fee</span>
+      <span class="pi">-</span> <span class="s">Billed monthly</span> 
+
+</code></pre></div>
+<table><thead>
+<tr>
+<th><div style="width:150px">Element name</div></th>
+<th>Type</th>
+<th>Options</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>pricingPlans</strong></td>
+<td>element</td>
+<td>-</td>
+<td>Binds the pricing plans related elements and attributes together</td>
+</tr>
+<tr>
+<td><strong>en</strong></td>
+<td>element</td>
+<td><a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1</a> defined 2-letter codes</td>
+<td><strong>NOTE! This is a dynamic element!</strong> This element binds together other product pricing plan attributes and expresses the langugage used. In the example this is &quot;en&quot;, which indicates that pricing plan details are in English. If you would like to use French details, then name the element &quot;fr&quot;. The naming of this element follows options (language codes) listed in <a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1</a> standard. <br/><br/> You can have product pricing plan details in multiple languages simply by adding similar sets like the example - just change the binding element name to matching language code. <br/><br/> The pattern to implement multilanguage support for data products was adopted from de facto UI translation practices. The attributes inside this element are commonly rendered in the UI for the consumer and providing a simple way to implement that was the driving reasoning. See for example  <a href="https://simplelocalize.io/docs/file-formats/multi-language-json/">JSON - Multi Language</a></td>
+</tr>
+<tr>
+<td><strong>priceCurrency</strong></td>
+<td>string</td>
+<td>Use standard formats: <a href="https://en.wikipedia.org/wiki/ISO_4217">ISO 4217</a> currency format e.g. &quot;USD&quot;; Ticker symbol for cryptocurrencies e.g. &quot;BTC&quot;</td>
+<td>The primary currency used in pricing. Platforms are assumed to use this as primary currency if currency conversions are used to display product pricing in different locations for various currencies. If the <em>unit</em> is revenue-sharing, then this attribute value MUST be percentage.</td>
+</tr>
+<tr>
+<td><strong>price</strong></td>
+<td>string</td>
+<td>-</td>
+<td>The offer price of a product, or of a price component, or revenue-sharing percentage. <br/><br/> If the <em>unit</em> of pricing is revenue-sharing, then this <em>price</em> attribute value is percentage value. <br/><br/> Use &#39;.&#39; (Unicode &#39;FULL STOP&#39; (U+002E)) rather than &#39;,&#39; to indicate a decimal point. Avoid using these symbols as a readability separator. Use values from 0123456789 (Unicode &#39;DIGIT ZERO&#39; (U+0030) to &#39;DIGIT NINE&#39; (U+0039)) rather than superficially similiar Unicode symbols. <br/><br/>With <em>data-volume</em> the price is for each 1GB of data.</td>
+</tr>
+<tr>
+<td><strong>billingDuration</strong></td>
+<td>string</td>
+<td>options: instant, day, week, month, year</td>
+<td>Specifies for how long this price (or price component) will be billed. Can be used, for example, to model the contractual duration of a subscription or payment plan.</td>
+</tr>
+<tr>
+<td><strong>unit</strong></td>
+<td>string</td>
+<td>One of: One-time-payment, Pay-per-use, Recurring, Revenue-sharing, Data-volume , Pay-what-you-want, Freemium, Open-data, Value-based, On-request, Trial</td>
+<td>One-time-payment is for single time purchase purposes, further purchaces are not intended to continue under same agreement. <br/><br/> <em>Pay-per-use</em> is intended for continuous usage and price set is for each successful usage action. <br/><br/> <em>Recurrring</em> is intended for continuous time period plans. <br/><br/><em>Revenue sharing</em> is a performance-based income model. An effective revenue sharing deal structure is offering your expertise to a business owner to help them grow their business. In return, you get paid a percentage of the revenue as a royalty fee. <br/><br/> <em>Freemium</em> is for free access. Use this option also for open data. <br/><br/> <em>Data-volume</em> is for data amount based pricing in which customer pays based on the served data amount. The price is always for 1GB of data. <br/><br/> <em>Pay-what-you-want</em>  is a pricing system where buyers pay any desired amount for a given commodity, sometimes including zero. In some cases, a minimum (floor) price may be set, and/or a suggested price may be indicated as guidance for the buyer. The buyer can also select an amount higher than the standard price for the commodity. If the floor price is set, use <em>minPrice</em> attribute. <br/><br/> <em>Open-data</em>  is an explicit pricing plan category for open data. By default open data should be free, but in some cases it can have a price. <br/><br/> <em>Value-based</em> is value-based selling unit. Present the outcome of your story with solid data and a measurable impact with help of <em>offering</em> attribute. Example: “We can lower the energy bill in heating by $8-13/square meter in a year. Try out simulator to calculate your value!”. Use optional <em>valueSimulator</em> attribute to provide link (URL) to value simulator you have created. In order to set base fee for value-based plan, you can for example set monthly (<em>billingDuration</em>) plan with base see with help of <em>minPrice</em> attribute. <br/><br/> <em>On-request</em> is for plans in which customer is given access to data product after contacting provider. Use provider contact information in providing means to contact data product provider for access permissions request. If the <em>trial</em> is used, then trial duration should be defined in the <em>offering</em> part.</td>
+</tr>
+<tr>
+<td><strong>maxTransactionQuantity</strong></td>
+<td>Integer</td>
+<td>Integer</td>
+<td>The maximum transaction quantity for the given billing duration. Use this to define for example monthly (or any other period) request limit to the data product. Note! If you want to set unlimited use, value must be 0 (zero).</td>
+</tr>
+<tr>
+<td><strong>offering</strong></td>
+<td>string</td>
+<td>array</td>
+<td>The element that contains pricing plan content as array of strings. Think of this as the list of what is included in the pricing plan and what you offer in return to the price asked. Use the language defined in the <em>plan</em></td>
+</tr>
+<tr>
+<td><strong>minPrice</strong></td>
+<td>string</td>
+<td>-</td>
+<td>The lowest price if the price is a range. If dynamic pricing is used with this product, this is the lowest price allowed. In dynamic pricing businesses are able to change prices based on algorithms that take into account competitor pricing, supply and demand, and other external factors in the market. Use &#39;.&#39; (Unicode &#39;FULL STOP&#39; (U+002E)) rather than &#39;,&#39; to indicate a decimal point. Avoid using these symbols as a readability separator. Use values from 0123456789 (Unicode &#39;DIGIT ZERO&#39; (U+0030) to &#39;DIGIT NINE&#39; (U+0039)) rather than superficially similiar Unicode symbols.</td>
+</tr>
+<tr>
+<td><strong>maxPrice</strong></td>
+<td>string</td>
+<td>-</td>
+<td>The highest price if the price is a range. If dynamic pricing is used with this product, this is the highest price allowed. Use &#39;.&#39; (Unicode &#39;FULL STOP&#39; (U+002E)) rather than &#39;,&#39; to indicate a decimal point. Avoid using these symbols as a readability separator. Use values from 0123456789 (Unicode &#39;DIGIT ZERO&#39; (U+0030) to &#39;DIGIT NINE&#39; (U+0039)) rather than superficially similiar Unicode symbols.</td>
+</tr>
+<tr>
+<td><strong>valueAddedTaxIncluded</strong></td>
+<td>boolean</td>
+<td>true/false</td>
+<td>Specifies whether the applicable value-added tax (VAT) is included in the price specification or not.</td>
+</tr>
+<tr>
+<td><strong>valueAddedTaxPercentage</strong></td>
+<td>Integer</td>
+<td>Number percentage value, range 0-100</td>
+<td>Use &#39;.&#39; (Unicode &#39;FULL STOP&#39; (U+002E)) rather than &#39;,&#39; to indicate a decimal point. Avoid using these symbols as a readability separator. Use values from 0123456789 (Unicode &#39;DIGIT ZERO&#39; (U+0030) to &#39;DIGIT NINE&#39; (U+0039)) rather than superficially similiar Unicode symbols.</td>
+</tr>
+<tr>
+<td><strong>validFrom</strong></td>
+<td>DateTime</td>
+<td>A combination of date and time in <a href="https://www.ionos.com/digitalguide/websites/web-development/iso-8601/">ISO 8601</a> format yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ.</td>
+<td>The date when the item becomes valid.</td>
+</tr>
+<tr>
+<td><strong>validTo</strong></td>
+<td>DateTime</td>
+<td>A combination of date and time in <a href="https://www.ionos.com/digitalguide/websites/web-development/iso-8601/">ISO 8601</a> format yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ.</td>
+<td>The date after when the item is not valid.</td>
+</tr>
+<tr>
+<td><strong>additionalPrice</strong></td>
+<td>string</td>
+<td>-</td>
+<td>This is used to define fees for usage which exceeds the defined max transaction quantity. This value is for each additional transaction. Use &#39;.&#39; (Unicode &#39;FULL STOP&#39; (U+002E)) rather than &#39;,&#39; to indicate a decimal point. Avoid using these symbols as a readability separator. Use values from 0123456789 (Unicode &#39;DIGIT ZERO&#39; (U+0030) to &#39;DIGIT NINE&#39; (U+0039)) rather than superficially similiar Unicode symbols.</td>
+</tr>
+<tr>
+<td><strong>maxDataQuantity</strong></td>
+<td>Integer</td>
+<td>-</td>
+<td>The maximum amount of data transferred during the billing duration. Unit is GB.</td>
+</tr>
+<tr>
+<td><strong>valueSimulator</strong></td>
+<td>url</td>
+<td>valid url</td>
+<td>Intended to be used with <em>value-based</em> pricing plan. Provide url to value simulator in which customer can see the value in various cases. In the simulator customer might be able to input own variables to match their exact case and see the gained value.</td>
+</tr>
+</tbody></table>
+
+<p>If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, <a href="https://github.com/Open-Data-Product-Initiative/open-data-product-spec-dev/issues">raise an issue in Github</a></p>
 <h1 id='data-licensing'>Data Licensing</h1>
 <p>The data product may be exploited e.g. by licensing its use and exploitation to third parties. Machine-readable license as part of the specification is implemented for this purpose. It can be used to conclude various agreements regarding data protection, processing and intellectual property rights (IPR). Data can be protected by one or more intellectual property rights. Principle is that when a third party (Data User) exploits the data, it must have a license or other right from Data Holder to exploit to the data.</p>
 <h2 id='optional-attributes-and-elements'>Optional attributes and elements</h2>
@@ -1875,6 +1691,230 @@ not feasable or possible to arrange for various reasons. <em>Type</em> attribute
 <td>string</td>
 <td>text content, max length 512 chars</td>
 <td>Force majeure is a clause that is included in contracts to remove liability for unforeseeable and unavoidable catastrophes that interrupt the expected course of events and prevent participants from fulfilling obligations. These clauses generally cover both natural disasters and catastrophes created by humans.</td>
+</tr>
+</tbody></table>
+<h1 id='dataops'>DataOps</h1>
+<p>DataOps is a process whereby a data product pipeline deployment method is defined. Usually the deployment script contains the logic of the individual steps as well as the code chaining the steps together.</p>
+
+<p>DataOps <strong>OBJECT</strong> describes building, deploying, and running data product&#39;s code, and storing and giving access to data and metadata. This principle has been adopted from the <a href="https://towardsdatascience.com/what-is-a-data-mesh-and-how-not-to-mesh-it-up-210710bb41e0">Data Mesh</a>.</p>
+<h2 id='optional-attributes-and-elements'>Optional attributes and elements</h2>
+<blockquote>
+<p>Example of DataOps component usage:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml"><code>
+<span class="na">dataOps</span><span class="pi">:</span>
+  <span class="na">data</span><span class="pi">:</span>
+    <span class="na">schemaLocationURL</span><span class="pi">:</span> <span class="s">http://http://192.168.10.1/schemas/2016/petshopML-2.3/schema/petstore.xsd</span>
+
+  <span class="na">lineage</span><span class="pi">:</span>
+    <span class="na">dataLineageTool</span><span class="pi">:</span> <span class="s">Collibra</span>
+    <span class="na">dataLineageOutput</span><span class="pi">:</span> <span class="s">http://192.168.10.1/lineage.json</span>
+
+  <span class="na">infrastructure</span><span class="pi">:</span>
+    <span class="na">platform</span><span class="pi">:</span> <span class="s">Azure</span>
+    <span class="na">region</span><span class="pi">:</span> <span class="s">West US 2 (Washington)</span>
+    <span class="na">storageTechnology</span><span class="pi">:</span> <span class="s">Azure SQL</span>
+    <span class="na">storageType</span><span class="pi">:</span> <span class="s">sql</span>
+    <span class="na">containerTool</span><span class="pi">:</span> <span class="s">helm</span>
+
+  <span class="na">build</span><span class="pi">:</span>
+    <span class="na">format</span><span class="pi">:</span> <span class="s">yaml</span>
+    <span class="na">hashType</span><span class="pi">:</span> <span class="s">SHA-2</span>
+    <span class="na">checksum</span><span class="pi">:</span> <span class="s">7b7444ab8f5832e9ae8f54834782af995d0a83b4a1d77a75833eda7e19b4c921</span>
+    <span class="na">signatureType</span><span class="pi">:</span> <span class="s">JWK</span>
+    <span class="na">scriptURL</span><span class="pi">:</span> <span class="s">http://192.168.10.1/rundatapipeline.yml</span>
+    <span class="na">deploymentDocumentationURL</span><span class="pi">:</span> <span class="s">http://192.168.10.1/datapipeline</span>
+
+</code></pre></div>
+<table><thead>
+<tr>
+<th><div style="width:150px">Element name</div></th>
+<th>Type</th>
+<th>Options</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>dataOps</strong></td>
+<td>element</td>
+<td>-</td>
+<td>Binds the dataOps related elements and attributes together.</td>
+</tr>
+<tr>
+<td><strong>infrastructure</strong></td>
+<td>element</td>
+<td>-</td>
+<td>Infrastructure is a process whereby a data product pipeline deployment method is defined.</td>
+</tr>
+<tr>
+<td><strong>platform</strong></td>
+<td>string</td>
+<td>any</td>
+<td>Platform infrastructure, such as AWS, GCP, Azure.</td>
+</tr>
+<tr>
+<td><strong>region</strong></td>
+<td>string</td>
+<td>any</td>
+<td>Provide details of cloud region of AWS, Azure or alike. Examples for AWS: US West (Oregon), Canada (Central), US East (N. Virginia), US East (Ohio). Examples for Azure: Canada Central (Toronto), East US 2 (Virginia), West US 2 (Washington)</td>
+</tr>
+<tr>
+<td><strong>storageTechnology</strong></td>
+<td>string</td>
+<td>any</td>
+<td>Describes the internal storage area technology, such as Amazon S3, Google Cloud Storage, Azure Blob Storage, Azure SQL.</td>
+</tr>
+<tr>
+<td><strong>storageType</strong></td>
+<td>string</td>
+<td>any</td>
+<td>Describes the internal storage type, such as files, sql, events, MQTT.</td>
+</tr>
+<tr>
+<td><strong>containerTool</strong></td>
+<td>string</td>
+<td>any</td>
+<td>A name of the package manager, container or infrastructure as code tool.</td>
+</tr>
+<tr>
+<td><strong>format</strong></td>
+<td>string</td>
+<td>any</td>
+<td>Type of script language.</td>
+</tr>
+<tr>
+<td><strong>schemaLocationURL</strong></td>
+<td>URL</td>
+<td>Valid URL</td>
+<td>The URL of the data product schema, such as XSD, XML or JSON Schema.</td>
+</tr>
+<tr>
+<td><strong>scriptURL</strong></td>
+<td>URL</td>
+<td>Valid URL</td>
+<td>The URL of the deployment script. Script can be used for implementing the data product. In a Data Mesh -model it can be used to define, for example, one or more outputs which take the data from source systems or other data products.</td>
+</tr>
+<tr>
+<td><strong>deploymentDocumentationURL</strong></td>
+<td>URL</td>
+<td>Valid URL</td>
+<td>The URL of the deployment documentation.</td>
+</tr>
+<tr>
+<td><strong>datalineageTool</strong></td>
+<td>URL</td>
+<td>Valid URL</td>
+<td>A tool to view the data lineage.</td>
+</tr>
+<tr>
+<td><strong>datalineageOutput</strong></td>
+<td>URL</td>
+<td>Valid URL</td>
+<td>The URL of the data lineage output. Data lineage output shows the mapping of source data to target output on a metadata level</td>
+</tr>
+<tr>
+<td><strong>hashType</strong></td>
+<td>string</td>
+<td>One of: SHA-1, SHA-2, SHA-3</td>
+<td>Type of secure hash algorithm for checksum.</td>
+</tr>
+<tr>
+<td><strong>checksum</strong></td>
+<td>string</td>
+<td>any</td>
+<td>Script checksum.</td>
+</tr>
+<tr>
+<td><strong>signatureType</strong></td>
+<td>string</td>
+<td>any</td>
+<td>A public-key cryptosystem,such as JWK, PKCS#12, or PEM.</td>
+</tr>
+</tbody></table>
+<h1 id='data-access'>Data Access</h1>
+<p>Data Access <strong>OBJECT</strong> describes the authorised ability to retrieve, edit, copy or transfer data from IT systems.</p>
+<h2 id='optional-attributes-and-elements'>Optional attributes and elements</h2>
+<blockquote>
+<p>Example of Data Access component usage:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml"><code>
+<span class="na">dataAccess</span><span class="pi">:</span>
+  <span class="na">interface</span><span class="pi">:</span>
+    <span class="na">outputPorttype</span><span class="pi">:</span> <span class="s">API</span>
+    <span class="na">authenticationMethod</span><span class="pi">:</span> <span class="s">OAuth</span>
+    <span class="na">specification</span><span class="pi">:</span> <span class="s">OAS</span>
+    <span class="na">format</span><span class="pi">:</span> <span class="s">GraphQL</span>
+    <span class="na">specsURL</span><span class="pi">:</span> <span class="s">http://192.168.10.1/petshop.json</span>
+    <span class="na">documentationURL</span><span class="pi">:</span> <span class="s">http://192.168.10.1/petshop</span>
+
+</code></pre></div>
+<table><thead>
+<tr>
+<th><div style="width:150px">Element name</div></th>
+<th>Type</th>
+<th>Options</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>dataAccess</strong></td>
+<td>element</td>
+<td>-</td>
+<td>Binds the data access related elements and attributes together.</td>
+</tr>
+<tr>
+<td><strong>interface</strong></td>
+<td>element</td>
+<td>-</td>
+<td>Reference to the ability to use data.</td>
+</tr>
+<tr>
+<td><strong>outputPorttype</strong></td>
+<td>string</td>
+<td>any</td>
+<td>Type of data access, such as API, SQL, sFTP, gRPC.</td>
+</tr>
+<tr>
+<td><strong>hashType</strong></td>
+<td>string</td>
+<td>any</td>
+<td>Type of secure hash algorithm, such as SHA-1, SHA-2, for checksum, when output is file(s).</td>
+</tr>
+<tr>
+<td><strong>checksum</strong></td>
+<td>string</td>
+<td>any</td>
+<td>File checksum.</td>
+</tr>
+<tr>
+<td><strong>authenticationMethod</strong></td>
+<td>string</td>
+<td>any</td>
+<td>Data access authentication method type, such as API key, HTTP Basic, OAuth, No authentication.</td>
+</tr>
+<tr>
+<td><strong>specification</strong></td>
+<td>string</td>
+<td>any</td>
+<td>Type of the data access specification, such as OAS, RAML, Slate.</td>
+</tr>
+<tr>
+<td><strong>format</strong></td>
+<td>string</td>
+<td>any</td>
+<td>Data access file format type, such as JSON, XML, GraphQL, plain text.</td>
+</tr>
+<tr>
+<td><strong>specsURL</strong></td>
+<td>URL</td>
+<td>Valid URL</td>
+<td>The URL of the data access documentation, preferably in a machine-readable format, such as OpenAPI specs.</td>
+</tr>
+<tr>
+<td><strong>documentationURL</strong></td>
+<td>URL</td>
+<td>Valid URL</td>
+<td>The URL of the separated data access documentation or guide. For example, it may contain instructions on how to create and manage api keys.</td>
 </tr>
 </tbody></table>
 <h1 id='data-holder'>Data Holder</h1>
