@@ -1220,7 +1220,7 @@ The YAML examples are not based on any real data product, but exemplify the usag
 <h1 id='data-sla'>Data SLA</h1>
 <p>Data Service Level Agreement (SLA) <strong>Object</strong> contains attributes which define the desired and promised quality of the data product. </p>
 
-<p><strong>SLA can be defined with 11 standardized dimentions:</strong></p>
+<p><strong>SLA can be defined with 11 standardized dimensions with Everything as Code monitoring:</strong></p>
 
 <table><thead>
 <tr>
@@ -1274,10 +1274,24 @@ The YAML examples are not based on any real data product, but exemplify the usag
 </tr>
 </tbody></table>
 
-<p>Each dimension has objective value, a unit and then monitoring &quot;as code&quot; to verify objective. In some cases monitoring is 
-not feasable or possible to arrange for various reasons. Type attribute indicates which monitoring system is used. Reference attribute contains url for reference documentation regarding the monitoring spec. Spec contains the actucal &quot;as code&quot; part which can be executed in selected monitoring system as is. </p>
+<blockquote>
+<p>Template structure of SLA array component:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml"><code> <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">selected dimension</span>
+    <span class="s">objective</span><span class="pi">:</span> 
+    <span class="na">unit</span><span class="pi">:</span> 
+    <span class="na">monitoring</span><span class="pi">:</span>
+      <span class="na">type</span><span class="pi">:</span>  
+      <span class="na">reference</span><span class="pi">:</span> 
+      <span class="na">spec</span><span class="pi">:</span>
 
-<p>Also basic email and phone support information can be expressed inside the SLA component. <strong>Note!</strong> The &quot;as code&quot; part of the component is the initial step towards embracing Everything as Code paradigm, but is still experimental. </p>
+</code></pre></div>
+<p>Each dimension has objective value, a unit and then <em>monitoring</em> &quot;as code&quot; to verify objective. In some cases monitoring is 
+not feasable or possible to arrange for various reasons. <em>Type</em> attribute indicates which monitoring system is used. <em>Reference</em> attribute contains url for reference documentation regarding the monitoring spec. <em>Spec</em> contains the actucal &quot;as code&quot; part as YAML or string which can be executed in selected monitoring system as is. <strong>Note!</strong> The &quot;as code&quot; part of the component is the initial step towards embracing Everything as Code paradigm, but is still experimental.</p>
+
+<p>The SLA object is general in nature and should be enough for common (80%) use cases. Note that you can make extensions to the standard with &quot;x-&quot; mechanism in order to fulfill any industry specific needs. The &quot;Specification extensions&quot; section provides details on how to use this feature. </p>
+
+<p>Also basic email and phone support information can be expressed inside the SLA component.  </p>
 
 <p>No mandatory attributes at the moment. Optional attributes are listed in own table and an example is given in the right column. </p>
 <h2 id='optional-attributes-and-elements'>Optional attributes and elements</h2>
@@ -1294,7 +1308,7 @@ not feasable or possible to arrange for various reasons. Type attribute indicate
     <span class="na">monitoring</span><span class="pi">:</span>
       <span class="na">type</span><span class="pi">:</span> <span class="s">prometheus</span>
       <span class="na">reference</span><span class="pi">:</span> <span class="s">https://prometheus.io/docs/prometheus/latest/querying/basics/</span> 
-      <span class="na">spec</span><span class="pi">:</span>  
+      <span class="na">spec</span><span class="pi">:</span>  <span class="c1"># expressed as string or inline yaml</span>
         <span class="s">myTimer.observeDuration();</span>
 
   <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">uptime</span>
@@ -1302,6 +1316,17 @@ not feasable or possible to arrange for various reasons. Type attribute indicate
       <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Uptime</span>
     <span class="na">objective</span><span class="pi">:</span> <span class="m">99</span>
     <span class="na">unit</span><span class="pi">:</span> <span class="s">percent</span>
+    <span class="na">monitoring</span><span class="pi">:</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s">prometheus</span>
+      <span class="na">reference</span><span class="pi">:</span> <span class="s">https://prometheus.io/docs/prometheus/latest/querying/basics/</span>
+      <span class="na">spec</span><span class="pi">:</span>  <span class="pi">|</span> <span class="c1"># expressed as string or inline yaml</span>
+        <span class="s">avg_over_time(</span>
+          <span class="s">(</span>
+            <span class="s">sum without() (up{job="prometheus"})</span>
+              <span class="s">or</span>
+            <span class="s">(0 * sum_over_time(up{job="prometheus"}[7d]))</span>
+          <span class="s">)[7d:5m]</span>
+        <span class="s">)    </span>
 
   <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">responseTime</span>
     <span class="na">objective</span><span class="pi">:</span> <span class="m">200</span>
@@ -1309,8 +1334,16 @@ not feasable or possible to arrange for various reasons. Type attribute indicate
     <span class="na">monitoring</span><span class="pi">:</span>
       <span class="na">type</span><span class="pi">:</span> <span class="s">prometheus</span>
       <span class="na">reference</span><span class="pi">:</span> <span class="s">https://prometheus.io/docs/prometheus/latest/querying/basics/</span> 
-      <span class="na">spec</span><span class="pi">:</span>  
-       <span class="s">rate(http_server_requests_seconds_sum[$__rate_interval]) / rate(http_server_requests_seconds_count[$__rate_interval])</span>
+      <span class="na">spec</span><span class="pi">:</span>  <span class="pi">|</span> <span class="c1"># expressed as string or inline yaml</span>
+        <span class="s">rate(http_server_requests_seconds_sum[$__rate_interval]) / rate(http_server_requests_seconds_count[$__rate_interval])</span>
+
+  <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">updateFrequency</span>
+    <span class="na">objective</span><span class="pi">:</span> <span class="m">30</span>
+    <span class="na">unit</span><span class="pi">:</span> <span class="s">minutes</span>
+    <span class="na">monitoring</span><span class="pi">:</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s">prometheus</span> 
+      <span class="na">spec</span><span class="pi">:</span> <span class="pi">|</span> <span class="c1"># expressed as string or inline yaml</span>
+        <span class="s">time() - max_over_time(timestamp(changes(table[5m]) &gt; 0)[1d:1m])</span>
 
   <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">errorRate</span>
     <span class="na">objective</span><span class="pi">:</span> <span class="m">0.1</span>
@@ -1323,10 +1356,6 @@ not feasable or possible to arrange for various reasons. Type attribute indicate
   <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">endOfLife</span>
     <span class="na">objective</span><span class="pi">:</span> <span class="s">01/03/2025</span> <span class="c1"># dd/mm/yyyy</span>
     <span class="na">unit</span><span class="pi">:</span> <span class="s">date</span>
-
-  <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">updateFrequency</span>
-    <span class="na">objective</span><span class="pi">:</span> <span class="m">7</span>
-    <span class="na">unit</span><span class="pi">:</span> <span class="s">days</span>
 
   <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">timeToDetect</span>
     <span class="na">objective</span><span class="pi">:</span> <span class="m">60</span>
@@ -1404,7 +1433,7 @@ not feasable or possible to arrange for various reasons. Type attribute indicate
 <tr>
 <td><strong>spec</strong></td>
 <td>element</td>
-<td>-</td>
+<td>YAML or string</td>
 <td>contains the as code part for monitoring. Content is intended to be in a form that can be injected as is to defined monitoring system.</td>
 </tr>
 <tr>
@@ -1455,7 +1484,7 @@ not feasable or possible to arrange for various reasons. Type attribute indicate
 <h1 id='data-quality'>Data Quality</h1>
 <p>Data quality is essential for one main reason: You give customers the best experience when you make decisions using accurate data. A great customer experience leads to happy customers, brand loyalty, and higher revenue for your business. Information is only valuable if it is of high quality.  How can you assess your data quality? ODPS is compatible with EDM Council data quality model. </p>
 
-<p><strong>ODPS offers 8 options to define and measure data quality:</strong> </p>
+<p><strong>ODPS offers 8 standardized options to define and measure data quality with Everything as Code monitoring:</strong> </p>
 
 <table><thead>
 <tr>
@@ -1497,11 +1526,26 @@ not feasable or possible to arrange for various reasons. Type attribute indicate
 </tr>
 </tbody></table>
 
-<p>The above list most likely covers majority of the cases and needs of organizations. In case additional indicators are needed, then use specification extensions (x-) described in the specification separately. </p>
+<blockquote>
+<p>Template structure of Data Quality array component:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml"><code> <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">selected dimension</span>
+    <span class="s">objective</span><span class="pi">:</span> 
+    <span class="na">unit</span><span class="pi">:</span> 
+    <span class="na">monitoring</span><span class="pi">:</span>
+      <span class="na">type</span><span class="pi">:</span>  
+      <span class="na">reference</span><span class="pi">:</span> 
+      <span class="na">spec</span><span class="pi">:</span>
+
+</code></pre></div>
+<p>Each dimension has objective value, a unit and then <em>monitoring</em> &quot;as code&quot; to verify objective. In some cases monitoring is 
+not feasable or possible to arrange for various reasons. <em>Type</em> attribute indicates which monitoring system is used. <em>Reference</em> attribute contains url for reference documentation regarding the monitoring spec. <em>Spec</em> contains the actucal &quot;as code&quot; part as YAML or string which can be executed in selected monitoring system as is. See template example. </p>
+
+<p><strong>Note!</strong> The &quot;as code&quot; part of the component is the initial step towards embracing Everything as Code paradigm, but is still experimental. </p>
 
 <p>The values of the QA attributes are given by the vendor. Should you trust in the values, is the choice made by the data consumer. If possible utilize automatic checking of data quality against the source and update the values accordingly. </p>
 
-<p>The QA object is general in nature and should be enough for common (80%) of the use cases. Note that you can make extensions to the standard with &quot;x-&quot; mechanism in order to fulfill any industry specific needs. The &quot;Specification extensions&quot; section provides details on how to use this feature. </p>
+<p>The QA object is general in nature and should be enough for common (80%) use cases. Note that you can make extensions to the standard with &quot;x-&quot; mechanism in order to fulfill any industry specific needs. The &quot;Specification extensions&quot; section provides details on how to use this feature. </p>
 
 <p>Data integrity is the maintenance of, and the assurance of, data accuracy and consistency over its entire life-cycle. That is why <em>integrity</em> is not in the attributes, but accuracy and consistency as well as completeness are. </p>
 
@@ -1527,7 +1571,7 @@ not feasable or possible to arrange for various reasons. Type attribute indicate
 
   <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">completeness</span>
     <span class="na">displaytitle</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Data Completeness</span>
+    <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Data Completeness (percent)</span>
     <span class="na">objective</span><span class="pi">:</span> <span class="m">99.9</span>
     <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
     <span class="na">monitoring</span><span class="pi">:</span>
@@ -1541,6 +1585,9 @@ not feasable or possible to arrange for various reasons. Type attribute indicate
                   <span class="na">fail</span><span class="pi">:</span> <span class="s">when &gt; 0.1%</span> <span class="c1"># Fail if more than 0.1% of records are null</span>
 
   <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">consistency</span>
+    <span class="na">displaytitle</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Data Consistency (percent)</span>
+    <span class="pi">-</span> <span class="na">fi</span><span class="pi">:</span> <span class="s">Datan johdonmukaisuus (prosenttia)</span>
     <span class="na">objective</span><span class="pi">:</span> <span class="m">98</span>
     <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
 
@@ -1622,7 +1669,7 @@ not feasable or possible to arrange for various reasons. Type attribute indicate
 <tr>
 <td><strong>spec</strong></td>
 <td>element</td>
-<td>-</td>
+<td>YAML or string</td>
 <td>contains the as code part for monitoring. Content is intended to be in a form that can be injected as is to defined monitoring system. Content depends of the system used and reference attribute is expected to provide more information.</td>
 </tr>
 </tbody></table>
