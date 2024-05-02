@@ -1078,7 +1078,7 @@ not feasable or possible to arrange for various reasons. <em>Type</em> attribute
 </tr>
 </tbody></table>
 
-<p>If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, <a href="https://github.com/Open-Data-Product-Initiative/open-data-product-spec-dev/issues">raise an issue in Github</a></p>
+<p>If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, <a href="https://github.com/Open-Data-Product-Initiative/open-data-product-spec-rc/issues">raise an issue in Github</a></p>
 <h1 id='data-quality'>Data Quality</h1>
 <p>Data quality is essential for one main reason: You give customers the best experience when you make decisions using accurate data. A great customer experience leads to happy customers, brand loyalty, and higher revenue for your business. Information is only valuable if it is of high quality.  </p>
 
@@ -1274,7 +1274,7 @@ not feasable or possible to arrange for various reasons. <em>Type</em> attribute
 </tr>
 </tbody></table>
 
-<p>If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, <a href="https://github.com/Open-Data-Product-Initiative/open-data-product-spec-dev/issues">raise an issue in Github</a></p>
+<p>If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, <a href="https://github.com/Open-Data-Product-Initiative/open-data-product-spec-rc/issues">raise an issue in Github</a></p>
 <h1 id='data-pricing-plans'>Data Pricing Plans</h1>
 <p>Pricing is the process whereby a business sets the price at which it will sell its products and services. Pricing <strong>OBJECT</strong> consists of mandatory and optional attributes. This element contains pricing plans related data to be used for example in displaying the items in a marketplace. If needed the standard metadata is converted to marketplace internal format. We encourage all data product owners to enforce usage of this standard.  </p>
 
@@ -1496,7 +1496,7 @@ not feasable or possible to arrange for various reasons. <em>Type</em> attribute
 </tr>
 </tbody></table>
 
-<p>If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, <a href="https://github.com/Open-Data-Product-Initiative/open-data-product-spec-dev/issues">raise an issue in Github</a></p>
+<p>If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, <a href="https://github.com/Open-Data-Product-Initiative/open-data-product-spec-rc/issues">raise an issue in Github</a></p>
 <h1 id='data-licensing'>Data Licensing</h1>
 <p>Data product licensing is essential for ensuring legal compliance, protecting intellectual property rights, enabling monetization and commercialization, facilitating control and governance, managing liability and indemnification, promoting standardization and interoperability, and fostering transparency and trust in data exchange and collaboration. By establishing clear and enforceable licensing agreements, data producers and consumers can effectively leverage data assets while minimizing legal risks and maximizing the value of data products.</p>
 
@@ -1926,7 +1926,7 @@ not feasable or possible to arrange for various reasons. <em>Type</em> attribute
 
 <p>The <em>data holder</em> might not be the original IPR owner of the data used, but has rights operate with it. The contract or other agreement between Provider and possible data owner is not part of the standard as metadata or licence wise.</p>
 
-<p>If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, <a href="https://github.com/Open-Data-Product-Initiative/open-data-product-spec-dev/issues">raise an issue in Github</a></p>
+<p>If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, <a href="https://github.com/Open-Data-Product-Initiative/open-data-product-spec-rc/issues">raise an issue in Github</a></p>
 <h2 id='optional-attributes-and-elements'>Optional attributes and elements</h2>
 <blockquote>
 <p>Example of Holder component with some of the voluntary attributes:</p>
@@ -2096,13 +2096,13 @@ not feasable or possible to arrange for various reasons. <em>Type</em> attribute
 </tr>
 </tbody></table>
 
-<p>If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, <a href="https://github.com/Open-Data-Product-Initiative/open-data-product-spec-dev/issues">raise an issue in Github</a></p>
+<p>If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, <a href="https://github.com/Open-Data-Product-Initiative/open-data-product-spec-rc/issues">raise an issue in Github</a></p>
 <h1 id='specification-extensions'>Specification extensions</h1>
 <p>While the Open Data Product Specification tries to accommodate most use cases, additional data can be added to extend the specification at certain points.</p>
 
 <p>The extensions properties are implemented as patterned fields that are always prefixed by &quot;x-&quot;. The extensions may or may not be supported by the available tooling, but those may be extended as well to add requested support (if tools are internal or open-sourced). Open Data Product Initiative Technical Steering Committee does not officially approve external extensions - they are fully independent. Popular extensions however are natural candidates for future additions of the standard. </p>
 
-<p>We encourage you to let us know of useful extensions so that we can consider those in the future releases, <a href="https://github.com/Open-Data-Product-Initiative/open-data-product-spec-dev/issues">raise an issue in Github</a></p>
+<p>We encourage you to let us know of useful extensions so that we can consider those in the future releases, <a href="https://github.com/Open-Data-Product-Initiative/open-data-product-spec-rc/issues">raise an issue in Github</a></p>
 
 <blockquote>
 <p>Example of extension usage:</p>
@@ -2138,8 +2138,8 @@ not feasable or possible to arrange for various reasons. <em>Type</em> attribute
 </blockquote>
 <div class="highlight"><pre class="highlight yaml"><code>
 <span class="nn">---</span>
-<span class="na">schema</span><span class="pi">:</span> <span class="s">https://raw.githubusercontent.com/Open-Data-Product-Initiative/open-data-product-spec-dev/ddbc069196a664d0e28a0f3dc7c1c7fb49b64591/source/schema/odps-dev-json-schema.json</span>
-<span class="na">version</span><span class="pi">:</span> <span class="s">dev</span>
+<span class="na">schema</span><span class="pi">:</span> <span class="s">https://raw.githubusercontent.com/Open-Data-Product-Initiative/open-data-product-spec-rc/main/source/schema/odps.yaml</span>
+<span class="na">version</span><span class="pi">:</span> <span class="m">3.0</span>
 <span class="na">product</span><span class="pi">:</span>
   <span class="na">en</span><span class="pi">:</span>
     <span class="na">name</span><span class="pi">:</span> <span class="s">Pets of the year</span>
@@ -2347,74 +2347,76 @@ not feasable or possible to arrange for various reasons. <em>Type</em> attribute
   <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">uniqueness</span>
     <span class="na">objective</span><span class="pi">:</span> <span class="m">100</span>
     <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
+
   <span class="na">license</span><span class="pi">:</span>
-    <span class="na">scope</span><span class="pi">:</span>
-      <span class="na">definition</span><span class="pi">:</span> <span class="s">The purpose of this license is to determine the terms and conditions</span>
-        <span class="s">applicable to the licensing of the data product, whereby Data Holder grants</span>
-        <span class="s">Data User the right to use the data.</span>
-      <span class="na">language</span><span class="pi">:</span> <span class="s">en-us</span>
-      <span class="na">restrictions</span><span class="pi">:</span> <span class="s">Data User agrees not to, directly or indirectly, participate in</span>
-        <span class="s">the unauthorized use, disclosure or conversion of any confidential information.</span>
-      <span class="na">geographicalArea</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="s">EU</span>
-      <span class="pi">-</span> <span class="s">US</span>
-      <span class="na">permanent</span><span class="pi">:</span> <span class="no">false</span>
-      <span class="na">exclusive</span><span class="pi">:</span> <span class="no">false</span>
-      <span class="na">rights</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="s">Reproduction</span>
-      <span class="pi">-</span> <span class="s">Display</span>
-      <span class="pi">-</span> <span class="s">Distribution</span>
-      <span class="pi">-</span> <span class="s">Adaptation</span>
-      <span class="pi">-</span> <span class="s">Reselling</span>
-      <span class="pi">-</span> <span class="s">Sublicensing</span>
-      <span class="pi">-</span> <span class="s">Transferring</span>
-    <span class="na">termination</span><span class="pi">:</span>
-      <span class="na">terminationConditions</span><span class="pi">:</span> <span class="s">Cancellation before 30 days. After the expiry of the</span>
-        <span class="s">right of use, the product and its derivatives must be removed.</span>
-      <span class="na">continuityConditions</span><span class="pi">:</span> <span class="s">Expired license will automatically continued without written</span>
-        <span class="s">cancellation (termination) by Data Holder</span>
-    <span class="na">governance</span><span class="pi">:</span>
-      <span class="na">ownership</span><span class="pi">:</span> <span class="s">Mindmote Oy, a company specializing in pet industry insights, owns</span>
-        <span class="s">the license to its proprietary data product 'Pets of the Year'.</span>
-      <span class="na">damages</span><span class="pi">:</span> <span class="s">During the term of license, except for the force majeure or the Data</span>
-        <span class="s">Holders reasons, Data User is required to follow strictly in accordance with</span>
-        <span class="s">the license. If Data User wants to terminate the license early, it needs to</span>
-        <span class="s">pay a certain amount of liquidated damages.</span>
-      <span class="na">confidentiality</span><span class="pi">:</span> <span class="s">Data User undertakes to maintain confidentiality as regards</span>
-        <span class="s">all information of a technical (such as, by way of a non-limiting example,</span>
-        <span class="s">drawings, tables, documentation, formulas and correspondence) and commercial</span>
-        <span class="s">nature (including contractual conditions, prices, payment conditions) gained</span>
-        <span class="s">during the performance of this license.</span>
-      <span class="na">applicableLaws</span><span class="pi">:</span> <span class="s">This license shall be interpreted, construed and enforced in</span>
-        <span class="s">accordance with the law of Finland, including Copyright Act 404/1961.</span>
-      <span class="na">warranties</span><span class="pi">:</span> <span class="s">Data Holder makes no warranties, express or implied, guarantees</span>
-        <span class="s">or conditions with respect to your use of the data product. To the extent</span>
-        <span class="s">permitted under local law, Data Holder disclaims all liability for any damages</span>
-        <span class="s">or losses, including direct, consequential, special, indirect, incidental</span>
-        <span class="s">or punitive, resulting from Data User use of the data product.</span>
-      <span class="na">audit</span><span class="pi">:</span> <span class="s">Data Holder will reasonably cooperate with Data Users by providing available</span>
-        <span class="s">additional information about the data product. Both parties will bear their</span>
-        <span class="s">own audit-related costs.</span>
-      <span class="na">forceMajeure</span><span class="pi">:</span> <span class="s">Both parties may suspend their contractual obligations when fulfillment</span>
-        <span class="s">becomes impossible or excessively costly due to unforeseeable events beyond</span>
-        <span class="s">their control, such as strikes, fires, wars, and other force majeure events.</span>
+    <span class="na">en</span><span class="pi">:</span>
+      <span class="na">scope</span><span class="pi">:</span>
+        <span class="na">definition</span><span class="pi">:</span> <span class="s">The purpose of this license is to determine the terms and conditions</span>
+          <span class="s">applicable to the licensing of the data product, whereby Data Holder grants</span>
+          <span class="s">Data User the right to use the data.</span>
+        <span class="na">restrictions</span><span class="pi">:</span> <span class="s">Data User agrees not to, directly or indirectly, participate in</span>
+          <span class="s">the unauthorized use, disclosure or conversion of any confidential information.</span>
+        <span class="na">geographicalArea</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">EU</span>
+        <span class="pi">-</span> <span class="s">US</span>
+        <span class="na">permanent</span><span class="pi">:</span> <span class="no">false</span>
+        <span class="na">exclusive</span><span class="pi">:</span> <span class="no">false</span>
+        <span class="na">rights</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">Reproduction</span>
+        <span class="pi">-</span> <span class="s">Display</span>
+        <span class="pi">-</span> <span class="s">Distribution</span>
+        <span class="pi">-</span> <span class="s">Adaptation</span>
+        <span class="pi">-</span> <span class="s">Reselling</span>
+        <span class="pi">-</span> <span class="s">Sublicensing</span>
+        <span class="pi">-</span> <span class="s">Transferring</span>
+      <span class="na">termination</span><span class="pi">:</span>
+        <span class="na">terminationConditions</span><span class="pi">:</span> <span class="s">Cancellation before 30 days. After the expiry of the</span>
+          <span class="s">right of use, the product and its derivatives must be removed.</span>
+        <span class="na">continuityConditions</span><span class="pi">:</span> <span class="s">Expired license will automatically continued without written</span>
+          <span class="s">cancellation (termination) by Data Holder</span>
+      <span class="na">governance</span><span class="pi">:</span>
+        <span class="na">ownership</span><span class="pi">:</span> <span class="s">Mindmote Oy, a company specializing in pet industry insights, owns</span>
+          <span class="s">the license to its proprietary data product 'Pets of the Year'.</span>
+        <span class="na">damages</span><span class="pi">:</span> <span class="s">During the term of license, except for the force majeure or the Data</span>
+          <span class="s">Holders reasons, Data User is required to follow strictly in accordance with</span>
+          <span class="s">the license. If Data User wants to terminate the license early, it needs to</span>
+          <span class="s">pay a certain amount of liquidated damages.</span>
+        <span class="na">confidentiality</span><span class="pi">:</span> <span class="s">Data User undertakes to maintain confidentiality as regards</span>
+          <span class="s">all information of a technical (such as, by way of a non-limiting example,</span>
+          <span class="s">drawings, tables, documentation, formulas and correspondence) and commercial</span>
+          <span class="s">nature (including contractual conditions, prices, payment conditions) gained</span>
+          <span class="s">during the performance of this license.</span>
+        <span class="na">applicableLaws</span><span class="pi">:</span> <span class="s">This license shall be interpreted, construed and enforced in</span>
+          <span class="s">accordance with the law of Finland, including Copyright Act 404/1961.</span>
+        <span class="na">warranties</span><span class="pi">:</span> <span class="s">Data Holder makes no warranties, express or implied, guarantees</span>
+          <span class="s">or conditions with respect to your use of the data product. To the extent</span>
+          <span class="s">permitted under local law, Data Holder disclaims all liability for any damages</span>
+          <span class="s">or losses, including direct, consequential, special, indirect, incidental</span>
+          <span class="s">or punitive, resulting from Data User use of the data product.</span>
+        <span class="na">audit</span><span class="pi">:</span> <span class="s">Data Holder will reasonably cooperate with Data Users by providing available</span>
+          <span class="s">additional information about the data product. Both parties will bear their</span>
+          <span class="s">own audit-related costs.</span>
+        <span class="na">forceMajeure</span><span class="pi">:</span> <span class="s">Both parties may suspend their contractual obligations when fulfillment</span>
+          <span class="s">becomes impossible or excessively costly due to unforeseeable events beyond</span>
+          <span class="s">their control, such as strikes, fires, wars, and other force majeure events.</span>
   <span class="na">dataHolder</span><span class="pi">:</span>
-    <span class="na">taxID</span><span class="pi">:</span> <span class="s">12243434-12</span>
-    <span class="na">vatID</span><span class="pi">:</span> <span class="s">12243434-12</span>
-    <span class="na">businessDomain</span><span class="pi">:</span> <span class="s">Data Product Business</span>
-    <span class="na">logoURL</span><span class="pi">:</span> <span class="s">https://mindmote.fi/logo.png</span>
-    <span class="na">description</span><span class="pi">:</span> <span class="s">Digital Economy services and tools</span>
-    <span class="na">URL</span><span class="pi">:</span> <span class="s">https://mindmote.fi</span>
-    <span class="na">telephone</span><span class="pi">:</span> <span class="s2">"</span><span class="s">+358</span><span class="nv"> </span><span class="s">45</span><span class="nv"> </span><span class="s">232</span><span class="nv"> </span><span class="s">2323"</span>
-    <span class="na">streetAddress</span><span class="pi">:</span> <span class="s">Koulukatu </span><span class="m">1</span>
-    <span class="na">postalCode</span><span class="pi">:</span> <span class="s1">'</span><span class="s">33100'</span>
-    <span class="na">addressRegion</span><span class="pi">:</span> <span class="s">Pirkanmaa</span>
-    <span class="na">addressLocality</span><span class="pi">:</span> <span class="s">Tampere</span>
-    <span class="na">addressCountry</span><span class="pi">:</span> <span class="s">Finland</span>
-    <span class="na">aggregateRating</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
-    <span class="na">ratingCount</span><span class="pi">:</span> <span class="m">1245</span>
-    <span class="na">slogan</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
-    <span class="na">parentOrganization</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
+    <span class="na">en</span><span class="pi">:</span>
+      <span class="na">taxID</span><span class="pi">:</span> <span class="s">12243434-12</span>
+      <span class="na">vatID</span><span class="pi">:</span> <span class="s">12243434-12</span>
+      <span class="na">businessDomain</span><span class="pi">:</span> <span class="s">Data Product Business</span>
+      <span class="na">logoURL</span><span class="pi">:</span> <span class="s">https://mindmote.fi/logo.png</span>
+      <span class="na">description</span><span class="pi">:</span> <span class="s">Digital Economy services and tools</span>
+      <span class="na">URL</span><span class="pi">:</span> <span class="s">https://mindmote.fi</span>
+      <span class="na">telephone</span><span class="pi">:</span> <span class="s2">"</span><span class="s">+358</span><span class="nv"> </span><span class="s">45</span><span class="nv"> </span><span class="s">232</span><span class="nv"> </span><span class="s">2323"</span>
+      <span class="na">streetAddress</span><span class="pi">:</span> <span class="s">Koulukatu </span><span class="m">1</span>
+      <span class="na">postalCode</span><span class="pi">:</span> <span class="s1">'</span><span class="s">33100'</span>
+      <span class="na">addressRegion</span><span class="pi">:</span> <span class="s">Pirkanmaa</span>
+      <span class="na">addressLocality</span><span class="pi">:</span> <span class="s">Tampere</span>
+      <span class="na">addressCountry</span><span class="pi">:</span> <span class="s">Finland</span>
+      <span class="na">aggregateRating</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
+      <span class="na">ratingCount</span><span class="pi">:</span> <span class="m">1245</span>
+      <span class="na">slogan</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
+      <span class="na">parentOrganization</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
 
 
 </code></pre></div><h1 id='mandatory-only-example'>Mandatory-only example</h1>
@@ -2424,8 +2426,8 @@ not feasable or possible to arrange for various reasons. <em>Type</em> attribute
 <p>Example of mandatory-only elements and attributes Open Data Product specification instance:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight yaml"><code>
-<span class="na">schema</span><span class="pi">:</span> <span class="s">https://raw.githubusercontent.com/Open-Data-Product-Initiative/open-data-product-spec-dev/ddbc069196a664d0e28a0f3dc7c1c7fb49b64591/source/schema/odps-dev-json-schema.json</span>
-<span class="na">version</span><span class="pi">:</span> <span class="s">dev</span>
+<span class="na">schema</span><span class="pi">:</span> <span class="s">https://raw.githubusercontent.com/Open-Data-Product-Initiative/open-data-product-spec-rc/main/source/schema/odps.yaml</span>
+<span class="na">version</span><span class="pi">:</span> <span class="m">3.0</span>
 <span class="na">product</span><span class="pi">:</span>
   <span class="na">en</span><span class="pi">:</span>
     <span class="na">name</span><span class="pi">:</span> <span class="s">Pets of the year</span>
