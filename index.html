@@ -1123,9 +1123,16 @@ not feasable or possible to arrange for various reasons. <em>Type</em> attribute
 <h1 id='data-quality'>Data Quality</h1>
 <p>Data quality is essential for one main reason: You give customers the best experience when you make decisions using accurate data. A great customer experience leads to happy customers, brand loyalty, and higher revenue for your business. Information is only valuable if it is of high quality.  </p>
 
-<p>By adhering to defined quality characteristics, organizations can maximize the value of their data assets, improve decision-making, enhance operational efficiency, and maintain trust and confidence in their data-driven processes and systems.</p>
+<p>By adhering to defined quality characteristics, organizations can maximize the value of their data assets, improve decision-making, enhance operational efficiency, and maintain trust and confidence in their data-driven processes and systems. ODPS is compatible with EDM Council data quality model.</p>
 
-<p>How can you assess your data quality? ODPS is compatible with EDM Council data quality model. </p>
+<p>How can you assess your data quality? The ODPS support &quot;as code&quot; approach to monitor data quality. Supported DQ tools for Everything as Code to define monitoring are: </p>
+
+<ul>
+<li>SodaCL</li>
+<li>MonteCarlo</li>
+<li>DQOps</li>
+<li>Custom (in-house solutions)</li>
+</ul>
 <h2 id='odps-offers-8-standardized-options-to-define-and-measure-data-quality-with-everything-as-code-monitoring'>ODPS offers 8 standardized options to define and measure data quality with Everything as Code monitoring</h2>
 <table><thead>
 <tr>
@@ -1175,22 +1182,19 @@ not feasable or possible to arrange for various reasons. <em>Type</em> attribute
     <span class="na">unit</span><span class="pi">:</span> 
     <span class="na">monitoring</span><span class="pi">:</span>
       <span class="na">type</span><span class="pi">:</span>  
+      <span class="na">version</span><span class="pi">:</span> 
       <span class="na">reference</span><span class="pi">:</span> 
       <span class="na">spec</span><span class="pi">:</span>
 
 </code></pre></div>
 <p>Each dimension has objective value, a unit and then <em>monitoring</em> &quot;as code&quot; to verify objective. In some cases monitoring is 
-not feasable or possible to arrange for various reasons. <em>Type</em> attribute indicates which monitoring system is used. <em>Reference</em> attribute contains url for reference documentation regarding the monitoring spec. <em>Spec</em> contains the actucal &quot;as code&quot; part as YAML or string which can be executed in selected monitoring system as is. See template example. </p>
+not feasable or possible to arrange for various reasons. <em>Type</em> attribute indicates which monitoring system is used. <em>Reference</em> attribute contains url for reference documentation regarding the monitoring spec. <em>Spec</em> contains the monitoring rules &quot;as code&quot; to be executed in selected monitoring system as is.  </p>
 
-<p><strong>Note!</strong> The &quot;as code&quot; part of the component is the initial step towards embracing Everything as Code paradigm, but is still experimental. </p>
-
-<p>The values of the QA attributes are given by the vendor. Should you trust in the values, is the choice made by the data consumer. If possible utilize automatic checking of data quality against the source and update the values accordingly. </p>
+<p><strong>Note!</strong> The &quot;as code&quot; part of the component is the initial step towards embracing Everything as Code paradigm, but is still experimental. We need more vendors supporting the approach. You can use predefined vendor options (as type) and custom for in-house solutions.</p>
 
 <p>The QA object is general in nature and should be enough for common (80%) use cases. Note that you can make extensions to the standard with &quot;x-&quot; mechanism in order to fulfill any industry specific needs. The <a href="#specification-extensions">&quot;Specification extensions&quot;</a> section provides details on how to use this feature. </p>
 
 <p>Data integrity is the maintenance of, and the assurance of, data accuracy and consistency over its entire life-cycle. That is why <em>integrity</em> is not in the attributes, but accuracy and consistency as well as completeness are. </p>
-
-<p><strong>Note!</strong> The &quot;as code&quot; <em>spec</em> part of the component is the initial step towards embracing Everything as Code paradigm, but is still experimental. We need more vendors supporting the approach. In the mean while you can use custom solutions. </p>
 <h2 id='optional-attributes-and-elements'>Optional attributes and elements</h2>
 <blockquote>
 <p>Example of Data Quality component with some of the data quality dimensions:</p>
@@ -1204,7 +1208,7 @@ not feasable or possible to arrange for various reasons. <em>Type</em> attribute
     <span class="na">objective</span><span class="pi">:</span> <span class="m">98</span>
     <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
     <span class="na">monitoring</span><span class="pi">:</span>
-      <span class="na">type</span><span class="pi">:</span> <span class="s">SodaCL</span> 
+      <span class="na">type</span><span class="pi">:</span> <span class="s">SodaCL</span>
       <span class="na">reference</span><span class="pi">:</span> <span class="s">https://docs.soda.io/soda-cl/soda-cl-overview.html</span>
       <span class="na">spec</span><span class="pi">:</span>
         <span class="pi">-</span> <span class="s">require_unique(member_id)</span> 
@@ -1213,17 +1217,25 @@ not feasable or possible to arrange for various reasons. <em>Type</em> attribute
   <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">completeness</span>
     <span class="na">displaytitle</span><span class="pi">:</span>
     <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Data Completeness (percent)</span>
-    <span class="na">objective</span><span class="pi">:</span> <span class="m">99.9</span>
+    <span class="na">objective</span><span class="pi">:</span> <span class="m">90</span>
     <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
     <span class="na">monitoring</span><span class="pi">:</span>
-      <span class="na">type</span><span class="pi">:</span> <span class="s">SodaCL</span> 
-      <span class="na">reference</span><span class="pi">:</span> <span class="s">https://docs.soda.io/soda-cl/soda-cl-overview.html</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s">DQOps</span>
+      <span class="na">version</span><span class="pi">:</span> <span class="s">1.6.0</span> 
+      <span class="na">reference</span><span class="pi">:</span> <span class="s">https://dqops.com/docs/dqo-concepts/running-data-quality-checks/</span>
       <span class="na">spec</span><span class="pi">:</span>
-        <span class="pi">-</span> <span class="na">for each column</span><span class="pi">:</span>
-            <span class="na">name</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">member_id</span><span class="pi">,</span> <span class="nv">gender</span><span class="pi">,</span> <span class="nv">age_band</span><span class="pi">]</span>
-            <span class="na">checks</span><span class="pi">:</span>
-              <span class="pi">-</span> <span class="na">not null</span><span class="pi">:</span>
-                  <span class="na">fail</span><span class="pi">:</span> <span class="s">when &gt; 0.1%</span> <span class="c1"># Fail if more than 0.1% of records are null</span>
+        <span class="na">columns</span><span class="pi">:</span>
+          <span class="na">target_column</span><span class="pi">:</span>
+            <span class="na">profiling_checks</span><span class="pi">:</span> 
+              <span class="na">nulls</span><span class="pi">:</span> 
+                <span class="na">profile_nulls_percent</span><span class="pi">:</span> 
+                  <span class="na">warning</span><span class="pi">:</span> 
+                    <span class="na">max_percent</span><span class="pi">:</span> <span class="m">8.0</span>
+                  <span class="na">error</span><span class="pi">:</span> 
+                    <span class="na">max_percent</span><span class="pi">:</span> <span class="m">10.0</span>
+                  <span class="na">fatal</span><span class="pi">:</span> 
+                    <span class="na">max_percent</span><span class="pi">:</span> <span class="m">11.0</span>
+
 
   <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">consistency</span>
     <span class="na">displaytitle</span><span class="pi">:</span>
@@ -1298,20 +1310,26 @@ not feasable or possible to arrange for various reasons. <em>Type</em> attribute
 <tr>
 <td><strong>type</strong></td>
 <td>attribute</td>
+<td>string, one of: <a href="https://docs.soda.io/soda-cl/soda-cl-overview.html">SodaCL</a>, <a href="https://docs.getmontecarlo.com/docs/monitors-as-code">Montecarlo</a>, <a href="https://dqops.com/docs/categories-of-data-quality-checks/">DQOps</a>, Custom</td>
+<td>DAta Quality Monitoring as code system name. Use one of the predefined options only. With <em>Custom</em> type you can use your in-house solution.</td>
+</tr>
+<tr>
+<td><strong>version</strong></td>
+<td>attribute</td>
 <td>string</td>
-<td>monitoring system name name such as SodaCL and Montecarlo. The systems enable as code approach to monitor data quality.</td>
+<td>The version of DQ monitoring tool used.</td>
 </tr>
 <tr>
 <td><strong>reference</strong></td>
 <td>URL</td>
 <td>Valid URL</td>
-<td>Provide URL for the reference documentation</td>
+<td>Provide URL pointing to the reference documentation</td>
 </tr>
 <tr>
 <td><strong>spec</strong></td>
 <td>element</td>
-<td>YAML or string</td>
-<td>contains the as code part for monitoring. Content is intended to be in a form that can be injected as is to defined monitoring system. Content depends of the system used and reference attribute is expected to provide more information.</td>
+<td>YAML/URL/string</td>
+<td>The content the as code part for Data Quality monitoring. Content is intended to be in a form that can be injected as is to <em>type</em> defined monitoring system. Content depends of the system used and reference attribute is expected to provide more information. <br/><br/> <strong>Note!</strong> By default the rules must be provide as valid YAML, either as inline element (YAML) or as valid URL (filesystem or online) pointing to valid YAML content file. String content is allowed and used only if <em>type</em> attribute value is <em>Custom</em>. In the custom case your string of course can be YAML too.</td>
 </tr>
 </tbody></table>
 
