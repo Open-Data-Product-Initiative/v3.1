@@ -315,7 +315,7 @@
 
   </head>
 
-  <body class="index" data-languages="[&quot;yaml&quot;]">
+  <body class="index" data-languages="[&quot;yaml&quot;,&quot;json&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -326,6 +326,7 @@
       <img src="images/logo-dps-new-4bb33ca5.png" class="logo" alt="" />
         <div class="lang-selector">
               <a href="#" data-language-name="yaml">yaml</a>
+              <a href="#" data-language-name="json">json</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -1177,9 +1178,11 @@ not feasable or possible to arrange for various reasons. <em>Type</em> attribute
 <blockquote>
 <p>Template structure of Data Quality array component:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight yaml"><code> <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">selected dimension</span>
+<div class="highlight"><pre class="highlight yaml"><code><span class="na">declative</span><span class="pi">:</span>
+ <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">selected dimension</span>
     <span class="s">objective</span><span class="pi">:</span> 
-    <span class="na">unit</span><span class="pi">:</span> 
+    <span class="na">unit</span><span class="pi">:</span>
+<span class="na">executable</span><span class="pi">:</span>
     <span class="na">monitoring</span><span class="pi">:</span>
       <span class="na">type</span><span class="pi">:</span>  
       <span class="na">version</span><span class="pi">:</span> 
@@ -1199,27 +1202,29 @@ not feasable or possible to arrange for various reasons. <em>Type</em> attribute
 <blockquote>
 <p>Example of Data Quality component with some of the data quality dimensions:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight yaml"><code>
-<span class="na">dataQuality</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">accuracy</span>
-    <span class="na">displaytitle</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Data Accuracy (percent)</span>
-    <span class="pi">-</span> <span class="na">fi</span><span class="pi">:</span> <span class="s">Datan virheettömyys (prosenttia)</span>
-    <span class="na">objective</span><span class="pi">:</span> <span class="m">98</span>
-    <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
-    <span class="na">monitoring</span><span class="pi">:</span>
+<div class="highlight"><pre class="highlight yaml"><code><span class="na">dataQuality</span><span class="pi">:</span>
+
+  <span class="na">declarative</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">accuracy</span>
+      <span class="na">displaytitle</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Data Accuracy (percent)</span>
+      <span class="pi">-</span> <span class="na">fi</span><span class="pi">:</span> <span class="s">Datan virheettömyys (prosenttia)</span>
+      <span class="na">objective</span><span class="pi">:</span> <span class="m">98</span>
+      <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
+    <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">completeness</span>
+      <span class="na">displaytitle</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Data Completeness (percent)</span>
+      <span class="na">objective</span><span class="pi">:</span> <span class="m">90</span>
+      <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
+
+  <span class="na">executable</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">accuracy</span>
       <span class="na">type</span><span class="pi">:</span> <span class="s">SodaCL</span>
       <span class="na">reference</span><span class="pi">:</span> <span class="s">https://docs.soda.io/soda-cl/soda-cl-overview.html</span>
       <span class="na">spec</span><span class="pi">:</span>
         <span class="pi">-</span> <span class="s">require_unique(member_id)</span> 
         <span class="pi">-</span> <span class="s">require_range(age_band, 18, 100)</span>
-
-  <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">completeness</span>
-    <span class="na">displaytitle</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Data Completeness (percent)</span>
-    <span class="na">objective</span><span class="pi">:</span> <span class="m">90</span>
-    <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
-    <span class="na">monitoring</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">completeness</span>
       <span class="na">type</span><span class="pi">:</span> <span class="s">DQOps</span>
       <span class="na">version</span><span class="pi">:</span> <span class="s">1.6.0</span> 
       <span class="na">reference</span><span class="pi">:</span> <span class="s">https://dqops.com/docs/dqo-concepts/running-data-quality-checks/</span>
@@ -1234,29 +1239,48 @@ not feasable or possible to arrange for various reasons. <em>Type</em> attribute
                   <span class="na">error</span><span class="pi">:</span> 
                     <span class="na">max_percent</span><span class="pi">:</span> <span class="m">10.0</span>
                   <span class="na">fatal</span><span class="pi">:</span> 
-                    <span class="na">max_percent</span><span class="pi">:</span> <span class="m">11.0</span>
-
-
-  <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">consistency</span>
-    <span class="na">displaytitle</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Data Consistency (percent)</span>
-    <span class="pi">-</span> <span class="na">fi</span><span class="pi">:</span> <span class="s">Datan johdonmukaisuus (prosenttia)</span>
-    <span class="na">objective</span><span class="pi">:</span> <span class="m">98</span>
-    <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
-
-  <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">timeliness</span>
-    <span class="na">objective</span><span class="pi">:</span> <span class="m">100</span>
-    <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
-
-  <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">validity</span>
-    <span class="na">objective</span><span class="pi">:</span> <span class="m">98</span>
-    <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
-
-  <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">uniqueness</span>
-    <span class="na">objective</span><span class="pi">:</span> <span class="m">100</span>
-    <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
-
-</code></pre></div>
+                    <span class="na">max_percent</span><span class="pi">:</span> <span class="s">11.0</span>      
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"dataQuality"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"declarative"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"dimension"</span><span class="p">:</span><span class="w"> </span><span class="s2">"accuracy"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"displaytitle"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"en"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Data Accuracy (percent)"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"fi"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Datan virheettömyys (prosenttia)"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+                </span><span class="nl">"objective"</span><span class="p">:</span><span class="w"> </span><span class="mi">98</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"percentage"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"dimension"</span><span class="p">:</span><span class="w"> </span><span class="s2">"completeness"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"displaytitle"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"en"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Data Completeness (percent)"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+                </span><span class="nl">"objective"</span><span class="p">:</span><span class="w"> </span><span class="mi">90</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"percentage"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"executable"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"dimension"</span><span class="p">:</span><span class="w"> </span><span class="s2">"accuracy"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SodaCL"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://docs.soda.io/soda-cl/soda-cl-overview.html"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"spec"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="s2">"require_unique(member_id)"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"require_range(age_band, 18, 100)"</span><span class="w">
+                </span><span class="p">]</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
 <table><thead>
 <tr>
 <th><div style="width:150px">Element name</div></th>
@@ -2548,6 +2572,7 @@ not feasable or possible to arrange for various reasons. <em>Type</em> attribute
       <div class="dark-box">
           <div class="lang-selector">
                 <a href="#" data-language-name="yaml">yaml</a>
+                <a href="#" data-language-name="json">json</a>
           </div>
       </div>
     </div>
