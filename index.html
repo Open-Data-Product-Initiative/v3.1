@@ -1151,6 +1151,12 @@ not feasable or possible to arrange for various reasons. <em>Type</em> attribute
 <p>Each dimension has objective value, a unit and then <em>monitoring</em> &quot;as code&quot; to verify objective. In some cases monitoring is 
 not feasable or possible to arrange for various reasons. <em>Type</em> attribute indicates which monitoring system is used. <em>Reference</em> attribute contains url for reference documentation regarding the monitoring spec. <em>Spec</em> contains the monitoring rules &quot;as code&quot; to be executed in selected monitoring system as is. </p>
 <h2 id='odps-offers-8-standardized-options-to-define-and-measure-data-quality-with-everything-as-code-monitoring'>ODPS offers 8 standardized options to define and measure data quality with Everything as Code monitoring</h2>
+<blockquote>
+<p>In case standardized options are not enough:</p>
+</blockquote>
+
+<p>The QA object is general in nature and should be enough for common (80%) use cases. You can make extensions to the standard with &quot;x-&quot; mechanism in order to fulfill any industry specific needs. The <a href="#specification-extensions">&quot;Specification extensions&quot;</a> section provides details on how to use this feature. </p>
+
 <table><thead>
 <tr>
 <th><div style="width:150px">Data Quality Dimension</div></th>
@@ -1192,8 +1198,6 @@ not feasable or possible to arrange for various reasons. <em>Type</em> attribute
 </tbody></table>
 
 <p>Data integrity is the maintenance of, and the assurance of, data accuracy and consistency over its entire life-cycle. That is why <em>integrity</em> is not in the attributes, but accuracy and consistency as well as completeness are. </p>
-
-<p>The QA object is general in nature and should be enough for common (80%) use cases. Note that you can make extensions to the standard with &quot;x-&quot; mechanism in order to fulfill any industry specific needs. The <a href="#specification-extensions">&quot;Specification extensions&quot;</a> section provides details on how to use this feature. </p>
 <h2 id='optional-attributes-and-elements'>Optional attributes and elements</h2>
 <blockquote>
 <p>Example of Data Quality component with some of the data quality dimensions:</p>
