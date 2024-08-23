@@ -386,7 +386,7 @@
             <a href="#data-pricing-plans" class="toc-h1 toc-link" data-title="Data Pricing Plans">Data Pricing Plans</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#odps-offers-12-standardized-pricing-models" class="toc-h2 toc-link" data-title="ODPS offers 12 standardized pricing models">ODPS offers 12 standardized pricing models</a>
+                    <a href="#odps-supports-12-standardized-pricing-models" class="toc-h2 toc-link" data-title="ODPS supports 12 standardized pricing models">ODPS supports 12 standardized pricing models</a>
                   </li>
                   <li>
                     <a href="#optional-attributes-and-elements" class="toc-h2 toc-link" data-title="Optional attributes and elements">Optional attributes and elements</a>
@@ -1351,7 +1351,9 @@ not feasable or possible to arrange for various reasons. <em>Type</em> attribute
 <p>If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, <a href="https://github.com/Open-Data-Product-Initiative/dev/issues">raise an issue in Github</a></p>
 <h1 id='data-pricing-plans'>Data Pricing Plans</h1>
 <p>Pricing is the process whereby a business sets the price at which it will sell its products and services. Pricing <strong>OBJECT</strong> consists of mandatory and optional attributes. This element contains pricing plans related data to be used for example in displaying the items in a marketplace. If needed the standard metadata is converted to marketplace internal format. We encourage all data product owners to enforce usage of this standard.  </p>
-<h2 id='odps-offers-12-standardized-pricing-models'>ODPS offers 12 standardized pricing models</h2>
+<h2 id='odps-supports-12-standardized-pricing-models'>ODPS supports 12 standardized pricing models</h2>
+<p>The <em>unit</em> attribute defines the plan and options for that are fixed unless extended with &quot;x-&quot; mechanism. </p>
+
 <blockquote>
 <p>In case standardized options are not enough:</p>
 </blockquote>
@@ -1364,15 +1366,17 @@ not feasable or possible to arrange for various reasons. <em>Type</em> attribute
 <span class="na">pricingPlans</span><span class="pi">:</span>
   <span class="na">en</span><span class="pi">:</span>
   <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Premium subscription 1 year</span>
+    <span class="na">unit</span><span class="pi">:</span> <span class="s">recurring</span>
     <span class="na">priceCurrency</span><span class="pi">:</span> <span class="s">EUR</span>
     <span class="na">price</span><span class="pi">:</span> <span class="m">50.00</span>
     <span class="na">billingDuration</span><span class="pi">:</span> <span class="s">year</span>
-    <span class="na">unit</span><span class="pi">:</span> <span class="s">recurring</span>
+
   <span class="pi">-</span> <span class="na">x-name</span><span class="pi">:</span> <span class="s">Extension plan</span>
+    <span class="na">unit</span><span class="pi">:</span> <span class="s">custom</span>
     <span class="na">priceCurrency</span><span class="pi">:</span> <span class="s">EUR</span>
     <span class="na">price</span><span class="pi">:</span> <span class="m">50.00</span>
     <span class="na">billingDuration</span><span class="pi">:</span> <span class="s">year</span>
-    <span class="na">unit</span><span class="pi">:</span> <span class="s">recurring</span>
+
 </code></pre></div>
 <table><thead>
 <tr>
