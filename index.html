@@ -386,7 +386,7 @@
             <a href="#data-pricing-plans" class="toc-h1 toc-link" data-title="Data Pricing Plans">Data Pricing Plans</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#odps-supports-11-standardized-pricing-models" class="toc-h2 toc-link" data-title="ODPS supports 11 standardized pricing models">ODPS supports 11 standardized pricing models</a>
+                    <a href="#odps-supports-12-standardized-pricing-models" class="toc-h2 toc-link" data-title="ODPS supports 12 standardized pricing models">ODPS supports 12 standardized pricing models</a>
                   </li>
                   <li>
                     <a href="#optional-attributes-and-elements" class="toc-h2 toc-link" data-title="Optional attributes and elements">Optional attributes and elements</a>
@@ -1395,10 +1395,6 @@
     <span class="na">price</span><span class="pi">:</span> <span class="m">8.00</span>
     <span class="na">billingDuration</span><span class="pi">:</span> <span class="s">month</span>
 </code></pre></div>
-<p>Pricing is the process whereby a business sets the price at which it will sell its products and services. Pricing <strong>OBJECT</strong> consists of mandatory and optional attributes. This element contains pricing plans related data to be used for example in displaying the items in a marketplace. If needed the standard metadata is converted to marketplace internal format. We encourage all data product owners to enforce usage of this standard.  </p>
-<h2 id='odps-supports-11-standardized-pricing-models'>ODPS supports 11 standardized pricing models</h2>
-<p>The <em>unit</em> attribute defines the plan and options for that are fixed unless extended with &quot;x-&quot; mechanism. Read more about the <a href="https://github.com/Open-Data-Product-Initiative/dev/wiki/Pricing-Plans#version-dev">Pricing plans from ODPS wiki</a></p>
-
 <blockquote>
 <p>In case standardized options are not enough:</p>
 </blockquote>
@@ -1423,6 +1419,12 @@
     <span class="na">billingDuration</span><span class="pi">:</span> <span class="s">year</span>
 
 </code></pre></div>
+<p>Pricing is the process whereby a business sets the price at which it will sell its products and services. Pricing <strong>OBJECT</strong> consists of mandatory and optional attributes. This element contains pricing plans related data to be used for example in displaying the items in a marketplace. If needed the standard metadata is converted to marketplace internal format. We encourage all data product owners to enforce usage of this standard.  </p>
+
+<p>The Pricing object is general in nature and should be enough for common (80%) use cases. Note that you can make extensions to the standard with &quot;x-&quot; mechanism in order to fulfill any industry specific needs. The <a href="#specification-extensions">&quot;Specification extensions&quot;</a> section provides details on how to use this feature. </p>
+<h2 id='odps-supports-12-standardized-pricing-models'>ODPS supports 12 standardized pricing models</h2>
+<p>The <em>unit</em> attribute defines the plan and options for that are fixed unless extended with &quot;x-&quot; mechanism. Read more about the <a href="https://github.com/Open-Data-Product-Initiative/dev/wiki/Pricing-Plans#version-dev">Pricing plans from ODPS wiki</a></p>
+
 <table><thead>
 <tr>
 <th><div style="width:150px">Pricing plan</div></th>
