@@ -364,7 +364,7 @@
             <a href="#data-sla" class="toc-h1 toc-link" data-title="Data SLA">Data SLA</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#sla-can-be-defined-with-11-standardized-dimensions-with-everything-as-code-monitoring" class="toc-h2 toc-link" data-title="SLA can be defined with 11 standardized dimensions with Everything as Code monitoring">SLA can be defined with 11 standardized dimensions with Everything as Code monitoring</a>
+                    <a href="#sla-can-be-defined-with-11-standardized-dimensions-with-decoupled-everything-as-code-monitoring" class="toc-h2 toc-link" data-title="SLA can be defined with 11 standardized dimensions with decoupled Everything as Code monitoring">SLA can be defined with 11 standardized dimensions with decoupled Everything as Code monitoring</a>
                   </li>
                   <li>
                     <a href="#optional-attributes-and-elements" class="toc-h2 toc-link" data-title="Optional attributes and elements">Optional attributes and elements</a>
@@ -853,12 +853,28 @@
 
 <p>If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, <a href="https://github.com/Open-Data-Product-Initiative/dev/issues">raise an issue in Github</a></p>
 <h1 id='data-sla'>Data SLA</h1>
+<blockquote>
+<p>Template structure of SLA array component:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml"><code><span class="na">declarative</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">selected dimension</span>
+    <span class="na">displaytitle</span><span class="pi">:</span>
+    <span class="na">description</span><span class="pi">:</span>
+    <span class="na">objective</span><span class="pi">:</span> 
+    <span class="na">unit</span><span class="pi">:</span>
+<span class="na">executable</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">selected dimension</span>
+    <span class="na">type</span><span class="pi">:</span>  
+    <span class="na">version</span><span class="pi">:</span> 
+    <span class="na">reference</span><span class="pi">:</span> 
+    <span class="na">spec</span><span class="pi">:</span>
+</code></pre></div>
 <p>Data Service Level Agreement (SLA) <strong>Object</strong> contains attributes which define the desired and promised quality of the data product. </p>
 
 <p>A Data Service Level Agreement (SLA) is a contractual agreement between a data service provider and its customers that defines the expected level of service quality, performance, and availability for the data services provided. SLAs outline specific metrics, targets, and responsibilities that both parties agree to adhere to, ensuring accountability and transparency in the delivery of data services.</p>
 
 <p>Defining Data SLAs in a machine-readable format enhances automation, facilitates monitoring, enables real-time compliance tracking, and supports seamless integration with monitoring and alerting systems.</p>
-<h2 id='sla-can-be-defined-with-11-standardized-dimensions-with-everything-as-code-monitoring'>SLA can be defined with 11 standardized dimensions with Everything as Code monitoring</h2>
+<h2 id='sla-can-be-defined-with-11-standardized-dimensions-with-decoupled-everything-as-code-monitoring'>SLA can be defined with 11 standardized dimensions with decoupled Everything as Code monitoring</h2>
 <table><thead>
 <tr>
 <th><div style="width:150px">SLA Dimension</div></th>
@@ -911,20 +927,7 @@
 </tr>
 </tbody></table>
 
-<blockquote>
-<p>Template structure of SLA array component:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight yaml"><code> <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">selected dimension</span>
-    <span class="s">objective</span><span class="pi">:</span> 
-    <span class="na">unit</span><span class="pi">:</span> 
-    <span class="na">monitoring</span><span class="pi">:</span>
-      <span class="na">type</span><span class="pi">:</span>  
-      <span class="na">reference</span><span class="pi">:</span> 
-      <span class="na">spec</span><span class="pi">:</span>
-
-</code></pre></div>
-<p>Each dimension has objective value, a unit and then <em>monitoring</em> &quot;as code&quot; to verify objective. In some cases monitoring is 
-not feasable or possible to arrange for various reasons. <em>Type</em> attribute indicates which monitoring system is used. <em>Reference</em> attribute contains url for reference documentation regarding the monitoring spec. <em>Spec</em> contains the actucal &quot;as code&quot; part as YAML or string which can be executed in selected monitoring system as is. <strong>Note!</strong> The &quot;as code&quot; part of the component is the initial step towards embracing Everything as Code paradigm, but is still experimental.</p>
+<p><strong>Structure notes:</strong> The SLA object is divided into 2 parts: declarative and executable. Declarative part defines the dimensions and aimed/intended SLA levels in defined unit. Executable part contains the machine-readable &quot;as code&quot; rules to validate SLA dimensions. The code inside <em>spec</em> element is intended to be injected as in supporting SLA monitoring platforms in their defined format and structure.  </p>
 
 <p>The SLA object is general in nature and should be enough for common (80%) use cases. Note that you can make extensions to the standard with &quot;x-&quot; mechanism in order to fulfill any industry specific needs. The <a href="#specification-extensions">&quot;Specification extensions&quot;</a> section provides details on how to use this feature. </p>
 
@@ -937,85 +940,52 @@ not feasable or possible to arrange for various reasons. <em>Type</em> attribute
 </blockquote>
 <div class="highlight"><pre class="highlight yaml"><code>
 <span class="na">SLA</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">latency</span>
-    <span class="na">displaytitle</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Latency</span>
-    <span class="na">objective</span><span class="pi">:</span> <span class="m">100</span>
-    <span class="na">unit</span><span class="pi">:</span> <span class="s">milliseconds</span>
-    <span class="na">monitoring</span><span class="pi">:</span>
+  <span class="na">declarative</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">uptime</span>
+      <span class="na">displaytitle</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Uptime</span>
+      <span class="na">objective</span><span class="pi">:</span> <span class="m">99</span>
+      <span class="na">unit</span><span class="pi">:</span> <span class="s">percent</span>
+    <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">responseTime</span>
+      <span class="na">objective</span><span class="pi">:</span> <span class="m">200</span>
+      <span class="na">unit</span><span class="pi">:</span> <span class="s">milliseconds</span>
+    <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">updateFrequency</span>
+      <span class="na">objective</span><span class="pi">:</span> <span class="m">30</span>
+      <span class="na">unit</span><span class="pi">:</span> <span class="s">minutes</span>
+    <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">errorRate</span>
+      <span class="na">objective</span><span class="pi">:</span> <span class="m">0.1</span>
+      <span class="na">unit</span><span class="pi">:</span> <span class="s">percent</span>
+    <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">endOfSupport</span>
+      <span class="na">objective</span><span class="pi">:</span> <span class="s">01/01/2025</span>
+      <span class="na">unit</span><span class="pi">:</span> <span class="s">date</span>
+    <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">endOfLife</span>
+      <span class="na">objective</span><span class="pi">:</span> <span class="s">01/03/2025</span>
+      <span class="na">unit</span><span class="pi">:</span> <span class="s">date</span>
+  <span class="na">executable</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">uptime</span>
       <span class="na">type</span><span class="pi">:</span> <span class="s">prometheus</span>
-      <span class="na">reference</span><span class="pi">:</span> <span class="s">https://prometheus.io/docs/prometheus/latest/querying/basics/</span> 
-      <span class="na">spec</span><span class="pi">:</span>  <span class="c1"># expressed as string or inline yaml</span>
-        <span class="s">myTimer.observeDuration();</span>
-
-  <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">uptime</span>
-    <span class="na">displaytitle</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Uptime</span>
-    <span class="na">objective</span><span class="pi">:</span> <span class="m">99</span>
-    <span class="na">unit</span><span class="pi">:</span> <span class="s">percent</span>
-    <span class="na">monitoring</span><span class="pi">:</span>
-      <span class="na">type</span><span class="pi">:</span> <span class="s">prometheus</span>
-      <span class="na">reference</span><span class="pi">:</span> <span class="s">https://prometheus.io/docs/prometheus/latest/querying/basics/</span>
-      <span class="na">spec</span><span class="pi">:</span>  <span class="pi">|</span> <span class="c1"># expressed as string or inline yaml</span>
+      <span class="na">reference</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://prometheus.io/docs/prometheus/latest/querying/basics/'</span>
+      <span class="na">spec</span><span class="pi">:</span> <span class="pi">|-</span>
         <span class="s">avg_over_time(</span>
           <span class="s">(</span>
             <span class="s">sum without() (up{job="prometheus"})</span>
               <span class="s">or</span>
             <span class="s">(0 * sum_over_time(up{job="prometheus"}[7d]))</span>
           <span class="s">)[7d:5m]</span>
-        <span class="s">)    </span>
-
-  <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">responseTime</span>
-    <span class="na">objective</span><span class="pi">:</span> <span class="m">200</span>
-    <span class="na">unit</span><span class="pi">:</span> <span class="s">milliseconds</span>
-    <span class="na">monitoring</span><span class="pi">:</span>
+        <span class="s">)   </span>
+    <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">responseTime</span>
       <span class="na">type</span><span class="pi">:</span> <span class="s">prometheus</span>
-      <span class="na">reference</span><span class="pi">:</span> <span class="s">https://prometheus.io/docs/prometheus/latest/querying/basics/</span> 
-      <span class="na">spec</span><span class="pi">:</span>  <span class="pi">|</span> <span class="c1"># expressed as string or inline yaml</span>
-        <span class="s">rate(http_server_requests_seconds_sum[$__rate_interval]) / rate(http_server_requests_seconds_count[$__rate_interval])</span>
-
-  <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">updateFrequency</span>
-    <span class="na">objective</span><span class="pi">:</span> <span class="m">30</span>
-    <span class="na">unit</span><span class="pi">:</span> <span class="s">minutes</span>
-    <span class="na">monitoring</span><span class="pi">:</span>
-      <span class="na">type</span><span class="pi">:</span> <span class="s">prometheus</span> 
-      <span class="na">spec</span><span class="pi">:</span> <span class="pi">|</span> <span class="c1"># expressed as string or inline yaml</span>
-        <span class="s">time() - max_over_time(timestamp(changes(table[5m]) &gt; 0)[1d:1m])</span>
-
-  <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">errorRate</span>
-    <span class="na">objective</span><span class="pi">:</span> <span class="m">0.1</span>
-    <span class="na">unit</span><span class="pi">:</span> <span class="s">percent</span>
-
-  <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">endOfSupport</span>
-    <span class="na">objective</span><span class="pi">:</span> <span class="s">01/01/2025</span> <span class="c1"># dd/mm/yyyy</span>
-    <span class="na">unit</span><span class="pi">:</span> <span class="s">date</span>
-
-  <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">endOfLife</span>
-    <span class="na">objective</span><span class="pi">:</span> <span class="s">01/03/2025</span> <span class="c1"># dd/mm/yyyy</span>
-    <span class="na">unit</span><span class="pi">:</span> <span class="s">date</span>
-
-  <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">timeToDetect</span>
-    <span class="na">objective</span><span class="pi">:</span> <span class="m">60</span>
-    <span class="na">unit</span><span class="pi">:</span> <span class="s">minutes</span>
-
-  <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">timeToNotify</span>
-    <span class="na">objective</span><span class="pi">:</span> <span class="m">120</span>
-    <span class="na">unit</span><span class="pi">:</span> <span class="s">minutes</span>
-
-  <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">timeToRepair</span>
-    <span class="na">objective</span><span class="pi">:</span> <span class="m">24</span>
-    <span class="na">unit</span><span class="pi">:</span> <span class="s">hours</span>
-
-  <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">emailResponseTime</span>
-    <span class="na">objective</span><span class="pi">:</span> <span class="m">12</span>
-    <span class="na">unit</span><span class="pi">:</span> <span class="s">hours</span>
-
+      <span class="na">reference</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://prometheus.io/docs/prometheus/latest/querying/basics/'</span>
+      <span class="na">spec</span><span class="pi">:</span> <span class="pi">|-</span>
+        <span class="s">rate(http_server_requests_seconds_sum[$__rate_interval]) /</span>
+        <span class="s">rate(http_server_requests_seconds_count[$__rate_interval])</span>
   <span class="na">support</span><span class="pi">:</span>
-      <span class="na">phoneNumber</span><span class="pi">:</span> <span class="s1">'</span><span class="s">+971508976456'</span>
-      <span class="na">phoneServiceHours</span><span class="pi">:</span> <span class="s1">'</span><span class="s">Mon-Fri</span><span class="nv"> </span><span class="s">8am-4pm</span><span class="nv"> </span><span class="s">(GMT)'</span>
-      <span class="na">email</span><span class="pi">:</span> <span class="s">support@opendataproducts.org</span>
-      <span class="na">emailServiceHours</span><span class="pi">:</span> <span class="s1">'</span><span class="s">Mon-Fri</span><span class="nv"> </span><span class="s">8am-4pm</span><span class="nv"> </span><span class="s">(GMT)'</span>
-      <span class="na">documentationURL</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
+    <span class="na">phoneNumber</span><span class="pi">:</span> <span class="s1">'</span><span class="s">+971508976456'</span>
+    <span class="na">phoneServiceHours</span><span class="pi">:</span> <span class="s">Mon-Fri 8am-4pm (GMT)</span>
+    <span class="na">email</span><span class="pi">:</span> <span class="s">support@opendataproducts.org</span>
+    <span class="na">emailServiceHours</span><span class="pi">:</span> <span class="s">Mon-Fri 8am-4pm (GMT)</span>
+    <span class="na">documentationURL</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
+
 </code></pre></div>
 <table><thead>
 <tr>
@@ -1032,6 +1002,12 @@ not feasable or possible to arrange for various reasons. <em>Type</em> attribute
 <td>Binds the SLA related elements and attributes together</td>
 </tr>
 <tr>
+<td><strong>declarative</strong></td>
+<td>element</td>
+<td>-</td>
+<td>Grouping element which collects together SLA dimensions target level (objectives), name to display in UI in wanted languages, measuring unit used, and dimension name (one of standardized options).</td>
+</tr>
+<tr>
 <td><strong>dimension</strong></td>
 <td>attribute</td>
 <td>string, one of: <em>latency, uptime, responseTime, errorRate, endOfSupport, endOfLife, updateFrequency, timeToDetect, timeToNotify, timeToRepair, emailResponseTime</em></td>
@@ -1044,10 +1020,10 @@ not feasable or possible to arrange for various reasons. <em>Type</em> attribute
 <td>Name of the quality attribute indicating the timely interval. If date is given, format is dd/mm/yyyy</td>
 </tr>
 <tr>
-<td><strong>monitoring</strong></td>
+<td><strong>executable</strong></td>
 <td>element</td>
 <td>-</td>
-<td>Contains the monitoring (computational &quot;as code&quot;) structure to validate target state for the selected SLA dimension.</td>
+<td>Grouping element which collects together SLA monitoring. You can define the monitoring patterns as code under this element for the above mentioned SLA dimensions. In other words, contains the monitoring (computational &quot;as code&quot;) structure to validate target state for the selected SLA dimension. The actual as code part is added with <em>spec</em> element.</td>
 </tr>
 <tr>
 <td><strong>displayTitle</strong></td>
@@ -1065,19 +1041,19 @@ not feasable or possible to arrange for various reasons. <em>Type</em> attribute
 <td><strong>type</strong></td>
 <td>attribute</td>
 <td>string</td>
-<td>monitoring system name name such as Prometheus. The systems enable as code approach to monitor SLA.</td>
+<td>monitoring system name name such as Prometheus. The system used must support as code approach to monitor SLA.</td>
 </tr>
 <tr>
 <td><strong>spec</strong></td>
 <td>element</td>
-<td>YAML or string</td>
-<td>contains the as code part for monitoring. Content is intended to be in a form that can be injected as is to defined monitoring system.</td>
+<td>YAML/URL/string</td>
+<td>The content the as code part for SLA monitoring. Content is intended to be in a form that can be injected as is to <em>type</em> defined monitoring system. Content depends of the system used and reference attribute is expected to provide more information. <br/><br/> <strong>Note!</strong> By default the rules must be provide as valid String or YAML. If YAML is used, it must be either as inline element (YAML) or as valid URL (filesystem or online) pointing to valid YAML or string content file.</td>
 </tr>
 <tr>
 <td><strong>reference</strong></td>
 <td>URL</td>
 <td>Valid URL</td>
-<td>Provide URL for the reference documentation</td>
+<td>Provide URL for the reference documentation regarding used monitoring system.</td>
 </tr>
 <tr>
 <td><strong>support</strong></td>
@@ -1215,6 +1191,26 @@ not feasable or possible to arrange for various reasons. <em>Type</em> attribute
 </tr>
 </tbody></table>
 
+<p><strong>Structure notes:</strong> The Data Quality object is divided into 2 parts: declarative and executable. Declarative part defines the dimensions and aimed/intended data quality levels in defined unit. Executable part contains the machine-readable &quot;as code&quot; rules to validate data quality dimensions. The code inside <em>spec</em> element is intended to be injected as in supporting data quality platforms in their defined format and structure.  </p>
+
+<blockquote>
+<p>Template structure of Data Quality array component:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml"><code><span class="na">declarative</span><span class="pi">:</span>
+<span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">selected dimension</span>
+  <span class="na">displaytitle</span><span class="pi">:</span>
+  <span class="na">description</span><span class="pi">:</span>
+  <span class="na">objective</span><span class="pi">:</span> 
+  <span class="na">unit</span><span class="pi">:</span>
+<span class="na">executable</span><span class="pi">:</span>
+<span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">selected dimension</span>
+  <span class="na">type</span><span class="pi">:</span>  
+  <span class="na">version</span><span class="pi">:</span> 
+  <span class="na">reference</span><span class="pi">:</span> 
+  <span class="na">spec</span><span class="pi">:</span>
+</code></pre></div>
+<p>The QA object is general in nature and should be enough for common (80%) use cases. Note that you can make extensions to the standard with &quot;x-&quot; mechanism in order to fulfill any industry specific needs. The <a href="#specification-extensions">&quot;Specification extensions&quot;</a> section provides details on how to use this feature. </p>
+
 <p>Data integrity is the maintenance of, and the assurance of, data accuracy and consistency over its entire life-cycle. That is why <em>integrity</em> is not in the attributes, but accuracy and consistency as well as completeness are. </p>
 <h2 id='optional-attributes-and-elements'>Optional attributes and elements</h2>
 <blockquote>
@@ -1226,16 +1222,22 @@ not feasable or possible to arrange for various reasons. <em>Type</em> attribute
       <span class="na">displaytitle</span><span class="pi">:</span>
       <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Data Accuracy (percent)</span>
       <span class="pi">-</span> <span class="na">fi</span><span class="pi">:</span> <span class="s">Datan virheettömyys (prosenttia)</span>
-      <span class="na">description</span><span class="pi">:</span> 
-      <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Data Accuracy ensures the data product reflects the real-world entities or events it represents, minimizing errors and providing reliable insights.</span>
-      <span class="pi">-</span> <span class="na">fi</span><span class="pi">:</span> <span class="s">Datatuotteen tarkkuus varmistaa, että se heijastaa todellisia kohteita tai tapahtumia, vähentää virheitä ja tarjoaa luotettavaa tietoa.</span>
-      <span class="na">objective</span><span class="pi">:</span> <span class="m">98</span>
-      <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
-    <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">completeness</span>
-      <span class="na">displaytitle</span><span class="pi">:</span>
+    <span class="na">description</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="pi">&gt;-</span>
+          <span class="s">Data Accuracy ensures the data product reflects the real-world</span>
+          <span class="s">entities or events it represents, minimizing errors and providing</span>
+          <span class="s">reliable insights.</span>
+      <span class="pi">-</span> <span class="na">fi</span><span class="pi">:</span> <span class="pi">&gt;-</span>
+          <span class="s">Datatuotteen tarkkuus varmistaa, että se heijastaa todellisia</span>
+          <span class="s">kohteita tai tapahtumia, vähentää virheitä ja tarjoaa luotettavaa</span>
+          <span class="s">tietoa.</span>
+    <span class="na">objective</span><span class="pi">:</span> <span class="m">98</span>
+    <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
+  <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">completeness</span>
+    <span class="na">displaytitle</span><span class="pi">:</span>
       <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Data Completeness (percent)</span>
-      <span class="na">objective</span><span class="pi">:</span> <span class="m">90</span>
-      <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
+        <span class="na">objective</span><span class="pi">:</span> <span class="m">90</span>
+        <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
   <span class="na">executable</span><span class="pi">:</span>
     <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">accuracy</span>
       <span class="na">type</span><span class="pi">:</span> <span class="s">SodaCL</span>
