@@ -874,6 +874,10 @@
 <p>A Data Service Level Agreement (SLA) is a contractual agreement between a data service provider and its customers that defines the expected level of service quality, performance, and availability for the data services provided. SLAs outline specific metrics, targets, and responsibilities that both parties agree to adhere to, ensuring accountability and transparency in the delivery of data services.</p>
 
 <p>Defining Data SLAs in a machine-readable format enhances automation, facilitates monitoring, enables real-time compliance tracking, and supports seamless integration with monitoring and alerting systems.</p>
+
+<p><strong>Structure notes:</strong> The SLA object is divided into 2 parts: declarative and executable. Declarative part defines the dimensions and aimed/intended SLA levels in defined unit. Executable part contains the machine-readable &quot;as code&quot; rules to validate SLA dimensions. The code inside <em>spec</em> element is intended to be injected as in supporting SLA monitoring platforms in their defined format and structure.  </p>
+
+<p>The SLA object is general in nature and should be enough for common (80%) use cases. Note that you can make extensions to the standard with &quot;x-&quot; mechanism in order to fulfill any industry specific needs. The <a href="#specification-extensions">&quot;Specification extensions&quot;</a> section provides details on how to use this feature.</p>
 <h2 id='sla-can-be-defined-with-11-standardized-dimensions-with-decoupled-everything-as-code-monitoring'>SLA can be defined with 11 standardized dimensions with decoupled Everything as Code monitoring</h2>
 <table><thead>
 <tr>
@@ -926,12 +930,6 @@
 <td>How long do you need to respond to email support requests?</td>
 </tr>
 </tbody></table>
-
-<p><strong>Structure notes:</strong> The SLA object is divided into 2 parts: declarative and executable. Declarative part defines the dimensions and aimed/intended SLA levels in defined unit. Executable part contains the machine-readable &quot;as code&quot; rules to validate SLA dimensions. The code inside <em>spec</em> element is intended to be injected as in supporting SLA monitoring platforms in their defined format and structure.  </p>
-
-<p>The SLA object is general in nature and should be enough for common (80%) use cases. Note that you can make extensions to the standard with &quot;x-&quot; mechanism in order to fulfill any industry specific needs. The <a href="#specification-extensions">&quot;Specification extensions&quot;</a> section provides details on how to use this feature. </p>
-
-<p>Also basic email and phone support information can be expressed inside the SLA component.  </p>
 
 <p>No mandatory attributes at the moment. Optional attributes are listed in own table and an example is given in the right column. </p>
 <h2 id='optional-attributes-and-elements'>Optional attributes and elements</h2>
