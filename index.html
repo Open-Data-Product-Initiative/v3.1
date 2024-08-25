@@ -879,6 +879,22 @@
 
 <p>The SLA object is general in nature and should be enough for common (80%) use cases. Note that you can make extensions to the standard with &quot;x-&quot; mechanism in order to fulfill any industry specific needs. The <a href="#specification-extensions">&quot;Specification extensions&quot;</a> section provides details on how to use this feature.</p>
 <h2 id='sla-can-be-defined-with-11-standardized-dimensions-with-decoupled-everything-as-code-monitoring'>SLA can be defined with 11 standardized dimensions with decoupled Everything as Code monitoring</h2>
+<blockquote>
+<p>Example of SLA component usage:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml"><code>
+<span class="na">SLA</span><span class="pi">:</span>
+  <span class="na">declarative</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">uptime</span>
+      <span class="na">displaytitle</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Uptime</span>
+      <span class="na">objective</span><span class="pi">:</span> <span class="m">99</span>
+      <span class="na">unit</span><span class="pi">:</span> <span class="s">percent</span>
+    <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">responseTime</span>
+      <span class="na">objective</span><span class="pi">:</span> <span class="m">200</span>
+      <span class="na">unit</span><span class="pi">:</span> <span class="s">milliseconds</span>
+
+</code></pre></div>
 <table><thead>
 <tr>
 <th><div style="width:150px">SLA Dimension</div></th>
