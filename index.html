@@ -856,18 +856,19 @@
 <blockquote>
 <p>Template structure of SLA array component:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight yaml"><code><span class="na">declarative</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">selected dimension</span>
-    <span class="na">displaytitle</span><span class="pi">:</span>
-    <span class="na">description</span><span class="pi">:</span>
-    <span class="na">objective</span><span class="pi">:</span> 
-    <span class="na">unit</span><span class="pi">:</span>
-<span class="na">executable</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">selected dimension</span>
-    <span class="na">type</span><span class="pi">:</span>  
-    <span class="na">version</span><span class="pi">:</span> 
-    <span class="na">reference</span><span class="pi">:</span> 
-    <span class="na">spec</span><span class="pi">:</span>
+<div class="highlight"><pre class="highlight yaml"><code><span class="na">SLA</span><span class="pi">:</span>
+  <span class="na">declarative</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">selected dimension</span>
+      <span class="na">displaytitle</span><span class="pi">:</span>
+      <span class="na">description</span><span class="pi">:</span>
+      <span class="na">objective</span><span class="pi">:</span> 
+      <span class="na">unit</span><span class="pi">:</span>
+  <span class="na">executable</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">selected dimension</span>
+      <span class="na">type</span><span class="pi">:</span>  
+      <span class="na">version</span><span class="pi">:</span> 
+      <span class="na">reference</span><span class="pi">:</span> 
+      <span class="na">spec</span><span class="pi">:</span>
 </code></pre></div>
 <p>Data Service Level Agreement (SLA) <strong>Object</strong> contains attributes which define the desired and promised quality of the data product. </p>
 
@@ -906,6 +907,7 @@
     <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">responseTime</span>
       <span class="na">objective</span><span class="pi">:</span> <span class="m">200</span>
       <span class="na">unit</span><span class="pi">:</span> <span class="s">milliseconds</span>
+
 </code></pre></div><h2 id='sla-can-be-defined-with-11-standardized-dimensions-with-decoupled-everything-as-code-monitoring'>SLA can be defined with 11 standardized dimensions with decoupled Everything as Code monitoring</h2>
 <blockquote>
 <p>Example of SLA component usage:</p>
@@ -994,15 +996,6 @@
     <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">updateFrequency</span>
       <span class="na">objective</span><span class="pi">:</span> <span class="m">30</span>
       <span class="na">unit</span><span class="pi">:</span> <span class="s">minutes</span>
-    <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">errorRate</span>
-      <span class="na">objective</span><span class="pi">:</span> <span class="m">0.1</span>
-      <span class="na">unit</span><span class="pi">:</span> <span class="s">percent</span>
-    <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">endOfSupport</span>
-      <span class="na">objective</span><span class="pi">:</span> <span class="s">01/01/2025</span>
-      <span class="na">unit</span><span class="pi">:</span> <span class="s">date</span>
-    <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">endOfLife</span>
-      <span class="na">objective</span><span class="pi">:</span> <span class="s">01/03/2025</span>
-      <span class="na">unit</span><span class="pi">:</span> <span class="s">date</span>
   <span class="na">executable</span><span class="pi">:</span>
     <span class="pi">-</span> <span class="na">dimension</span><span class="pi">:</span> <span class="s">uptime</span>
       <span class="na">type</span><span class="pi">:</span> <span class="s">prometheus</span>
@@ -1021,6 +1014,7 @@
       <span class="na">spec</span><span class="pi">:</span> <span class="pi">|-</span>
         <span class="s">rate(http_server_requests_seconds_sum[$__rate_interval]) /</span>
         <span class="s">rate(http_server_requests_seconds_count[$__rate_interval])</span>
+
   <span class="na">support</span><span class="pi">:</span>
     <span class="na">phoneNumber</span><span class="pi">:</span> <span class="s1">'</span><span class="s">+971508976456'</span>
     <span class="na">phoneServiceHours</span><span class="pi">:</span> <span class="s">Mon-Fri 8am-4pm (GMT)</span>
