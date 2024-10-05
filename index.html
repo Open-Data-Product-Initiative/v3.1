@@ -1420,6 +1420,14 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 <p>The 12 pricing plans enabled by ODPS are meticulously defined through an in-depth analysis of pricing models applied across more than 300 data products. We continuously monitor the evolution of pricing plans in the data economy, striving to provide the most comprehensive and up-to-date list of standardized pricing options - yet some gaps might exist.</p>
 
 <p>The Pricing object is general in nature and should be enough for common (80%) use cases. You can make extensions to the standard with &quot;x-&quot; mechanism in order to fulfill any industry specific needs. The <a href="#specification-extensions">&quot;Specification extensions&quot;</a> section provides details on how to use this feature. </p>
+
+<p><strong>This version introduces the &quot;Pricing Plans as Code&quot; feature.</strong> You can define the necessary actions (CRUP) to set up and use the selected payment gateway, initiating the purchase process. <strong>CRUP</strong> stands for: 
+- <strong>C</strong>reate (create pricing plan), 
+- <strong>R</strong>etire (delete pricing plan), 
+- <strong>U</strong>pdate (update existing pricing plan) and,
+- <strong>P</strong>urchase (generate link to ignite purchase process in the gateway). </p>
+
+<p>With this feature, you can translate the pricing plans defined in the declarative part into executable code within payment gateways. </p>
 <h2 id='odps-supports-12-standardized-pricing-models'>ODPS supports 12 standardized pricing models</h2>
 <p>The <em>unit</em> attribute defines the plan and options for that are fixed unless extended with &quot;x-&quot; mechanism. Read more about the <a href="https://github.com/Open-Data-Product-Initiative/dev/wiki/Pricing-Plans#version-dev">Pricing plans from ODPS wiki</a></p>
 
