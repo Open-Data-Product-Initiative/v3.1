@@ -1484,47 +1484,42 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 </blockquote>
 <div class="highlight"><pre class="highlight yaml"><code>
 <span class="na">pricingPlans</span><span class="pi">:</span>
-  <span class="na">en</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Premium subscription 1 year</span>
-    <span class="na">priceCurrency</span><span class="pi">:</span> <span class="s">EUR</span>
-    <span class="na">price</span><span class="pi">:</span> <span class="m">50.00</span>
-    <span class="na">billingDuration</span><span class="pi">:</span> <span class="s">year</span>
-    <span class="na">unit</span><span class="pi">:</span> <span class="s">recurring</span>
-    <span class="na">maxTransactionQuantity</span><span class="pi">:</span> <span class="s">unlimited</span>
-    <span class="na">offering</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="s">High Quality Pets data</span>
-      <span class="pi">-</span> <span class="s">Unlimited transactions</span>
-      <span class="pi">-</span> <span class="s">Billed annually</span> 
-  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Premium Package Monthly</span>
-    <span class="na">priceCurrency</span><span class="pi">:</span> <span class="s">EUR</span>
-    <span class="na">price</span><span class="pi">:</span> <span class="m">5.00</span>
-    <span class="na">billingDuration</span><span class="pi">:</span> <span class="s">month</span>
-    <span class="na">unit</span><span class="pi">:</span> <span class="s">recurring</span>
-    <span class="na">maxTransactionQuantity</span><span class="pi">:</span> <span class="s">unlimited</span>
-    <span class="na">offering</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="s">High Quality Pets data</span>
-      <span class="pi">-</span> <span class="s">Unlimited transactions</span>
-      <span class="pi">-</span> <span class="s">Billed monthly</span> 
-  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Freemium Package</span>
-    <span class="na">priceCurrency</span><span class="pi">:</span> <span class="s">EUR</span>
-    <span class="na">price</span><span class="pi">:</span> <span class="m">0.00</span>
-    <span class="na">billingDuration</span><span class="pi">:</span> <span class="s">month</span>
-    <span class="na">unit</span><span class="pi">:</span> <span class="s">recurring</span>
-    <span class="na">maxTransactionQuantity</span><span class="pi">:</span> <span class="m">1000</span>
-    <span class="na">offering</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="s">High Quality Pets data</span>
-      <span class="pi">-</span> <span class="s">Free to use, no cost at all!</span>
-      <span class="pi">-</span> <span class="s">Fair amount of transactions for testing and small business</span> 
-  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Revenue sharing</span>
-    <span class="na">priceCurrency</span><span class="pi">:</span> <span class="s">percentage</span>
-    <span class="na">price</span><span class="pi">:</span> <span class="m">5.50</span>
-    <span class="na">billingDuration</span><span class="pi">:</span> <span class="s">month</span>
-    <span class="na">unit</span><span class="pi">:</span> <span class="s">revenue-sharing</span>
-    <span class="na">maxTransactionQuantity</span><span class="pi">:</span> <span class="m">20000</span>
-    <span class="na">offering</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="s">High Quality Pets data</span>
-      <span class="pi">-</span> <span class="s">No upfront fee</span>
-      <span class="pi">-</span> <span class="s">Billed monthly</span> 
+  <span class="na">declarative</span><span class="pi">:</span>
+    <span class="na">en</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Premium subscription 1 month</span>
+      <span class="na">priceCurrency</span><span class="pi">:</span> <span class="s">EUR</span>
+      <span class="na">price</span><span class="pi">:</span> <span class="m">50.00</span>
+      <span class="na">billingDuration</span><span class="pi">:</span> <span class="s">month</span>
+      <span class="na">unit</span><span class="pi">:</span> <span class="s">recurring</span>
+      <span class="na">maxTransactionQuantity</span><span class="pi">:</span> <span class="m">200000</span>
+      <span class="na">offering</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">High Quality Pets data</span>
+        <span class="pi">-</span> <span class="s">High amount of transactions</span>
+        <span class="pi">-</span> <span class="s">Billed monthly</span> 
+  <span class="na">executable</span><span class="pi">:</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s">Stripe</span> 
+      <span class="na">version</span><span class="pi">:</span> <span class="m">1.2</span>
+      <span class="na">reference</span><span class="pi">:</span> <span class="s">https://docs.stripe.com/payment-links/api</span>
+      <span class="na">create</span><span class="pi">:</span>
+        <span class="na">spec</span><span class="pi">:</span> <span class="pi">|-</span> 
+          <span class="s">stripe products create  \</span>
+          <span class="s">--name="Premium subscription 1 year"</span>
+
+          <span class="s">stripe prices create  \</span>
+          <span class="s">--currency=eur \</span>
+          <span class="s">--unit-amount=50 \</span>
+          <span class="s">-d "recurring[interval]"=month \</span>
+          <span class="s">-d "product_data[name]"="Premium subscription 1 year"</span>
+      <span class="na">update</span><span class="pi">:</span>
+        <span class="na">spec</span><span class="pi">:</span> <span class="pi">|-</span> 
+          <span class="s"># update plan as Stripe requires</span>
+      <span class="na">retire</span><span class="pi">:</span>
+        <span class="na">spec</span><span class="pi">:</span> <span class="pi">|-</span> 
+          <span class="s"># delete of the plan as Stripe requires</span>
+      <span class="na">purchase</span><span class="pi">:</span>
+        <span class="na">spec</span><span class="pi">:</span> <span class="pi">|-</span> 
+          <span class="s"># generate or get the link in order to </span>
+          <span class="s"># provide method for client to ignite purchase process  </span>
 
 </code></pre></div>
 <table><thead>
@@ -1546,6 +1541,12 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 <td>element</td>
 <td><a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1</a> defined 2-letter codes</td>
 <td><strong>NOTE! This is a dynamic element!</strong> This element binds together other product pricing plan attributes and expresses the langugage used. In the example this is &quot;en&quot;, which indicates that pricing plan details are in English. If you would like to use French details, then name the element &quot;fr&quot;. The naming of this element follows options (language codes) listed in <a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1</a> standard. <br/><br/> You can have product pricing plan details in multiple languages simply by adding similar sets like the example - just change the binding element name to matching language code. <br/><br/> The pattern to implement multilanguage support for data products was adopted from de facto UI translation practices. The attributes inside this element are commonly rendered in the UI for the consumer and providing a simple way to implement that was the driving reasoning. See for example  <a href="https://simplelocalize.io/docs/file-formats/multi-language-json/">JSON - Multi Language</a></td>
+</tr>
+<tr>
+<td><strong>declarative</strong></td>
+<td>element</td>
+<td>-</td>
+<td>Grouping element which collects together data product pricing plans with business details</td>
 </tr>
 <tr>
 <td><strong>priceCurrency</strong></td>
@@ -1636,6 +1637,60 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 <td>url</td>
 <td>valid url</td>
 <td>Intended to be used with <em>value-based</em> pricing plan. Provide url to value simulator in which customer can see the value in various cases. In the simulator customer might be able to input own variables to match their exact case and see the gained value.</td>
+</tr>
+<tr>
+<td><strong>executable</strong></td>
+<td>element</td>
+<td>-</td>
+<td>Grouping element which collects together pricing plans payment gateway management features. You can define the needed action (CRUP) to setup and use the gateway to ignite purchase process. <br/><br/> CRUP stands for: <strong>C</strong>reate, <strong>R</strong>etire, <strong>U</strong>pdate, and <strong>P</strong>urchase.  The actual as code part is added with <em>spec</em> element.</td>
+</tr>
+<tr>
+<td><strong>type</strong></td>
+<td>attribute</td>
+<td>string, one of: <em>Stripe</em>, <em>Custom</em></td>
+<td>Payment gateway system name. Use one of the predefined options only. With <em>Custom</em> type you can use your in-house solution.</td>
+</tr>
+<tr>
+<td><strong>version</strong></td>
+<td>attribute</td>
+<td>string</td>
+<td>The version of the payment gateway tool used.</td>
+</tr>
+<tr>
+<td><strong>reference</strong></td>
+<td>URL</td>
+<td>Valid URL</td>
+<td>Provide URL pointing to the reference documentation</td>
+</tr>
+<tr>
+<td><strong>create</strong></td>
+<td>element</td>
+<td>-</td>
+<td>Contains the as code part to create pricing plan in the payment gateway</td>
+</tr>
+<tr>
+<td><strong>retire</strong></td>
+<td>element</td>
+<td>-</td>
+<td>Contains the as code part to retire (delete) pricing plan in the payment gateway</td>
+</tr>
+<tr>
+<td><strong>update</strong></td>
+<td>element</td>
+<td>-</td>
+<td>Contains the as code part to update pricing plan in the payment gateway</td>
+</tr>
+<tr>
+<td><strong>purchase</strong></td>
+<td>element</td>
+<td>-</td>
+<td>Contains the as code part to create or get pricing plan purchase igniting link in the payment gateway</td>
+</tr>
+<tr>
+<td><strong>spec</strong></td>
+<td>element</td>
+<td>YAML/URL/string</td>
+<td>The content the as code part for the pricing plan. Content is intended to be in a form that can be injected as is to <em>type</em> defined payment gateway system. Content depends of the system used and reference attribute is expected to provide more information. <br/><br/> <strong>Note!</strong> By default the rules must be provide as valid YAML, either as inline element (YAML) or as valid URL (filesystem or online) pointing to valid YAML content file. String content is allowed and used only if <em>type</em> attribute value is <em>Custom</em>. In the custom case your string of course can be YAML too.</td>
 </tr>
 </tbody></table>
 
