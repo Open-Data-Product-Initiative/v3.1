@@ -1429,6 +1429,11 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 <li><strong>P</strong>urchase (generate link to ignite purchase process in the gateway). </li>
 </ul>
 
+<p>Supported payment gateways:
+- Stripe, 
+- Checkout,
+- Custom</p>
+
 <p>With this feature, you can translate the pricing plans defined in the declarative part into executable code within payment gateways. </p>
 <h2 id='odps-supports-12-standardized-pricing-models'>ODPS supports 12 standardized pricing models</h2>
 <p>The <em>unit</em> attribute defines the plan and options for that are fixed unless extended with &quot;x-&quot; mechanism. Read more about the <a href="https://github.com/Open-Data-Product-Initiative/dev/wiki/Pricing-Plans#version-dev">Pricing plans from ODPS wiki</a></p>
@@ -1652,12 +1657,12 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 <td><strong>executable</strong></td>
 <td>element</td>
 <td>-</td>
-<td>Grouping element which collects together pricing plans payment gateway management features. You can define the needed action (CRUP) to setup and use the gateway to ignite purchase process. <br/><br/> CRUP stands for: <strong>C</strong>reate, <strong>R</strong>etire, <strong>U</strong>pdate, and <strong>P</strong>urchase.  The actual as code part is added with <em>spec</em> element.</td>
+<td>Grouping element which collects together pricing plans payment gateway management features. You can define the needed action (CRUP) to setup and use the gateway to ignite purchase process. <br/><br/> CRUP stands for: <strong>C</strong>reate, <strong>R</strong>etire, <strong>U</strong>pdate, and <strong>Purchase</strong>.  The actual as code part is added with <em>spec</em> element.</td>
 </tr>
 <tr>
 <td><strong>type</strong></td>
 <td>attribute</td>
-<td>string, one of: <em>Stripe</em>, <em>Custom</em></td>
+<td>string, one of: <em>Stripe</em>, <em>Checkout</em>, <em>Custom</em></td>
 <td>Payment gateway system name. Use one of the predefined options only. With <em>Custom</em> type you can use your in-house solution.</td>
 </tr>
 <tr>
