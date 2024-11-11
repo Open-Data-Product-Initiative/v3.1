@@ -1,5 +1,5 @@
 ---
-title: Open (source) Data Product Specification Development Version | Linux Foundation 
+title: Open (source) Data Product Specification 3.1 RC Version | Linux Foundation 
 
 language_tabs: # must be one of https://git.io/vQNgJ
 - yaml
@@ -34,19 +34,19 @@ meta:
 
 # OPEN DATA PRODUCT SPECIFICATION 
 
-## Development Version 
+## Version 3.1 Release Candidate 
 
 The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”, “SHOULD NOT”, “RECOMMENDED”, “NOT RECOMMENDED”, “MAY”, and “OPTIONAL” in this document are to be interpreted as described in BCP 14 [RFC2119] [RFC8174] when, and only when, they appear in all capitals, as shown here.
 
 The specification is shared under <a href='https://www.apache.org/licenses/LICENSE-2.0'>Apache 2.0</a> license. 
 Development of the specification is under the umbrella of the Linux Foundation. 
 
-**DEVELOPMENT VERSION**
+**RELEASE CANDIDATE VERSION**
 
 
 **Version source:**
 
-* <a href="https://github.com/Open-Data-Product-Initiative/dev">https://github.com/Open-Data-Product-Initiative/dev</a>
+* <a href="https://github.com/Open-Data-Product-Initiative/rc">https://github.com/Open-Data-Product-Initiative/rc</a>
 
 **ODPS YAML Schema:**
 
@@ -59,7 +59,7 @@ Development of the specification is under the umbrella of the Linux Foundation.
 
 **Participate:**
 
-* [Raise an issue in Github](https://github.com/Open-Data-Product-Initiative/dev/issues)
+* [Raise an issue in Github](https://github.com/Open-Data-Product-Initiative/rc/issues)
 
 ## Introduction
 
@@ -87,7 +87,7 @@ The specification has been designed with four major aspects of the data product 
 ![odps-model](images/ODPS-design.png)
 
 
-If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, [raise an issue in Github](https://github.com/Open-Data-Product-Initiative/dev/issues)
+If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, [raise an issue in Github](https://github.com/Open-Data-Product-Initiative/rc/issues)
 
 ## Document structure
 
@@ -125,8 +125,8 @@ Here's the list of attributes which can occur at the document root level. In the
 > Example of document level attribute usage and structure:
 
 ```yml
-schema: https://opendataproducts.org/v3.0/schema/odps.yaml
-version: 3.0
+schema: https://opendataproducts.org/v3.1/schema/odps.yaml
+version: 3.1
 product:
   details:
     en:
@@ -146,7 +146,7 @@ product:
 | <div style="width:150px">Element name</div>   | Type  | Options  | Description  |
 |---|---|---|---|
 | **schema** | URL | Valid URL. See more from [RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986). | **REQUIRED** Defines the URL of Schema. Used often for validation purposes. |
-| **version** | string | This is the version of ODPS, for example dev or 2.2 | **REQUIRED** Defines the ODPS version. |
+| **version** | string | This is the version of ODPS, for example dev or 3.1 | **REQUIRED** Defines the ODPS version. |
 | **product** | element | root element | **REQUIRED** Root element to tie all together. |
 | **details** | element | product business details | **REQUIRED** Binds together business details in different languages. |
 | **en** | element | [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) defined 2-letter codes | **REQUIRED** - **NOTE! This is a dynamic element!** This element binds together other product attributes and expresses the langugage used. In the example this is "en", which indicates that product details are in English. If you would like to use French details, then name the element "fr". The naming of this element follows options (language codes) listed in [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) standard. <br/><br/> You can have product details in multiple languages simply by adding similar sets like the example - just change the binding element name to matching language code. <br/><br/> The pattern to implement multilanguage support for data products was adopted from de facto UI translation practices. The attributes inside this element are commonly rendered in the UI for the consumer and providing a simple way to implement that was the driving reasoning. See for example  [JSON - Multi Language](https://simplelocalize.io/docs/file-formats/multi-language-json/) |
@@ -166,8 +166,8 @@ RecommendedUseCases **OBJECT** is an array which contains offers method to attac
 > Example of document level attribute usage and structure:
 
 ```yml
-schema: https://opendataproducts.org/v3.0/schema/odps.yaml
-version: 3.0
+schema: https://opendataproducts.org/v3.1/schema/odps.yaml
+version: 3.1
 product:
   contract:
     id: 02323M123  
