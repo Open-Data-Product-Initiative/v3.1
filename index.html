@@ -17,7 +17,7 @@
             content="The Open Data Product Specification (Linux Foundation project) is a vendor-neutral, open-source machine-readable data product metadata model. It defines the objects and attributes as well as the structure of digital data products."
         >
 
-    <title>Open (source) Data Product Specification Development Version | Linux Foundation</title>
+    <title>Open (source) Data Product Specification 3.1 RC Version | Linux Foundation</title>
 
 
     <style media="screen">
@@ -336,7 +336,7 @@
             <a href="#open-data-product-specification" class="toc-h1 toc-link" data-title="OPEN DATA PRODUCT SPECIFICATION">OPEN DATA PRODUCT SPECIFICATION</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#development-version" class="toc-h2 toc-link" data-title="Development Version">Development Version</a>
+                    <a href="#version-3-1-release-candidate" class="toc-h2 toc-link" data-title="Version 3.1 Release Candidate">Version 3.1 Release Candidate</a>
                   </li>
                   <li>
                     <a href="#introduction" class="toc-h2 toc-link" data-title="Introduction">Introduction</a>
@@ -455,18 +455,18 @@
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='open-data-product-specification'>OPEN DATA PRODUCT SPECIFICATION</h1><h2 id='development-version'>Development Version</h2>
+        <h1 id='open-data-product-specification'>OPEN DATA PRODUCT SPECIFICATION</h1><h2 id='version-3-1-release-candidate'>Version 3.1 Release Candidate</h2>
 <p>The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”, “SHOULD NOT”, “RECOMMENDED”, “NOT RECOMMENDED”, “MAY”, and “OPTIONAL” in this document are to be interpreted as described in BCP 14 [RFC2119] [RFC8174] when, and only when, they appear in all capitals, as shown here.</p>
 
 <p>The specification is shared under <a href='https://www.apache.org/licenses/LICENSE-2.0'>Apache 2.0</a> license. 
 Development of the specification is under the umbrella of the Linux Foundation. </p>
 
-<p><strong>DEVELOPMENT VERSION</strong></p>
+<p><strong>RELEASE CANDIDATE VERSION</strong></p>
 
 <p><strong>Version source:</strong></p>
 
 <ul>
-<li><a href="https://github.com/Open-Data-Product-Initiative/dev">https://github.com/Open-Data-Product-Initiative/dev</a></li>
+<li><a href="https://github.com/Open-Data-Product-Initiative/rc">https://github.com/Open-Data-Product-Initiative/rc</a></li>
 </ul>
 
 <p><strong>ODPS YAML Schema:</strong></p>
@@ -484,7 +484,7 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 <p><strong>Participate:</strong></p>
 
 <ul>
-<li><a href="https://github.com/Open-Data-Product-Initiative/dev/issues">Raise an issue in Github</a></li>
+<li><a href="https://github.com/Open-Data-Product-Initiative/rc/issues">Raise an issue in Github</a></li>
 </ul>
 <h2 id='introduction'>Introduction</h2>
 <p>The Open Data Product Specification is a vendor-neutral, open-source machine-readable data product metadata model. It defines the objects and attributes as well as the structure of digital data products. The work is based on existing standards (schema.org), best practices and emerging concepts like Data Mesh. The reasoning is that we reuse and proudly copy instead of reinventing the wheel. More detailed information of the origin can be found from the <a href="http://www.opendataproducts.org">Open Data Product Specification homepage</a>. </p>
@@ -510,7 +510,7 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 
 <p><img src="images/ODPS-design-d19966d9.png" alt="odps-model" /></p>
 
-<p>If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, <a href="https://github.com/Open-Data-Product-Initiative/dev/issues">raise an issue in Github</a></p>
+<p>If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, <a href="https://github.com/Open-Data-Product-Initiative/rc/issues">raise an issue in Github</a></p>
 <h2 id='document-structure'>Document structure</h2>
 <p><strong>LEFT COLUMN: Navigation</strong></p>
 
@@ -540,8 +540,8 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 <blockquote>
 <p>Example of document level attribute usage and structure:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight yaml"><code><span class="na">schema</span><span class="pi">:</span> <span class="s">https://opendataproducts.org/v3.0/schema/odps.yaml</span>
-<span class="na">version</span><span class="pi">:</span> <span class="m">3.0</span>
+<div class="highlight"><pre class="highlight yaml"><code><span class="na">schema</span><span class="pi">:</span> <span class="s">https://opendataproducts.org/v3.1/schema/odps.yaml</span>
+<span class="na">version</span><span class="pi">:</span> <span class="m">3.1</span>
 <span class="na">product</span><span class="pi">:</span>
   <span class="na">details</span><span class="pi">:</span>
     <span class="na">en</span><span class="pi">:</span>
@@ -574,7 +574,7 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 <tr>
 <td><strong>version</strong></td>
 <td>string</td>
-<td>This is the version of ODPS, for example dev or 2.2</td>
+<td>This is the version of ODPS, for example dev or 3.1</td>
 <td><strong>REQUIRED</strong> Defines the ODPS version.</td>
 </tr>
 <tr>
@@ -634,8 +634,8 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 <blockquote>
 <p>Example of document level attribute usage and structure:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight yaml"><code><span class="na">schema</span><span class="pi">:</span> <span class="s">https://opendataproducts.org/v3.0/schema/odps.yaml</span>
-<span class="na">version</span><span class="pi">:</span> <span class="m">3.0</span>
+<div class="highlight"><pre class="highlight yaml"><code><span class="na">schema</span><span class="pi">:</span> <span class="s">https://opendataproducts.org/v3.1/schema/odps.yaml</span>
+<span class="na">version</span><span class="pi">:</span> <span class="m">3.1</span>
 <span class="na">product</span><span class="pi">:</span>
   <span class="na">contract</span><span class="pi">:</span>
     <span class="na">id</span><span class="pi">:</span> <span class="s">02323M123</span>  
