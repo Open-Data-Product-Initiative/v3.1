@@ -154,10 +154,10 @@ SLA:
 | **spec** | element | YAML/URL/string | The content the as code part for SLA monitoring. Content is intended to be in a form that can be injected as is to _type_ defined monitoring system. Content depends of the system used and reference attribute is expected to provide more information. <br/><br/> **Note!** By default the rules must be provide as valid String or YAML. If YAML is used, it must be either as inline element (YAML) or as valid URL (filesystem or online) pointing to valid YAML or string content file. |
 | **reference** | URL | Valid URL | Provide URL for the reference documentation regarding used monitoring system. |
 | **support** | element | - | Support element describes how the customer can reach for help in case of difficulties in usage, billing, or otherwise. |
-| **phoneNumber** | string | valid phone number | The support phone number. Use [E.164](https://www.itu.int/rec/T-REC-E.164/en)  |
-| **phoneServiceHours** | string | - | Describes the service hours company provides. Contains information often in week level eg Mon-Fri at 8am - 4pm. |
-| **email** | string | valid email address | Email information for support requests. Use [RFC2822](https://datatracker.ietf.org/doc/html/rfc2822) |
-| **emailServiceHours** | string | - | Describes the email service hours company provides. Contains information often in week level eg Mon-Fri at 8am - 4pm. |
+| **phoneNumber** | attribute | valid phone number | The support phone number. Use [E.164](https://www.itu.int/rec/T-REC-E.164/en)  |
+| **phoneServiceHours** | attribute | - | Describes the service hours company provides. Contains information often in week level eg Mon-Fri at 8am - 4pm. |
+| **email** | attribute | valid email address | Email information for support requests. Use [RFC2822](https://datatracker.ietf.org/doc/html/rfc2822) |
+| **emailServiceHours** | attribute | - | Describes the email service hours company provides. Contains information often in week level eg Mon-Fri at 8am - 4pm. |
 | **documentationURL** | URL | Valid URL | URL to documentation | 
 
 
