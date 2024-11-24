@@ -48,13 +48,13 @@ Development of the specification is under the umbrella of the Linux Foundation.
 
 * <a href="https://github.com/Open-Data-Product-Initiative/rc">https://github.com/Open-Data-Product-Initiative/rc</a>
 
-**ODPS YAML Schema:**
+**ODPS YAML version 3.1 Schema:**
 
-* <a href="https://opendataproducts.org/dev/schema/odps.yaml">YAML Schema</a>
+* <a href="https://opendataproducts.org/v3.1/schema/odps.yaml">YAML Schema</a>
 
 **Editors:**
 
-* <a href="https://www.linkedin.com/in/jarkkomoilanen/">Jarkko Moilanen</a>
+* <a href="https://www.linkedin.com/in/jarkkomoilanen/">Dr. Jarkko Moilanen</a>
 
 
 **Participate:**
@@ -187,7 +187,7 @@ product:
       productVersion: '0.1.0'
       versionNotes: New version with additional details such more accurate pet details
       issues: The current issues include incorrect information in the dog breeds. The
-        resolution for these problems is planned for the next     update, scheduled
+        resolution for these problems is planned for the next update, scheduled
         to be released on July 15th, 2023.
       categories:
       - pets
@@ -246,4 +246,4 @@ product:
 | **useCaseURL**| URL | Valid URL, [RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986) | Valid URL of the more detailed usecase description. |
 | **recommendedDataProducts** | array | Array of valid URLs ([RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986)) | Data products to recommend use next to this data product or even as replacement (for comparison). The URL provided MUST reference a description of a data product following this same standard |
 
-If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, [raise an issue in Github](https://github.com/Open-Data-Product-Initiative/dev/issues)
+If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, [raise an issue in Github](https://github.com/Open-Data-Product-Initiative/devv3.1/issues)
