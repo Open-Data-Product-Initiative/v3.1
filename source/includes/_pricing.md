@@ -154,7 +154,7 @@ pricingPlans:
 |  **maxDataQuantity** | Integer  | -  | The maximum amount of data transferred during the billing duration. Unit is GB. |
 |  **valueSimulator**  | url | valid url | Intended to be used with *value-based* pricing plan. Provide url to value simulator in which customer can see the value in various cases. In the simulator customer might be able to input own variables to match their exact case and see the gained value. |
 | **executable** | element | - | Grouping element which collects together pricing plans payment gateway management features. You can define the needed action (CRUP) to setup and use the gateway to ignite purchase process. <br/><br/> CRUP stands for: **C**reate, **R**etire, **U**pdate, and **Purchase**.  The actual as code part is added with _spec_ element. |
-| **type** | attribute | string, one of: _Stripe_, _Checkout_, _Custom_ | Payment gateway system name. Use one of the predefined options only. With _Custom_ type you can use your in-house solution. |
+| **type** | attribute | string, one of: _Stripe_, _Checkout_, _Square_, _Paypal_, _Custom_ | Payment gateway system name. Use one of the predefined options only. With _Custom_ type you can use your in-house solution. |
 | **version** | attribute | string | The version of the payment gateway tool used. |
 | **reference** | URL | Valid URL | Provide URL pointing to the reference documentation |
 | **create** | element | - | Contains the as code part to create pricing plan in the payment gateway |
