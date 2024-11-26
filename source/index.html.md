@@ -1,5 +1,5 @@
 ---
-title: Open (source) Data Product Specification 3.1 RC Version | Linux Foundation 
+title: Open (source) Data Product Specification 3.1 | Linux Foundation 
 
 language_tabs: # must be one of https://git.io/vQNgJ
 - yaml
@@ -34,19 +34,19 @@ meta:
 
 # OPEN DATA PRODUCT SPECIFICATION 
 
-## Version 3.1 Release Candidate 
+## Version 3.1  
 
 The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”, “SHOULD NOT”, “RECOMMENDED”, “NOT RECOMMENDED”, “MAY”, and “OPTIONAL” in this document are to be interpreted as described in BCP 14 [RFC2119] [RFC8174] when, and only when, they appear in all capitals, as shown here.
 
 The specification is shared under <a href='https://www.apache.org/licenses/LICENSE-2.0'>Apache 2.0</a> license. 
 Development of the specification is under the umbrella of the Linux Foundation. 
 
-**RELEASE CANDIDATE VERSION**
+**PRODUCTION RELEASE**
 
 
 **Version source:**
 
-* <a href="https://github.com/Open-Data-Product-Initiative/rc">https://github.com/Open-Data-Product-Initiative/rc</a>
+* <a href="https://github.com/Open-Data-Product-Initiative/v3.1">https://github.com/Open-Data-Product-Initiative/v3.1</a>
 
 **ODPS YAML version 3.1 Schema:**
 
@@ -59,7 +59,7 @@ Development of the specification is under the umbrella of the Linux Foundation.
 
 **Participate:**
 
-* [Raise an issue in Github](https://github.com/Open-Data-Product-Initiative/rc/issues)
+* [Raise an issue in Github](https://github.com/Open-Data-Product-Initiative/v3.1/issues)
 
 ## Introduction
 
@@ -87,7 +87,7 @@ The specification has been designed with four major aspects of the data product 
 ![odps-model](images/ODPS-design.png)
 
 
-If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, [raise an issue in Github](https://github.com/Open-Data-Product-Initiative/rc/issues)
+If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, [raise an issue in Github](https://github.com/Open-Data-Product-Initiative/v3.1/issues)
 
 ## Document structure
 
@@ -246,4 +246,4 @@ product:
 | **useCaseURL**| URL | Valid URL, [RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986) | Valid URL of the more detailed usecase description. |
 | **recommendedDataProducts** | array | Array of valid URLs ([RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986)) | Data products to recommend use next to this data product or even as replacement (for comparison). The URL provided MUST reference a description of a data product following this same standard |
 
-If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, [raise an issue in Github](https://github.com/Open-Data-Product-Initiative/devv3.1/issues)
+If you see something missing, described inaccurately or plain wrong, or you want to comment the specification, [raise an issue in Github](https://github.com/Open-Data-Product-Initiative/v3.1/issues)
