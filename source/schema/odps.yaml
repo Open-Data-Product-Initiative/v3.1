@@ -358,12 +358,5 @@ required:
 - schema
 - version
 - product
-- details  # Marked "details" as required
-- dataOps
-- dataAccess
-- SLA
-- dataQuality
-- license
-- dataHolder
 schema: source/schema/odps.yaml
 version: 3.1
