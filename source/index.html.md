@@ -67,7 +67,7 @@ The Open Data Product Specification is a vendor-neutral, open-source machine-rea
 
 Open Data Product Specification (ODPS) changes the data product metadata model towards a standalone model, which helps to decouple data product from the systems often directly associated with it. With help of the ODPS data product can be presented and described to the customer also as such without any need for marketplace or other systems. 
 
-This version Data Contract support has been added to Open Data Product Specification. You can reference Data Contract as a URL or define Data Contract as an inline element in ODPS. Both Data Contract Specification (DCS) and Open Data Contract Standard (ODCS) supported. 
+This version Data Contract support has been added to Open Data Product Specification. You can reference Data Contract as a URL or define Data Contract as an inline element in ODPS. Both Data Contract Specification (DCS) and Open Data Contract Standard (ODCS) are supported. 
 
 ## Specification aims and aspects
 
