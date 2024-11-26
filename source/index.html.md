@@ -198,7 +198,7 @@ product:
       type: dataset
       contentSample: https://download.com/pets.json
       logoURL: https://data-product-business.github.io/open-data-product-spec/images/logo-dps-ebd5a97d.png
-      OutputFileFormats:
+      outputFileFormats:
       - JSON
       - XML
       - CSV
