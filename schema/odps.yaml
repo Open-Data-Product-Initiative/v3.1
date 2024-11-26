@@ -353,5 +353,5 @@ required:
 - dataQuality
 - license
 - dataHolder
-schema: source/schema/odps-dev-yaml-schema.yaml
-version: dev
+schema: source/schema/odps.yaml
+version: 3.1
