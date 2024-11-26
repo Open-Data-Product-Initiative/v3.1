@@ -78,7 +78,8 @@ This version Data Contract support has been added to Open Data Product Specifica
 * increase the speed of designing, testing, and implementing data products. 
 * speed up tools development around data product design, development and management.
 * enable creation of automated data product deployment with standard methods (DataOps)
-* enable [Everything as Code](https://www.cloudbees.com/blog/what-is-everything-as-code-eac) approach for SLA and Data Quality monitoring
+* Support use of Data Contracts as part of Data Products
+* enable [Everything as Code](https://www.cloudbees.com/blog/what-is-everything-as-code-eac) approach for SLA, Data Quality monitoring, and Pricing Plans
 
 **Note!** In the "Open Data Product" focus is on the latter words and the prefix  'open' refers to the openness of the standard. Any kind of connotations to open data (a different thing) are not intentional, intended, or desirable.
 
