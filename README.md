@@ -1,5 +1,7 @@
+[![OpenSSF Best Practices](https://www.bestpractices.dev/projects/10024/badge)
+
 <p align="center">
-  <img src="https://opendataproducts.org/img/profile.png" alt="Open Data Product Specification" width="300">
+  <img src="https://opendataproducts.org/images/social.png" alt="Open Data Product Specification" width="300">
 </p>
 
 Features
