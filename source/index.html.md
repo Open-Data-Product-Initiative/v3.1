@@ -53,6 +53,8 @@ Development of the specification is under the umbrella of the Linux Foundation.
 **Editors:**
 
 * <a href="https://www.linkedin.com/in/jarkkomoilanen/">Dr. Jarkko Moilanen</a>
+* <a href="https://www.linkedin.com/in/manfred-sorg/">Manfred Sorg</a>
+
 
 
 **Participate:**
